@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Gyanu Notes - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #ffffff;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #333;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            padding: 8px 12px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px 60px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+
+        /* Privacy Content */
+        .privacy-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .privacy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .privacy-section h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .privacy-section h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin: 15px 0 10px 0;
+        }
+
+        .privacy-section p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .privacy-section ul {
+            margin: 10px 0 10px 20px;
+            color: #666;
+        }
+
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+
+        .effective-date {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #667eea;
+            margin-top: 8px;
+        }
+
+        .footer-col p {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #667eea;
+        }
+
+        .contact-info li {
+            color: #aaa;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #2a2a3e;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a3e;
+            color: #aaa;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                border-radius: 0 0 10px 10px;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .privacy-card {
+                padding: 25px;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-col h3:after {
+                margin: 8px auto 0;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-name {
+                font-size: 1.1rem;
+            }
+            
+            .page-header {
+                padding: 80px 15px 40px;
+            }
+            
+            .privacy-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <span class="site-name">Gyanu Notes</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">🏠 Home</a>
+                <a href="notes.html">📝 Notes</a>
+                <a href="books.html">📚 Books</a>
+                <a href="about.html">ℹ️ About</a>
+                <a href="contact.html">📧 Contact</a>
+                <a href="login.html">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>🔒 Privacy Policy</h1>
+        <p>Your privacy matters to us. Read how we protect your data.</p>
+    </div>
+
+    <div class="container">
+        <div class="privacy-card">
+            <div class="effective-date">
+                📅 Effective Date: January 1, 2024 | Last Updated: December 15, 2024
+            </div>
+
+            <div class="privacy-section">
+                <h2>📖 1. Introduction</h2>
+                <p>Welcome to Gyanu Notes ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+                <p>By using our website, you agree to the collection and use of information in accordance with this policy.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>📊 2. Information We Collect</h2>
+                <h3>Personal Information</h3>
+                <ul>
+                    <li><strong>Name</strong> - When you create an account or contact us</li>
+                    <li><strong>Email Address</strong> - For account creation and communication</li>
+                    <li><strong>Profile Information</strong> - Optional information you provide</li>
+                </ul>
+                
+                <h3>Usage Data</h3>
+                <ul>
+                    <li>Pages you visit on our website</li>
+                    <li>Time and date of your visit</li>
+                    <li>Time spent on pages</li>
+                    <li>Device information (browser type, operating system)</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🔐 3. How We Use Your Information</h2>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>✓ Provide, operate, and maintain our website</li>
+                    <li>✓ Create and manage your account</li>
+                    <li>✓ Send you important updates and notifications</li>
+                    <li>✓ Respond to your comments, questions, and requests</li>
+                    <li>✓ Improve our educational content and user experience</li>
+                    <li>✓ Monitor and analyze usage patterns</li>
+                    <li>✓ Protect against unauthorized access and fraud</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🍪 4. Cookies and Tracking Technologies</h2>
+                <p>We use cookies and similar tracking technologies to track activity on our website and store certain information. Cookies are files with small amount of data which may include an anonymous unique identifier.</p>
+                <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🔒 5. Data Security</h2>
+                <p>We implement appropriate technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>👶 6. Children's Privacy</h2>
+                <p>Our website is intended for students of all ages. We do not knowingly collect personally identifiable information from children under 13 without parental consent. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🔗 7. Third-Party Services</h2>
+                <p>We use the following third-party services:</p>
+                <ul>
+                    <li><strong>Firebase (Google)</strong> - For authentication and data storage</li>
+                    <li><strong>Google Drive</strong> - To host our PDF notes and books</li>
+                    <li><strong>Google Maps</strong> - To show our location on contact page</li>
+                </ul>
+                <p>These services have their own privacy policies and terms of service.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>📧 8. Your Rights</h2>
+                <p>Depending on your location, you may have the following rights:</p>
+                <ul>
+                    <li>✓ Access your personal information</li>
+                    <li>✓ Correct inaccurate information</li>
+                    <li>✓ Delete your personal information</li>
+                    <li>✓ Object to or restrict processing</li>
+                    <li>✓ Data portability</li>
+                    <li>✓ Withdraw consent at any time</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🔄 9. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>📞 10. Contact Us</h2>
+                <div class="contact-info">
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>📧 Email: <strong>gyanunotes@gmail.com</strong></li>
+                        <li>📱 Phone: <strong>+977 9800000000</strong></li>
+                        <li>📍 Address: <strong>Kathmandu, Nepal</strong></li>
+                        <li>🌐 Website: <strong>www.gyanunotes.com</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Gyanu Notes</h3>
+                    <p>Your trusted educational platform for quality study materials following CDC Nepal curriculum.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="notes.html">Notes</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>📧 gyanunotes@gmail.com</li>
+                        <li>📱 +977 9800000000</li>
+                        <li>📍 Nepal</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gyanu Notes. Made with ❤️ for Nepali students | CDC Curriculum</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('show');
+            menuToggle.classList.toggle('active');
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').classList.remove('show');
+                    document.querySelector('.menu-toggle').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

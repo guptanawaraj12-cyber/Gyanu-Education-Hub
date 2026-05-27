@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyanu Notes - Reference Books</title>
+    <link rel="stylesheet" href="books.css">
+</head>
+<body>
+  <!-- Navigation Bar - Mobile Hamburger Menu -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area">
+            <span class="site-name">Gyanu Notes</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">🏠 Home</a>
+            <a href="notes.html">📝 Notes</a>
+            <a href="books.html">📚 Books</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="contact.html">📧 Contact</a>
+            <a href="login.html">🔐 Login</a>
+        </div>
+    </div>
+</nav>
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>📚 Reference Books</h1>
+        <p>Choose your class → Select subject → Get free reference books (PDF)</p>
+    </div>
+
+    <div class="container">
+        <!-- Back Button -->
+        <div id="backButton" class="back-button" style="display: none;">
+            <button onclick="showClasses()">← Back to Classes</button>
+        </div>
+
+        <!-- STEP 1: CLASSES VIEW -->
+        <div id="classesView" class="classes-view">
+            <h2 class="view-title">📖 Select Your Class</h2>
+            <div class="classes-grid">
+                <div class="class-card" onclick="selectClass('class7')">
+                    <div class="class-icon">7️⃣</div>
+                    <h3>Class 7</h3>
+                    <p>Basic Foundation</p>
+                    <span class="class-tag">5 Books</span>
+                </div>
+                <div class="class-card" onclick="selectClass('class8')">
+                    <div class="class-icon">8️⃣</div>
+                    <h3>Class 8</h3>
+                    <p>Building Concepts</p>
+                    <span class="class-tag">5 Books</span>
+                </div>
+                <div class="class-card" onclick="selectClass('class9')">
+                    <div class="class-icon">9️⃣</div>
+                    <h3>Class 9</h3>
+                    <p>Secondary Level</p>
+                    <span class="class-tag">6 Books</span>
+                </div>
+                <div class="class-card" onclick="selectClass('class10')">
+                    <div class="class-icon">🔟</div>
+                    <h3>Class 10 (SEE)</h3>
+                    <p>SEE Preparation</p>
+                    <span class="class-tag">8 Books</span>
+                </div>
+                <div class="class-card" onclick="selectClass('class11')">
+                    <div class="class-icon">1️⃣1️⃣</div>
+                    <h3>Class 11</h3>
+                    <p>Higher Secondary</p>
+                    <span class="class-tag">8 Books</span>
+                </div>
+                <div class="class-card" onclick="selectClass('class12')">
+                    <div class="class-icon">1️⃣2️⃣</div>
+                    <h3>Class 12</h3>
+                    <p>NEB Preparation</p>
+                    <span class="class-tag">10 Books</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 2: SUBJECTS VIEW -->
+        <div id="subjectsView" class="subjects-view" style="display: none;">
+            <h2 id="selectedClassTitle" class="view-title"></h2>
+            <div id="subjectsList" class="subjects-list"></div>
+        </div>
+
+        <!-- STEP 3: BOOKS VIEW -->
+        <div id="booksView" class="books-view" style="display: none;">
+            <button class="back-to-subjects" onclick="showSubjects()">← Back to Subjects</button>
+            <h2 id="selectedSubjectTitle" class="view-title"></h2>
+            <div id="booksList" class="books-list-view"></div>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Book Preview</h2>
+            <div id="modalBody"></div>
+            <button class="download-modal" onclick="downloadFromModal()">📥 Download Full PDF</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Gyanu Notes</h3>
+                    <p>Your trusted educational platform for quality reference books and study materials following CDC Nepal curriculum.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="notes.html">Notes</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Textbooks</a></li>
+                        <li><a href="#">Reference Books</a></li>
+                        <li><a href="#">Solution Guides</a></li>
+                        <li><a href="#">Previous Papers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>📧 gyanunotes@gmail.com</li>
+                        <li>📱 +977 9800000000</li>
+                        <li>📍 Nepal</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gyanu Notes. Made with ❤️ for Nepali students | CDC Curriculum</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="books.js"></script>
+    <script>
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    }
+    
+    // Close menu when clicking a link (on mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.querySelector('.menu-toggle');
+                navLinks.classList.remove('show');
+                menuToggle.classList.remove('active');
+            }
+        });
+    });
+    
+    // Close menu when clicking outside (optional)
+    document.addEventListener('click', function(event) {
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const isClickInsideNav = navLinks.contains(event.target);
+        const isClickOnToggle = menuToggle.contains(event.target);
+        
+        if (window.innerWidth <= 768 && !isClickInsideNav && !isClickOnToggle) {
+            navLinks.classList.remove('show');
+            menuToggle.classList.remove('active');
+        }
+    });
+</script>
+</body>
+</html>

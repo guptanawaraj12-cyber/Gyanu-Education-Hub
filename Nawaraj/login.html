@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Gyanu Notes - Login / Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <span class="site-name">Gyanu Notes</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">🏠 Home</a>
+                <a href="notes.html">📝 Notes</a>
+                <a href="books.html">📚 Books</a>
+                <a href="about.html">ℹ️ About</a>
+                <a href="contact.html">📧 Contact</a>
+                <a href="login.html" class="active">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div id="authContainer">
+            <!-- Content will be loaded by JavaScript -->
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="logo">📚</div>
+                    <h1>Welcome to Gyanu Notes</h1>
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Gyanu Notes</h3>
+                    <p>Your trusted educational platform for quality study materials following CDC Nepal curriculum.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="notes.html">Notes</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Curriculum</h3>
+                    <ul>
+                        <li><a href="#">CDC Nepal</a></li>
+                        <li><a href="#">NEB Curriculum</a></li>
+                        <li><a href="#">SEE Preparation</a></li>
+                        <li><a href="#">Class 12 Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>📧 gyanunotes@gmail.com</li>
+                        <li>📱 +977 9800000000</li>
+                        <li>📍 Nepal</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gyanu Notes. Made with ❤️ for Nepali students | CDC Curriculum</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="login.js"></script>
+    <script>
+        // Hamburger menu function (non-module)
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (navLinks && menuToggle) {
+                navLinks.classList.toggle('show');
+                menuToggle.classList.toggle('active');
+            }
+        }
+        
+        // Close menu when clicking a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const navLinks = document.getElementById('navLinks');
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    if (navLinks && menuToggle) {
+                        navLinks.classList.remove('show');
+                        menuToggle.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

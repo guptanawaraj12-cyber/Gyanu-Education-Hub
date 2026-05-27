@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyanu Notes - Educational Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar - Mobile Hamburger Menu -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area">
+            <span class="site-name">Gyanu Notes</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">🏠 Home</a>
+            <a href="notes.html">📝 Notes</a>
+            <a href="books.html">📚 Books</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="contact.html">📧 Contact</a>
+            <a href="login.html">🔐 Login</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Home Page - Clean Professional Design -->
+    <main id="home" class="page active">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="highlight">Gyanu Notes</span></h1>
+                    <h2>Your Learning Companion</h2>
+                    <p>Providing quality educational resources, study materials, and notes to help students excel in their academic journey. Learn anytime, anywhere.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="window.location.href='notes.html'">Explore Notes</button>
+                        <button class="btn-secondary" onclick="window.location.href='books.html'">Download Books</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        📚
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- What I Offer Section -->
+            <div class="section">
+                <h3 class="section-title">What We Offer</h3>
+                <div class="offer-grid">
+                    <div class="offer-card">
+                        <div class="offer-icon">📝</div>
+                        <h4>Study Notes</h4>
+                        <p>Comprehensive notes for all subjects prepared by experts</p>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-icon">📚</div>
+                        <h4>Reference Books</h4>
+                        <p>Free downloadable educational books and materials</p>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-icon">✅</div>
+                        <h4>Practice Tests</h4>
+                        <p>Interactive quizzes to test your knowledge</p>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-icon">🎥</div>
+                        <h4>Video Lessons</h4>
+                        <p>Engaging video tutorials for better understanding</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Subjects -->
+            <div class="section">
+                <h3 class="section-title">Featured Subjects</h3>
+                <div class="subjects-grid">
+                    <div class="subject-item">
+                        <span class="subject-icon">📐</span>
+                        <span>Mathematics</span>
+                    </div>
+                    <div class="subject-item">
+                        <span class="subject-icon">🔬</span>
+                        <span>Science</span>
+                    </div>
+                    <div class="subject-item">
+                        <span class="subject-icon">💻</span>
+                        <span>Computer</span>
+                    </div>
+                    <div class="subject-item">
+                        <span class="subject-icon">📖</span>
+                        <span>English</span>
+                    </div>
+                    <div class="subject-item">
+                        <span class="subject-icon">🌍</span>
+                        <span>Social Studies</span>
+                    </div>
+                    <div class="subject-item">
+                        <span class="subject-icon">🎨</span>
+                        <span>Arts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Other Pages (Coming Soon) -->
+    <div id="notes" class="page">
+        <div class="container">
+            <h1>📝 Notes Page</h1>
+            <p>Study notes coming soon...</p>
+        </div>
+    </div>
+    <div id="books" class="page">
+        <div class="container">
+            <h1>📚 Books Page</h1>
+            <p>Reference books coming soon...</p>
+        </div>
+    </div>
+    <div id="about" class="page">
+        <div class="container">
+            <h1>ℹ️ About Us</h1>
+            <p>About Gyanu Notes coming soon...</p>
+        </div>
+    </div>
+    <div id="contact" class="page">
+        <div class="container">
+            <h1>📧 Contact Us</h1>
+            <p>Contact form coming soon...</p>
+        </div>
+    </div>
+    <div id="login" class="page">
+        <div class="container">
+            <h1>🔐 Login</h1>
+            <p>Login system coming soon...</p>
+        </div>
+    </div>
+
+    <!-- Footer - Gyanu Notes -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-col">
+                    <h3>Gyanu Notes</h3>
+                    <p>Your trusted educational platform for quality study materials, notes, and resources to help students succeed.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('notes')">Notes</a></li>
+                        <li><a href="#" onclick="showPage('books')">Books</a></li>
+                        <li><a href="#" onclick="showPage('about')">About</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                        <li><a href="#" onclick="showPage('login')">Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Study Materials</a></li>
+                        <li><a href="#">Previous Papers</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="privacy.html">privacy</a></li>
+                        <li><a href="terms.html">terms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>📧 <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a></li>
+                        <li>📱 <a href="#">+977 9800000000</a></li>
+                        <li>📍 Nepal</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gyanu Notes. All rights reserved. | Made with ❤️ for students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    }
+    
+    // Close menu when clicking a link (on mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.querySelector('.menu-toggle');
+                navLinks.classList.remove('show');
+                menuToggle.classList.remove('active');
+            }
+        });
+    });
+    
+    // Close menu when clicking outside (optional)
+    document.addEventListener('click', function(event) {
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const isClickInsideNav = navLinks.contains(event.target);
+        const isClickOnToggle = menuToggle.contains(event.target);
+        
+        if (window.innerWidth <= 768 && !isClickInsideNav && !isClickOnToggle) {
+            navLinks.classList.remove('show');
+            menuToggle.classList.remove('active');
+        }
+    });
+</script>
+</body>
+</html>

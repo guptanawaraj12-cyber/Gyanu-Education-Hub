@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Gyanu Notes - Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #ffffff;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #333;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            padding: 8px 12px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px 60px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+
+        .terms-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .terms-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .terms-section:last-child {
+            border-bottom: none;
+        }
+
+        .terms-section h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .terms-section p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .terms-section ul {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .terms-section li {
+            margin-bottom: 8px;
+        }
+
+        .effective-date {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: #ffffff;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #667eea;
+            margin-top: 8px;
+        }
+
+        .footer-col p, .footer-col ul li a {
+            color: #aaa;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #667eea;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #2a2a3e;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2a2a3e;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                border-radius: 0 0 10px 10px;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-card {
+                padding: 25px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-col h3:after {
+                margin: 8px auto 0;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <span class="site-name">Gyanu Notes</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">🏠 Home</a>
+                <a href="notes.html">📝 Notes</a>
+                <a href="books.html">📚 Books</a>
+                <a href="about.html">ℹ️ About</a>
+                <a href="contact.html">📧 Contact</a>
+                <a href="login.html">🔐 Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>📜 Terms of Service</h1>
+        <p>Please read these terms carefully before using our website</p>
+    </div>
+
+    <div class="container">
+        <div class="terms-card">
+            <div class="effective-date">
+                📅 Effective Date: January 1, 2024 | Last Updated: December 15, 2024
+            </div>
+
+            <div class="terms-section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using Gyanu Notes website, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>2. Description of Service</h2>
+                <p>Gyanu Notes provides free educational resources including:</p>
+                <ul>
+                    <li>Study notes for Class 7-12 following CDC/NEB curriculum</li>
+                    <li>Reference books in PDF format</li>
+                    <li>Educational materials and resources</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>3. User Accounts</h2>
+                <p>To access certain features, you may need to create an account. You are responsible for:</p>
+                <ul>
+                    <li>Maintaining the confidentiality of your login credentials</li>
+                    <li>All activities that occur under your account</li>
+                    <li>Providing accurate and complete information</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>4. Intellectual Property</h2>
+                <p>All content on Gyanu Notes is owned by us or our licensors. You may:</p>
+                <ul>
+                    <li>Download notes and books for personal educational use</li>
+                    <li>Share links to our content</li>
+                </ul>
+                <p>You may NOT:</p>
+                <ul>
+                    <li>Sell or redistribute our content commercially</li>
+                    <li>Claim our content as your own</li>
+                    <li>Modify or create derivative works</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>5. User Conduct</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the website for any illegal purpose</li>
+                    <li>Upload malicious code or viruses</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Harass, abuse, or harm others</li>
+                    <li>Share inappropriate or offensive content</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>6. Disclaimer of Warranties</h2>
+                <p>The website and content are provided "as is" without warranties of any kind. We do not guarantee that:</p>
+                <ul>
+                    <li>The content is completely accurate or error-free</li>
+                    <li>The website will be available 100% of the time</li>
+                    <li>Downloaded files are free from viruses</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>7. Limitation of Liability</h2>
+                <p>Gyanu Notes shall not be liable for any indirect, incidental, or consequential damages arising from your use of the website or inability to access content.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>8. Termination</h2>
+                <p>We may terminate or suspend your account immediately without prior notice for conduct that violates these Terms of Service.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>9. Changes to Terms</h2>
+                <p>We reserve the right to modify these terms at any time. Continued use of the website after changes constitutes acceptance of the new terms.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>10. Contact Information</h2>
+                <p>For questions about these Terms of Service, please contact us at: <strong>gyanunotes@gmail.com</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Gyanu Notes</h3>
+                    <p>Your trusted educational platform for quality study materials following CDC Nepal curriculum.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="notes.html">Notes</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>📧 gyanunotes@gmail.com</li>
+                        <li>📱 +977 9800000000</li>
+                        <li>📍 Nepal</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">📷</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gyanu Notes. Made with ❤️ for Nepali students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('show');
+            menuToggle.classList.toggle('active');
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').classList.remove('show');
+                    document.querySelector('.menu-toggle').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
