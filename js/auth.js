@@ -16,8 +16,6 @@ import {
     onAuthStateChanged,
     updateProfile,
     doc,
-    setDoc,
-    getDoc,
     updateDoc,
     saveUserToFirestore
 } from './firebase-config.js';
@@ -25,6 +23,7 @@ import {
 let loginForm, signupForm, forgotPasswordForm;
 let errorMessage, successMessage;
 
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     loginForm = document.getElementById('loginForm');
     signupForm = document.getElementById('signupForm');
@@ -58,7 +57,7 @@ function checkAuthState() {
         if (user) {
             updateUIForLoggedInUser(user);
             const currentPage = window.location.pathname.split('/').pop();
-            if (currentPage === 'login.html') {
+            if (currentPage === 'login.html' || currentPage === 'signup.html') {
                 window.location.href = 'dashboard.html';
             }
         } else {
@@ -121,10 +120,6 @@ async function handleLogin(e) {
             case 'auth/too-many-requests': errorMsg = 'Too many attempts. Try again later.'; break;
         }
         showError(errorMsg);
-        const form = loginForm;
-        form.classList.add('error-shake');
-        setTimeout(() => form.classList.remove('error-shake'), 500);
-    } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
     }
@@ -172,7 +167,6 @@ async function handleSignup(e) {
             case 'auth/weak-password': errorMsg = 'Password is too weak.'; break;
         }
         showError(errorMsg);
-    } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
     }
@@ -194,7 +188,6 @@ async function handleSocialLogin(providerType) {
         }, 1500);
     } catch (error) {
         showError(`${providerType} sign-in failed. Please try again.`);
-    } finally {
         btn.innerHTML = originalText;
         btn.disabled = false;
     }
@@ -314,3 +307,9 @@ function showSuccess(message) {
         }, 3000);
     }
 }
+
+// Make functions global for HTML buttons
+window.handleLogin = handleLogin;
+window.handleSignup = handleSignup;
+window.handleForgotPassword = handleForgotPassword;
+window.handleLogout = handleLogout;
