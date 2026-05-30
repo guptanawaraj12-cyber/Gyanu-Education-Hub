@@ -20,7 +20,7 @@
     <!-- ==================== HEADER / NAVBAR ==================== -->
     <nav class="navbar">
         <div class="logo-area">
-            <img src="images/WhatsApp Image 2026-01-22 at 8.39.23 PM.jpeg" alt="Gyanu Notes Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45x45?text=GN'">
+            <img src="images/logo.png" alt="Gyanu Notes Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="site-name">Gyanu Notes</span>
         </div>
         
@@ -41,17 +41,17 @@
             <li><a href="notes.html">Notes</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="about.html">About Us</a></li>
-<li class="profile-dropdown">
-    <a href="login.html" class="login-link" id="loginLink">Login</a>
-    <div class="dropdown-content" id="dropdownContent" style="display: none;">
-        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
-        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
-        <hr>
-        <a href="#" id="logoutDropdownBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
-    </div>
-</li>    
-    </ul>
+            <li class="profile-dropdown">
+                <a href="login.html" class="login-link" id="loginLink">Login</a>
+                <div class="dropdown-content" id="dropdownContent" style="display: none;">
+                    <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                    <hr>
+                    <a href="#" id="logoutDropdownBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 
     <!-- ==================== AI SEARCH MODAL ==================== -->
@@ -104,7 +104,7 @@
                 <!-- Settings Content Area -->
                 <div class="settings-content">
                     
-                    <!-- Profile Section -->
+                    <!-- ==================== PROFILE SECTION ==================== -->
                     <div id="profileSection" class="settings-section active">
                         <h2><i class="fas fa-user-circle"></i> Profile Settings</h2>
                         
@@ -112,7 +112,7 @@
                             <div class="profile-avatar">
                                 <i class="fas fa-user-graduate"></i>
                             </div>
-                            <button class="change-photo-btn" id="changePhotoBtn">
+                            <button type="button" id="changePhotoBtn" class="change-photo-btn">
                                 <i class="fas fa-camera"></i> Change Photo
                             </button>
                         </div>
@@ -154,7 +154,7 @@
                         </form>
                     </div>
 
-                    <!-- Appearance Section -->
+                    <!-- ==================== APPEARANCE SECTION ==================== -->
                     <div id="appearanceSection" class="settings-section">
                         <h2><i class="fas fa-palette"></i> Appearance</h2>
                         
@@ -205,7 +205,7 @@
                         </form>
                     </div>
 
-                    <!-- Notifications Section -->
+                    <!-- ==================== NOTIFICATIONS SECTION ==================== -->
                     <div id="notificationsSection" class="settings-section">
                         <h2><i class="fas fa-bell"></i> Notifications</h2>
                         
@@ -250,7 +250,7 @@
                         </form>
                     </div>
 
-                    <!-- Security Section -->
+                    <!-- ==================== SECURITY SECTION ==================== -->
                     <div id="securitySection" class="settings-section">
                         <h2><i class="fas fa-shield-alt"></i> Security</h2>
                         
@@ -289,7 +289,7 @@
                         </div>
                     </div>
 
-                    <!-- Privacy & Data Section -->
+                    <!-- ==================== PRIVACY & DATA SECTION ==================== -->
                     <div id="privacySection" class="settings-section">
                         <h2><i class="fas fa-lock"></i> Privacy & Data</h2>
                         
@@ -357,7 +357,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 3: Notes by Class -->
+                !-- Column 3: Notes by Class -->
                 <div class="footer-col">
                     <h3>Notes by Class</h3>
                     <ul>
@@ -423,14 +423,15 @@
     </button>
 
     <!-- ==================== JS FILES ==================== -->
-    <script src="js/firebase-config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/settings.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/settings.js"></script>
     
     <!-- Sidebar Navigation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar navigation
             const navButtons = document.querySelectorAll('.settings-nav');
             const sections = document.querySelectorAll('.settings-section');
             
@@ -438,35 +439,14 @@
                 btn.addEventListener('click', function() {
                     const sectionId = this.getAttribute('data-section');
                     
-                    // Remove active class from all buttons and sections
                     navButtons.forEach(b => b.classList.remove('active'));
                     sections.forEach(s => s.classList.remove('active'));
                     
-                    // Add active class to current button and section
                     this.classList.add('active');
                     document.getElementById(sectionId + 'Section').classList.add('active');
                 });
             });
         });
     </script>
-    <script type="module">
-    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-    import { auth } from './js/firebase-config.js';
-    
-    onAuthStateChanged(auth, (user) => {
-        const loginLink = document.querySelector('.login-link');
-        if (user) {
-            if (loginLink) {
-                loginLink.innerHTML = '<i class="fas fa-user"></i> Dashboard';
-                loginLink.href = 'dashboard.html';
-            }
-        } else {
-            if (loginLink) {
-                loginLink.innerHTML = 'Login';
-                loginLink.href = 'login.html';
-            }
-        }
-    });
-</script>
 </body>
 </html>
