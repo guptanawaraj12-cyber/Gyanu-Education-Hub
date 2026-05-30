@@ -3,7 +3,7 @@
    Web3Forms integration, form validation
    ============================================ */
 
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "1faf2630-a720-4238-b659-b8d1dc4a541b";
 
 document.addEventListener('DOMContentLoaded', function() {
     initContactForm();

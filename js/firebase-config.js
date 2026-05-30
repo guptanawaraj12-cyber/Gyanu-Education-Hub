@@ -35,14 +35,14 @@ import {
 // ========== FIREBASE CONFIGURATION ==========
 // REPLACE THESE WITH YOUR OWN FIREBASE PROJECT KEYS
 // Get them from: https://console.firebase.google.com/
-
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",              // Replace with your API Key
-    authDomain: "YOUR_AUTH_DOMAIN",      // Replace with your Auth Domain
-    projectId: "YOUR_PROJECT_ID",        // Replace with your Project ID
-    storageBucket: "YOUR_STORAGE_BUCKET", // Replace with your Storage Bucket
-    messagingSenderId: "YOUR_SENDER_ID",  // Replace with your Sender ID
-    appId: "YOUR_APP_ID"                  // Replace with your App ID
+  const firebaseConfig = {
+  apiKey: "AIzaSyA-QLb54wT2y-k4W3GUrsxB9SA-WFZ_03w",
+  authDomain: "gyanu-notes-6f6d8.firebaseapp.com",
+  projectId: "gyanu-notes-6f6d8",
+  storageBucket: "gyanu-notes-6f6d8.firebasestorage.app",
+  messagingSenderId: "149239448624",
+  appId: "1:149239448624:web:4e4695a7d557dce234d9f5",
+  measurementId: "G-WM3DLZTBPN"
 };
 
 // ========== INITIALIZE FIREBASE ==========
