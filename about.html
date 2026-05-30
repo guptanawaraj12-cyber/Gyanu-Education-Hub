@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Gyanu Notes | Free Study Notes for Nepal Students</title>
+    <meta name="description" content="Learn about Gyanu Notes - our mission to provide free, high-quality study notes for Class 8-12 students in Nepal. Join thousands of successful students.">
+    <meta name="keywords" content="about Gyanu Notes, free education Nepal, study notes mission">
+    
+    <!-- CSS File - About page specific styles (includes dark mode, responsive, animations) -->
+    <link rel="stylesheet" href="css/about.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="images/WhatsApp Image 2026-01-22 at 8.39.23 PM.jpeg" alt="Gyanu Notes Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45x45?text=GN'">
+            <span class="site-name">Gyanu Notes</span>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="search-btn" id="aiSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="login.html" class="login-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== AI SEARCH MODAL ==================== -->
+    <div class="search-modal" id="searchModal">
+        <div class="close-search" id="closeSearch">&times;</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search notes by subject, class, or topic...">
+            <button id="searchSubmit"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- ==================== ABOUT PAGE MAIN CONTENT ==================== -->
+    <main class="about-main">
+        <div class="container">
+            
+            <!-- Hero Section -->
+            <div class="about-hero">
+                <h1>About Gyanu Notes</h1>
+                <p>Free study notes for every student in Nepal and beyond</p>
+            </div>
+
+            <!-- Our Story Section -->
+            <div class="about-section">
+                <div class="section-content">
+                    <h2><i class="fas fa-book-open"></i> Our Story</h2>
+                    <p>Gyanu Notes was founded with a simple mission: to provide high-quality, free study notes to every student in Nepal. We believe that quality education should be accessible to everyone, regardless of their financial situation.</p>
+                    <p>What started as a small collection of personal notes has now grown into a comprehensive resource trusted by thousands of students across the country. Our team works tirelessly to create notes that are easy to understand, comprehensive, and completely free.</p>
+                    <p>Today, Gyanu Notes helps students from Class 8 to Class 12 prepare for their exams with confidence. We cover all major subjects including Science, Mathematics, English, Nepali, Social Studies, Computer Science, and more.</p>
+                </div>
+                <div class="section-image">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="mission-vision">
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To make quality education accessible to every student, anywhere, completely free of cost. We strive to empower students with the best study materials.</p>
+                </div>
+                <div class="vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become Nepal's most trusted free study platform, empowering thousands of students to achieve their dreams and excel in their academic journey.</p>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Section -->
+            <div class="why-choose">
+                <h2><i class="fas fa-star"></i> Why Choose Gyanu Notes?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-coins"></i>
+                        <h3>100% Free</h3>
+                        <p>No hidden charges. No premium plans. Everything is completely free forever.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-download"></i>
+                        <h3>Easy to Download</h3>
+                        <p>One-click PDF downloads for offline study. Study anywhere, anytime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Updated Syllabus</h3>
+                        <p>Notes follow the latest NEB and CBSE curriculum. Regular updates.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Access Anywhere</h3>
+                        <p>Study on mobile, tablet, or desktop - anywhere, anytime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Track Progress</h3>
+                        <p>Create a free account to track your study progress and save favorites.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Student Support</h3>
+                        <p>We're here to help. Contact us anytime with questions or requests.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="10000">0</h3>
+                    <p>Students Helped</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Free Notes</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Subjects Covered</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="5">0</h3>
+                    <p>Classes (8-12)</p>
+                </div>
+            </div>
+
+            <!-- Founder Section -->
+            <div class="founder-section">
+                <div class="founder-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="founder-message">
+                    <h2><i class="fas fa-user-graduate"></i> Message from the Founder</h2>
+                    <p>"I started Gyanu Notes because I believe every student deserves access to quality study materials. Education should not be a luxury - it's a right. I remember struggling to find good notes when I was a student, and I don't want others to face the same challenge.</p>
+                    <p>Our team works hard to create notes that are easy to understand, comprehensive, and completely free. We update our content regularly to match the latest syllabus and exam patterns.</p>
+                    <p>Thank you for being part of our learning community. Together, we can make education accessible to all!"</p>
+                    <h4>— Gyanu</h4>
+                    <p class="founder-title">Founder, Gyanu Notes</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="about-cta">
+                <h3>Ready to start learning?</h3>
+                <p>Join thousands of students who study with Gyanu Notes every day.</p>
+                <div class="cta-buttons">
+                    <a href="notes.html" class="btn-primary">📚 Browse Notes</a>
+                    <a href="login.html" class="btn-secondary">🔐 Create Free Account</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER (5 COLUMNS) ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 Home</a></li>
+                        <li><a href="notes.html">📚 Notes</a></li>
+                        <li><a href="contact.html">📞 Contact</a></li>
+                        <li><a href="about.html">ℹ️ About Us</a></li>
+                        <li><a href="login.html">🔐 Login</a></li>
+                        <li><a href="dashboard.html">📊 Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Other Links -->
+                <div class="footer-col">
+                    <h3>Other Links</h3>
+                    <ul>
+                        <li><a href="#">📜 Privacy Policy</a></li>
+                        <li><a href="#">⚖️ Terms of Service</a></li>
+                        <li><a href="#">❓ FAQ</a></li>
+                        <li><a href="#">📝 Blog</a></li>
+                        <li><a href="#">⭐ Rate Us</a></li>
+                        <li><a href="#">📢 Report Issue</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Notes by Class -->
+                <div class="footer-col">
+                    <h3>Notes by Class</h3>
+                    <ul>
+                        <li><a href="notes.html?class=class8">📖 Class 8</a></li>
+                        <li><a href="notes.html?class=class9">📖 Class 9</a></li>
+                        <li><a href="notes.html?class=class10">📖 Class 10 (SEE)</a></li>
+                        <li><a href="notes.html?class=class11">📖 Class 11</a></li>
+                        <li><a href="notes.html?class=class12">📖 Class 12</a></li>
+                        <li><a href="notes.html">📚 All Notes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> gyanunotes@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 9814412941</li>
+                        <li><i class="fab fa-whatsapp"></i> 9814412941 (WhatsApp)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nawalparasi, Nepal</li>
+                        <li><i class="far fa-clock"></i> Mon-Fri: 9am - 6pm</li>
+                        <li><i class="fas fa-reply-all"></i> Reply within 24hrs</li>
+                    </ul>
+                </div>
+
+                <!-- Column 5: Social Media -->
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-icon youtube" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-icon facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-icon instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon twitter" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="social-handle">
+                        <p><i class="fab fa-instagram"></i> @GyanuNotes</p>
+                        <p><i class="fab fa-facebook"></i> /GyanuNotes</p>
+                        <p><i class="fab fa-youtube"></i> @gyanu-notes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gyanu Notes. All rights reserved. | Made with <i class="fas fa-heart"></i> for students in Nepal</p>
+                <p class="credits">Empowering education, one note at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== DARK MODE TOGGLE BUTTON ==================== -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ==================== JS FILES ==================== -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Counter Animation Script -->
+    <script>
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const updateCounter = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.innerText = target;
+                    clearInterval(updateCounter);
+                } else {
+                    element.innerText = Math.floor(current);
+                }
+            }, 30);
+        }
+
+        // Check if element is in viewport
+        function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= window.innerHeight - 100;
+        }
+
+        // Initialize counter animation on scroll
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        function checkCounters() {
+            counters.forEach(counter => {
+                if (!counter.classList.contains('animated') && isInViewport(counter)) {
+                    counter.classList.add('animated');
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    animateCounter(counter, target);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCounters);
+        checkCounters();
+    </script>
+</body>
+</html>

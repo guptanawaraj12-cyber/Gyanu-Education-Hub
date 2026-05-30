@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gyanu Notes | Your Study Progress</title>
+    <meta name="description" content="Track your study progress, save favorite notes, and continue learning with Gyanu Notes dashboard.">
+    
+    <!-- CSS File - Dashboard page specific styles -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="images/WhatsApp Image 2026-01-22 at 8.39.23 PM.jpeg" alt="Gyanu Notes Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45x45?text=GN'">
+            <span class="site-name">Gyanu Notes</span>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="search-btn" id="aiSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="dashboard.html" class="login-link active">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== AI SEARCH MODAL ==================== -->
+    <div class="search-modal" id="searchModal">
+        <div class="close-search" id="closeSearch">&times;</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search notes by subject, class, or topic...">
+            <button id="searchSubmit"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- ==================== DASHBOARD MAIN CONTENT ==================== -->
+    <main class="dashboard-main">
+        <div class="container">
+            
+            <!-- Welcome Header -->
+            <div class="dashboard-header">
+                <div class="welcome-section">
+                    <h1>Welcome back, <span id="userName">Student</span>!</h1>
+                    <p id="userClass" class="user-class">Class 10 • SEE Preparation</p>
+                </div>
+                <div class="header-actions">
+                    <a href="settings.html" class="settings-link" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                    <button id="logoutBtn" class="logout-header" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Overview Cards -->
+            <div class="stats-overview">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="completedCount">0</h3>
+                        <p>Chapters Completed</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="savedCount">0</h3>
+                        <p>Saved Notes</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="streakCount">0</h3>
+                        <p>Day Streak</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="studyTime">0</h3>
+                        <p>Study Hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Progress Section -->
+            <div class="progress-section">
+                <h2><i class="fas fa-chart-line"></i> Your Overall Progress</h2>
+                <div class="progress-wrapper">
+                    <div class="progress-label">
+                        <span>Overall Completion</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Goal Section -->
+            <div class="daily-goal">
+                <h2><i class="fas fa-bullseye"></i> Today's Goal</h2>
+                <div class="goal-card">
+                    <div class="goal-header">
+                        <i class="fas fa-flag-checkered"></i>
+                        <div>
+                            <h3>Complete Daily Study Target</h3>
+                            <p>Stay consistent to maintain your streak!</p>
+                        </div>
+                    </div>
+                    <div class="goal-progress">
+                        <div class="goal-label">
+                            <span>Progress for today</span>
+                            <span id="goalProgressText">0/2 chapters</span>
+                        </div>
+                        <div class="goal-bar-bg">
+                            <div class="goal-bar-fill" id="goalProgressBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="goal-status" id="goalStatus">
+                        <i class="fas fa-info-circle"></i> Complete 2 chapters today to maintain your 7-day streak!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue Learning Section -->
+            <div class="continue-learning">
+                <h2><i class="fas fa-play-circle"></i> Continue Learning</h2>
+                <div id="continueLearningContainer" class="continue-grid">
+                    <!-- Dynamically loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Saved Notes Section -->
+            <div class="saved-notes">
+                <h2><i class="fas fa-heart"></i> Saved Notes</h2>
+                <div id="savedNotesContainer" class="saved-notes-grid">
+                    <!-- Dynamically loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Achievements / Badges Section -->
+            <div class="badges-section">
+                <h2><i class="fas fa-trophy"></i> Your Achievements</h2>
+                <div id="badgesContainer" class="badges-grid">
+                    <!-- Dynamically loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Recommended For You Section -->
+            <div class="recommendations">
+                <h2><i class="fas fa-star"></i> Recommended for You</h2>
+                <div id="recommendationsContainer" class="recommendations-grid">
+                    <!-- Dynamically loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Upcoming Exams Section -->
+            <div class="upcoming-exams">
+                <h2><i class="fas fa-calendar-alt"></i> Upcoming Exams</h2>
+                <div id="upcomingExamsContainer" class="exams-grid">
+                    <!-- Dynamically loaded by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Study Plan Generator -->
+            <div class="study-plan">
+                <div class="plan-card">
+                    <div class="plan-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="plan-content">
+                        <h3>Need a Study Plan?</h3>
+                        <p>Get a personalized study plan based on your exam dates and progress.</p>
+                    </div>
+                    <button class="plan-btn" onclick="generateStudyPlan()">
+                        Generate Study Plan <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Study Plan Modal -->
+    <div id="studyPlanModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeStudyPlan()">&times;</span>
+            <div id="planContent">
+                <div class="plan-loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Generating your personalized study plan...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER (5 COLUMNS) ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">🏠 Home</a></li>
+                        <li><a href="notes.html">📚 Notes</a></li>
+                        <li><a href="contact.html">📞 Contact</a></li>
+                        <li><a href="about.html">ℹ️ About Us</a></li>
+                        <li><a href="dashboard.html">📊 Dashboard</a></li>
+                        <li><a href="settings.html">⚙️ Settings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Other Links -->
+                <div class="footer-col">
+                    <h3>Other Links</h3>
+                    <ul>
+                        <li><a href="#">📜 Privacy Policy</a></li>
+                        <li><a href="#">⚖️ Terms of Service</a></li>
+                        <li><a href="#">❓ FAQ</a></li>
+                        <li><a href="#">📝 Blog</a></li>
+                        <li><a href="#">⭐ Rate Us</a></li>
+                        <li><a href="#">📢 Report Issue</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Notes by Class -->
+                <div class="footer-col">
+                    <h3>Notes by Class</h3>
+                    <ul>
+                        <li><a href="notes.html?class=class8">📖 Class 8</a></li>
+                        <li><a href="notes.html?class=class9">📖 Class 9</a></li>
+                        <li><a href="notes.html?class=class10">📖 Class 10 (SEE)</a></li>
+                        <li><a href="notes.html?class=class11">📖 Class 11</a></li>
+                        <li><a href="notes.html?class=class12">📖 Class 12</a></li>
+                        <li><a href="notes.html">📚 All Notes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> gyanunotes@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 9814412941</li>
+                        <li><i class="fab fa-whatsapp"></i> 9814412941 (WhatsApp)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nawalparasi, Nepal</li>
+                        <li><i class="far fa-clock"></i> Mon-Fri: 9am - 6pm</li>
+                        <li><i class="fas fa-reply-all"></i> Reply within 24hrs</li>
+                    </ul>
+                </div>
+
+                <!-- Column 5: Social Media -->
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-icon youtube" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-icon facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-icon instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon twitter" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="social-handle">
+                        <p><i class="fab fa-instagram"></i> @GyanuNotes</p>
+                        <p><i class="fab fa-facebook"></i> /GyanuNotes</p>
+                        <p><i class="fab fa-youtube"></i> @gyanu-notes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gyanu Notes. All rights reserved. | Made with <i class="fas fa-heart"></i> for students in Nepal</p>
+                <p class="credits">Empowering education, one note at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== DARK MODE TOGGLE BUTTON ==================== -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ==================== JS FILES ==================== -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
