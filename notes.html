@@ -42,7 +42,16 @@
             <li><a href="notes.html" class="active">Notes</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="login.html" class="login-link">Login</a></li>
+<li class="profile-dropdown">
+    <a href="login.html" class="login-link" id="loginLink">Login</a>
+    <div class="dropdown-content" id="dropdownContent" style="display: none;">
+        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
+        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        <hr>
+        <a href="#" id="logoutDropdownBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</li>
         </ul>
     </nav>
 
@@ -212,5 +221,24 @@
             });
         });
     </script>
+    <script type="module">
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+    import { auth } from './js/firebase-config.js';
+    
+    onAuthStateChanged(auth, (user) => {
+        const loginLink = document.querySelector('.login-link');
+        if (user) {
+            if (loginLink) {
+                loginLink.innerHTML = '<i class="fas fa-user"></i> Dashboard';
+                loginLink.href = 'dashboard.html';
+            }
+        } else {
+            if (loginLink) {
+                loginLink.innerHTML = 'Login';
+                loginLink.href = 'login.html';
+            }
+        }
+    });
+</script>
 </body>
 </html>

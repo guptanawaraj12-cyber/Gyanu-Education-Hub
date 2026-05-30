@@ -1,6 +1,5 @@
 /* ============================================
-   GYANU NOTES - AUTHENTICATION
-   Firebase Login, Signup, Google Sign-In, Facebook Sign-In, Logout
+   GYANU NOTES - AUTHENTICATION (with Profile Dropdown)
    ============================================ */
 
 import { 
@@ -23,7 +22,6 @@ import {
 let loginForm, signupForm, forgotPasswordForm;
 let errorMessage, successMessage;
 
-// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     loginForm = document.getElementById('loginForm');
     signupForm = document.getElementById('signupForm');
@@ -44,9 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     facebookBtns.forEach(btn => {
         if (btn) btn.addEventListener('click', () => handleSocialLogin('facebook'));
     });
-    
-    const logoutBtn = document.getElementById('logoutBtn');
-    if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
     
     checkAuthState();
     initTabSwitching();
@@ -72,18 +67,57 @@ function checkAuthState() {
 }
 
 function updateUIForLoggedInUser(user) {
-    const loginLink = document.querySelector('.login-link');
+    const loginLink = document.getElementById('loginLink');
     if (loginLink) {
-        loginLink.innerHTML = `<i class="fas fa-user"></i> Dashboard`;
-        loginLink.href = 'dashboard.html';
+        const displayName = user.displayName || user.email.split('@')[0];
+        loginLink.innerHTML = `<i class="fas fa-user-circle"></i> ${displayName} <i class="fas fa-chevron-down"></i>`;
+        loginLink.href = '#';
     }
+    initProfileDropdown();
 }
 
 function updateUIForLoggedOutUser() {
-    const loginLink = document.querySelector('.login-link');
+    const loginLink = document.getElementById('loginLink');
+    const dropdownContent = document.getElementById('dropdownContent');
     if (loginLink) {
-        loginLink.innerHTML = 'Login';
+        loginLink.innerHTML = `<i class="fas fa-sign-in-alt"></i> Login`;
         loginLink.href = 'login.html';
+    }
+    if (dropdownContent) {
+        dropdownContent.style.display = 'none';
+    }
+}
+
+function initProfileDropdown() {
+    const loginLink = document.getElementById('loginLink');
+    const dropdownContent = document.getElementById('dropdownContent');
+    
+    if (!loginLink || !dropdownContent) return;
+    
+    // Remove old listener to prevent duplicates
+    const newLoginLink = loginLink.cloneNode(true);
+    loginLink.parentNode.replaceChild(newLoginLink, loginLink);
+    
+    newLoginLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isVisible = dropdownContent.style.display === 'block';
+        dropdownContent.style.display = isVisible ? 'none' : 'block';
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!newLoginLink.contains(e.target) && !dropdownContent.contains(e.target)) {
+            dropdownContent.style.display = 'none';
+        }
+    });
+    
+    const logoutBtn = document.getElementById('logoutDropdownBtn');
+    if (logoutBtn) {
+        const newLogoutBtn = logoutBtn.cloneNode(true);
+        logoutBtn.parentNode.replaceChild(newLogoutBtn, logoutBtn);
+        newLogoutBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            await handleLogout();
+        });
     }
 }
 
@@ -307,9 +341,3 @@ function showSuccess(message) {
         }, 3000);
     }
 }
-
-// Make functions global for HTML buttons
-window.handleLogin = handleLogin;
-window.handleSignup = handleSignup;
-window.handleForgotPassword = handleForgotPassword;
-window.handleLogout = handleLogout;
