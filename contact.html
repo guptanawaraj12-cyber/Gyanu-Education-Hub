@@ -344,5 +344,24 @@
             });
         });
     </script>
+    <script type="module">
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+    import { auth } from './js/firebase-config.js';
+    
+    onAuthStateChanged(auth, (user) => {
+        const loginLink = document.querySelector('.login-link');
+        if (user) {
+            if (loginLink) {
+                loginLink.innerHTML = '<i class="fas fa-user"></i> Dashboard';
+                loginLink.href = 'dashboard.html';
+            }
+        } else {
+            if (loginLink) {
+                loginLink.innerHTML = 'Login';
+                loginLink.href = 'login.html';
+            }
+        }
+    });
+</script>
 </body>
 </html>
