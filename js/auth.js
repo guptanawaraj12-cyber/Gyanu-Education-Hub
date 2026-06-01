@@ -1,5 +1,6 @@
 /* ============================================
-   GYANU NOTES - AUTHENTICATION (FIXED - Dropdown only when logged in)
+   GYANU NOTES - AUTHENTICATION (FIXED)
+   Shows avatar only when logged in, hides dropdown when logged out
    ============================================ */
 
 import { 
@@ -51,7 +52,6 @@ function checkAuthState() {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
             localStorage.setItem('gyanu_logged_in', 'true');
-            document.body.classList.add('logged-in');
             updateUIForLoggedInUser(user);
             const currentPage = window.location.pathname.split('/').pop();
             if (currentPage === 'login.html' || currentPage === 'signup.html') {
@@ -59,7 +59,6 @@ function checkAuthState() {
             }
         } else {
             localStorage.removeItem('gyanu_logged_in');
-            document.body.classList.remove('logged-in');
             updateUIForLoggedOutUser();
             const currentPage = window.location.pathname.split('/').pop();
             const protectedPages = ['dashboard.html', 'settings.html', 'profile.html'];
@@ -73,6 +72,7 @@ function checkAuthState() {
 function updateUIForLoggedInUser(user) {
     const loginLink = document.getElementById('loginLink');
     const dropdownContent = document.getElementById('dropdownContent');
+    const profileDropdown = document.querySelector('.profile-dropdown');
     
     if (loginLink) {
         const displayName = user.displayName || user.email.split('@')[0];
@@ -88,15 +88,24 @@ function updateUIForLoggedInUser(user) {
         loginLink.classList.add('has-avatar');
     }
     
-    // SHOW dropdown when logged in
+    // Show dropdown when logged in
     if (dropdownContent) {
-        dropdownContent.style.display = 'block';
+        dropdownContent.style.display = '';
+        dropdownContent.style.opacity = '';
+        dropdownContent.style.visibility = '';
+        dropdownContent.style.pointerEvents = 'auto';
+    }
+    
+    // Enable hover effect
+    if (profileDropdown) {
+        profileDropdown.classList.add('logged-in');
     }
 }
 
 function updateUIForLoggedOutUser() {
     const loginLink = document.getElementById('loginLink');
     const dropdownContent = document.getElementById('dropdownContent');
+    const profileDropdown = document.querySelector('.profile-dropdown');
     
     if (loginLink) {
         loginLink.innerHTML = `<i class="fas fa-sign-in-alt"></i> Login`;
@@ -104,9 +113,17 @@ function updateUIForLoggedOutUser() {
         loginLink.classList.remove('has-avatar');
     }
     
-    // HIDE dropdown when logged out
+    // HIDE dropdown when logged out - IMPORTANT!
     if (dropdownContent) {
         dropdownContent.style.display = 'none';
+        dropdownContent.style.opacity = '0';
+        dropdownContent.style.visibility = 'hidden';
+        dropdownContent.style.pointerEvents = 'none';
+    }
+    
+    // Disable hover effect
+    if (profileDropdown) {
+        profileDropdown.classList.remove('logged-in');
     }
 }
 
@@ -247,7 +264,6 @@ async function handleForgotPassword(e) {
 async function handleLogout() {
     try {
         localStorage.removeItem('gyanu_logged_in');
-        document.body.classList.remove('logged-in');
         await signOut(auth);
         window.location.href = 'index.html';
     } catch (error) {

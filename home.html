@@ -44,9 +44,8 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="about.html">About Us</a></li>
 <li class="profile-dropdown">
-    <a href="#" class="login-link" id="loginLink">
-        <i class="fas fa-sign-in-alt"></i> Login
-    </a>
+   <li class="profile-dropdown">
+    <a href="login.html" class="login-link" id="loginLink">Login</a>
     <div class="dropdown-content" id="dropdownContent">
         <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
@@ -57,7 +56,6 @@
 </li>
         </ul>
     </nav>
-
     <!-- ==================== AI SEARCH MODAL ==================== -->
     <div class="search-modal" id="searchModal">
         <div class="close-search" id="closeSearch">&times;</div>
@@ -520,7 +518,7 @@
     <!-- ==================== JS FILES ==================== -->
     <script type="module" src="js/firebase-config.js"></script>
     <script src="js/main.js"></script>
-    <script type="module">
+    <script type="module" src="js/auth.js"></script>
     import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
     import { auth } from './js/firebase-config.js';
     
