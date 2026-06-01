@@ -42,15 +42,17 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="about.html">About Us</a></li>
             <li class="profile-dropdown">
-                <a href="login.html" class="login-link" id="loginLink">Login</a>
-                <div class="dropdown-content" id="dropdownContent" style="display: none;">
-                    <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                    <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
-                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
-                    <hr>
-                    <a href="#" id="logoutDropdownBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </div>
-            </li>
+    <a href="#" class="login-link" id="loginLink">
+        <i class="fas fa-sign-in-alt"></i> Login
+    </a>
+    <div class="dropdown-content" id="dropdownContent">
+        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a>
+        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+        <hr>
+        <a href="#" id="logoutDropdownBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</li>
         </ul>
     </nav>
 
@@ -339,7 +341,6 @@
                         <li><a href="notes.html">📚 Notes</a></li>
                         <li><a href="contact.html">📞 Contact</a></li>
                         <li><a href="about.html">ℹ️ About Us</a></li>
-                        <li><a href="dashboard.html">📊 Dashboard</a></li>
                         <li><a href="settings.html">⚙️ Settings</a></li>
                     </ul>
                 </div>
@@ -424,7 +425,7 @@
 
     <!-- ==================== JS FILES ==================== -->
     <script type="module" src="js/firebase-config.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script type="module" src="js/auth.js"></script>
     <script type="module" src="js/settings.js"></script>
     
@@ -448,5 +449,18 @@
             });
         });
     </script>
+    <script>
+    // Check localStorage for saved theme and auth state immediately
+    (function() {
+        // Check if user was logged in (you can set this flag on login)
+        const wasLoggedIn = localStorage.getItem('gyanu_logged_in');
+        if (wasLoggedIn === 'true') {
+            // Hide login button temporarily until Firebase loads
+            const style = document.createElement('style');
+            style.textContent = '.login-link { visibility: hidden; }';
+            document.head.appendChild(style);
+        }
+    })();
+</script>
 </body>
 </html>

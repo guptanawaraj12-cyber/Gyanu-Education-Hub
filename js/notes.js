@@ -316,6 +316,8 @@ function loadAllClassesOverview() {
             window.location.href = `notes.html?class=${className}&subject=${subject}`;
         });
     });
+    // After rendering overview, check which subjects have missing chapters
+    checkSubjectsAvailability();
 }
 
 // ========== LOAD SPECIFIC CLASS AND SUBJECT NOTES ==========
@@ -341,6 +343,15 @@ function loadClassNotes(className, subjectName) {
             pageTitle.textContent = `${classDisplayNames[className]} - ${subject.name} Notes`;
         }
         
+        const folderMap = {
+            class8: 'class8',
+            class9: 'class9',
+            class10: 'class10',
+            class11: 'class 11',
+            class12: 'class 12'
+        };
+        const folder = folderMap[className] || className;
+
         container.innerHTML = `
             <div class="subject-header">
                 <button class="back-btn" onclick="window.location.href='notes.html'">
@@ -362,13 +373,32 @@ function loadClassNotes(className, subjectName) {
                             ${chapter.views ? `<span><i class="fas fa-eye"></i> ${chapter.views} views</span>` : ''}
                             ${chapter.pdf ? '<span class="pdf-badge"><i class="fas fa-file-pdf"></i> PDF Available</span>' : ''}
                         </div>
-                        <button class="view-chapter-btn" onclick="viewChapter('${className}', '${subjectName}', '${chapter.id}')">
-                            View Notes <i class="fas fa-arrow-right"></i>
+                        <button class="view-chapter-btn" data-url="notes/${folder}/${subjectName}/${chapter.id}.html" onclick="viewChapter('${className}', '${subjectName}', '${chapter.id}')">
+                            Checking... <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 `).join('')}
             </div>
         `;
+
+        // After rendering, check which chapter files actually exist
+        checkChapterFiles().then(() => {
+            // show count of coming-soon chapters in header
+            const coming = document.querySelectorAll('.view-chapter-btn.coming-soon').length;
+            const header = document.querySelector('.subject-header');
+            if (header) {
+                let marker = header.querySelector('.coming-soon-count');
+                if (!marker) {
+                    marker = document.createElement('span');
+                    marker.className = 'coming-soon-count';
+                    marker.style.marginLeft = '12px';
+                    marker.style.fontSize = '14px';
+                    marker.style.color = '#F57C00';
+                    header.querySelector('h2').appendChild(marker);
+                }
+                marker.textContent = coming > 0 ? `${coming} coming soon` : '';
+            }
+        });
     } else {
         // Show all subjects for the class
         if (pageTitle) {
@@ -414,9 +444,92 @@ function loadClassNotes(className, subjectName) {
     }
 }
 
+// Check availability of chapter files and update buttons accordingly
+function checkChapterFiles() {
+    const promises = Array.from(document.querySelectorAll('.view-chapter-btn')).map(btn => {
+        const url = btn.getAttribute('data-url');
+        if (!url) return Promise.resolve();
+        // mark checking state
+        btn.classList.add('checking');
+        btn.innerHTML = 'Checking... <i class="fas fa-arrow-right"></i>';
+        return fetch(url, { method: 'HEAD' }).then(resp => {
+            btn.classList.remove('checking');
+            if (resp.ok) {
+                btn.disabled = false;
+                btn.innerHTML = 'View Notes <i class="fas fa-arrow-right"></i>'
+                btn.classList.remove('coming-soon');
+            } else {
+                btn.disabled = true;
+                btn.innerHTML = 'Coming soon';
+                btn.classList.add('coming-soon');
+            }
+        }).catch(() => {
+            btn.classList.remove('checking');
+            btn.disabled = true;
+            btn.innerHTML = 'Coming soon';
+            btn.classList.add('coming-soon');
+        });
+    });
+    return Promise.all(promises);
+}
+
+// Check availability for each subject card and show how many chapters are missing
+function checkSubjectsAvailability() {
+    const folderMap = {
+        class8: 'class8',
+        class9: 'class9',
+        class10: 'class10',
+        class11: 'class 11',
+        class12: 'class 12'
+    };
+    document.querySelectorAll('.subject-card').forEach(card => {
+        const cls = card.getAttribute('data-class');
+        const subj = card.getAttribute('data-subject');
+        const classData = notesData[cls];
+        if (!classData || !classData[subj]) return;
+        const chapters = classData[subj].chapters || [];
+        const folder = folderMap[cls] || cls;
+        const checks = chapters.map(ch => {
+            const url = `notes/${folder}/${subj}/${ch.id}.html`;
+            return fetch(url, { method: 'HEAD' }).then(r => r.ok).catch(() => false);
+        });
+        Promise.all(checks).then(results => {
+            const missing = results.filter(ok => !ok).length;
+            let badge = card.querySelector('.coming-soon-count');
+            if (!badge) {
+                badge = document.createElement('div');
+                badge.className = 'coming-soon-count';
+                badge.style.marginTop = '8px';
+                badge.style.color = '#F57C00';
+                badge.style.fontSize = '13px';
+                card.appendChild(badge);
+            }
+            badge.textContent = missing > 0 ? `${missing} coming soon` : '';
+        });
+    });
+}
+
 // ========== VIEW CHAPTER ==========
 window.viewChapter = function(className, subject, chapterId) {
-    window.location.href = `notes/${className}/${subject}/${chapterId}.html`;
+    const folderMap = {
+        class8: 'class8',
+        class9: 'class9',
+        class10: 'class10',
+        class11: 'class 11',
+        class12: 'class 12'
+    };
+    const folder = folderMap[className] || className;
+    const url = `notes/${folder}/${subject}/${chapterId}.html`;
+    // Try to fetch the file first; if it exists navigate, otherwise show message
+    fetch(url, { method: 'GET' }).then(resp => {
+        if (resp.ok) {
+            window.location.href = url;
+        } else {
+            alert('Notes not available yet for this chapter.');
+        }
+    }).catch(() => {
+        alert('Unable to load notes. They may not exist on the server yet.');
+    });
 };
 
 // ========== GET SUBJECT ICON ==========
@@ -441,7 +554,7 @@ function getSubjectIcon(subject) {
 // ========== INITIALIZE NOTES SEARCH ==========
 function initNotesSearch() {
     const searchInput = document.getElementById('notesSearchInput');
-    const searchResults = document.getElementById('searchResults');
+    const searchResults = document.getElementById('searchResultsDropdown');
     
     if (!searchInput) return;
     
@@ -730,3 +843,4 @@ notesStyles.textContent = `
     }
 `;
 document.head.appendChild(notesStyles);
+

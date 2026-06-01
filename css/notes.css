@@ -575,6 +575,32 @@ button {
     transform: translateY(-2px);
 }
 
+/* States for chapter availability */
+.view-chapter-btn.coming-soon,
+.view-chapter-btn[disabled] {
+    background: #f0f0f0;
+    color: #888;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.view-chapter-btn.coming-soon i {
+    display: none;
+}
+
+.view-chapter-btn.checking {
+    background: #fff8e1;
+    color: #8a6d00;
+    cursor: wait;
+}
+
+/* Coming soon count badge for subject cards */
+.coming-soon-count {
+    font-weight: 600;
+    color: #F57C00;
+}
+
 /* ========== EMPTY STATE ========== */
 .empty-state {
     text-align: center;
@@ -1064,6 +1090,15 @@ body.dark-mode .skeleton {
     z-index: 100;
     overflow: hidden;
     margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.profile-dropdown.logged-in:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .dropdown-content a {
@@ -1106,3 +1141,43 @@ body.dark-mode .dropdown-content a:hover {
 body.dark-mode .dropdown-content hr {
     border-top-color: #333;
 }
+
+/* User Avatar Styles */
+.user-avatar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-letter {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #FFC107, #FF9800);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.user-avatar:hover .avatar-letter {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FFD700, #FFB300);
+}
+
+/* Login link with avatar */
+.login-link.has-avatar {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.login-link.has-avatar:hover {
+    background: transparent !important;
+}
+
+
+

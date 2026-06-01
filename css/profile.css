@@ -1,0 +1,138 @@
+/* ============================================
+   GYANU NOTES - PROFILE PAGE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9fafb;
+    color: #1a1a1a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== NAVBAR STYLES ========== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.site-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2E7D32;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.search-btn:hover {
+    color: #2E7D32;
+    background: rgba(46, 125, 50, 0.1);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    border-radius: 3px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #2E7D32;
+}
+
+/* User Avatar Styles */
+.user-avatar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-letter {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #FFC107, #FF9800);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.login-link.has-avatar {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+
