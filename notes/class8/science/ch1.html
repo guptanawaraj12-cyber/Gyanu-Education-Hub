@@ -1,130 +1,569 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class 8 Science - Chapter 1: Cell - Structure and Functions | Gyanu Notes</title>
-    <meta name='description' content='Free study notes for Class 8 Science Chapter 1: Cell - Structure and Functions. Complete notes, diagrams, practice questions, and summary.'>
-    <meta name='keywords' content='gyanu notes, Class 8, Science, chapter 1, Cell - Structure and Functions'>
-    <link rel='stylesheet' href='../../../css/style.css'>
-    <link rel='stylesheet' href='../../../css/dark-mode.css'>
-    <link rel='stylesheet' href='../../../css/responsive.css'>
-    <link rel='stylesheet' href='../../../css/animations.css'>
-    <link rel='stylesheet' href='../../../css/chapter.css'>
-    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+    <meta name="description" content="Free study notes for Class 8 Science Chapter 1: Cell - Structure and Functions. Complete notes with diagrams, key points, practice questions, and PDF download.">
+    <meta name="keywords" content="class 8 science, cell structure, cell functions, biology notes, Gyanu Notes, Nepal">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class='navbar'>
-        <div class='logo-area'>
-            <img src='../../../images/logo.png' alt='Gyanu Notes Logo' class='logo-img' onerror='this.style.display="none"'>
-            <span class='site-name'>Gyanu Notes</span>
+
+    <!-- ==================== HEADER ==================== -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="../../../images/logo.png" alt="Gyanu Notes Logo" class="logo-img" onerror="this.style.display='none'">
+            <span class="site-name">Gyanu Notes</span>
         </div>
-        <div class='nav-controls'>
-            <button class='search-btn' id='aiSearchBtn'><i class='fas fa-search'></i></button>
-            <div class='hamburger' id='hamburger'><span></span><span></span><span></span></div>
+        
+        <div class="nav-controls">
+            <button class="search-btn" id="aiSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <ul class='nav-menu' id='navMenu'>
-            <li><a href='../../../index.html'>Home</a></li>
-            <li><a href='../../../notes.html'>Notes</a></li>
-            <li><a href='../../../contact.html'>Contact</a></li>
-            <li><a href='../../../about.html'>About Us</a></li>
-            <li class='profile-dropdown'>
-                <a href='../../../login.html' class='login-link' id='loginLink'>Login</a>
-                <div class='dropdown-content' id='dropdownContent'>
-                    <a href='../../../dashboard.html'><i class='fas fa-tachometer-alt'></i> Dashboard</a>
-                    <a href='../../../profile.html'><i class='fas fa-user-circle'></i> My Profile</a>
-                    <a href='../../../settings.html'><i class='fas fa-cog'></i> Settings</a>
-                    <hr>
-                    <a href='#' id='logoutDropdownBtn'><i class='fas fa-sign-out-alt'></i> Logout</a>
-                </div>
-            </li>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../notes.html">Notes</a></li>
+            <li><a href="../../../contact.html">Contact</a></li>
+            <li><a href="../../../about.html">About Us</a></li>
+            
         </ul>
     </nav>
-    <div class='search-modal' id='searchModal'>
-        <div class='close-search' id='closeSearch'>&times;</div>
-        <div class='search-container'>
-            <input type='text' id='searchInput' placeholder='Search notes by subject, class, or topic...'>
-            <button id='searchSubmit'><i class='fas fa-search'></i></button>
+
+    <!-- ==================== SEARCH MODAL ==================== -->
+    <div class="search-modal" id="searchModal">
+        <div class="close-search" id="closeSearch">&times;</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search notes by subject, class, or topic...">
+            <button id="searchSubmit"><i class="fas fa-search"></i></button>
         </div>
-        <div id='searchResults' class='search-results'></div>
+        <div id="searchResults" class="search-results"></div>
     </div>
-    <main class='chapter-page'>
-        <div class='container'>
-            <div class='breadcrumb'>
-                <a href='../../../index.html'>Home</a>
-                <i class='fas fa-chevron-right'></i>
-                <a href='../../../notes.html'>Notes</a>
-                <i class='fas fa-chevron-right'></i>
-                <a href='../../../notes.html?class=class8'>Class 8</a>
-                <i class='fas fa-chevron-right'></i>
-                <a href='../../../notes.html?class=class8&subject=science'>Science</a>
-                <i class='fas fa-chevron-right'></i>
+
+    <!-- ==================== CHAPTER CONTENT ==================== -->
+    <main class="chapter-page">
+        <div class="container">
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <a href="../../../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../../../notes.html">Notes</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../../../notes.html?class=class8">Class 8</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../../../notes.html?class=class8&subject=science">Science</a>
+                <i class="fas fa-chevron-right"></i>
                 <span>Cell - Structure and Functions</span>
             </div>
-            <div class='chapter-header'>
-                <div class='chapter-meta'>
-                    <span class='class-badge'>Class 8</span>
-                    <span class='subject-badge'>Science</span>
+            
+            <!-- Chapter Header -->
+            <div class="chapter-header">
+                <div class="chapter-meta">
+                    <span class="class-badge">Class 8</span>
+                    <span class="subject-badge">Science</span>
                 </div>
-                <h1 class='chapter-title'>Cell - Structure and Functions</h1>
-                <p class='chapter-description'>Free study notes for Class 8 Science Chapter 1: Cell - Structure and Functions. Learn key concepts, diagrams, examples, and exercises.</p>
+                <h1 class="chapter-title">Cell - Structure and Functions</h1>
+                <p class="chapter-description">Learn about the basic unit of life - the cell. Understand cell structure, organelles, and their functions.</p>
             </div>
-            <div class='chapter-actions'>
-                <button class='action-btn download-btn' id='downloadPdfBtn'><i class='fas fa-download'></i> Download PDF</button>
-                <button class='action-btn print-btn' onclick='window.print()'><i class='fas fa-print'></i> Print</button>
-                <button class='action-btn share-btn' id='shareBtn'><i class='fas fa-share-alt'></i> Share</button>
-                <button class='action-btn save-btn' id='saveNoteBtn'><i class='far fa-bookmark'></i> Save</button>
+            
+            <!-- Action Buttons -->
+            <div class="chapter-actions">
+                <button class="action-btn download-btn" id="downloadPdfBtn">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+                <button class="action-btn print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                <button class="action-btn share-btn" id="shareBtn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="action-btn save-btn" id="saveNoteBtn">
+                    <i class="far fa-bookmark"></i> Save
+                </button>
             </div>
-            <div class='chapter-content'>
-                <section class='content-section key-points'>
-                    <h2><i class='fas fa-key'></i> Key Points</h2>
+            
+            <!-- Main Content Area -->
+            <div class="chapter-content">
+                
+                <!-- Key Points Section -->
+                <section class="content-section key-points">
+                    <h2><i class="fas fa-key"></i> Key Points</h2>
                     <ul>
-                        <li><strong>Topic:</strong> Cell - Structure and Functions</li>
-                        <li><strong>Class:</strong> Class 8</li>
-                        <li><strong>Subject:</strong> Science</li>
-                        <li><strong>Focus:</strong> Important definitions, diagrams, and examples for this chapter.</li>
+                        <li><strong>Cell:</strong> The basic structural and functional unit of all living organisms.</li>
+                        <li><strong>Discovery of Cell:</strong> Discovered by Robert Hooke in 1665.</li>
+                        <li><strong>Cell Theory:</strong> All living things are made of cells, cells are the basic unit of life, and new cells arise from existing cells.</li>
+                        <li><strong>Prokaryotic Cell:</strong> No well-defined nucleus (e.g., Bacteria).</li>
+                        <li><strong>Eukaryotic Cell:</strong> Has a well-defined nucleus (e.g., Plant and Animal cells).</li>
+                        <li><strong>Cell Organelles:</strong> Nucleus, mitochondria, ribosomes, endoplasmic reticulum, Golgi apparatus, etc.</li>
+                        <li><strong>Plant Cell vs Animal Cell:</strong> Plant cells have cell wall, chloroplasts, and large vacuoles.</li>
                     </ul>
                 </section>
-                <section class='content-section introduction'>
-                    <h2><i class='fas fa-book-open'></i> Introduction</h2>
-                    <p>This chapter explains the main ideas of <strong>Cell - Structure and Functions</strong> for Class 8 Science. Read the summary, examples, and exercises to prepare quickly for exams.</p>
+                
+                <!-- Introduction -->
+                <section class="content-section introduction">
+                    <h2><i class="fas fa-book-open"></i> Introduction</h2>
+                    <p>The cell is the smallest structural and functional unit of life. All living organisms, from the smallest bacteria to the largest whale, are made up of cells. Some organisms like Amoeba are made of a single cell (unicellular), while others like humans are made of many cells (multicellular).</p>
+                    <p>In this chapter, we will explore the structure of cells, the different organelles inside them, and how they function to keep living organisms alive.</p>
                 </section>
-                <section class='content-section'>
-                    <h2>1. Overview</h2>
-                    <p>The chapter <strong>Cell - Structure and Functions</strong> covers essential concepts and facts. Use this section to understand definitions and the overall structure of the topic.</p>
+                
+                <!-- Discovery of Cell -->
+                <section class="content-section">
+                    <h2>1. Discovery of the Cell</h2>
+                    <p>The cell was first discovered by <strong>Robert Hooke</strong> in 1665. He observed thin slices of cork under a self-made microscope and saw tiny compartments that looked like "little rooms". He named them "cells". Later, <strong>Anton van Leeuwenhoek</strong> discovered living cells in pond water using a more advanced microscope.</p>
+                    
+                    <div class="note-box">
+                        <strong>💡 Important Note:</strong>
+                        <p>Robert Hooke observed dead cells (cork cells), while Leeuwenhoek was the first to observe living cells.</p>
+                    </div>
                 </section>
-                <section class='content-section'>
-                    <h2>2. Important Concepts</h2>
-                    <p>Focus on these key concepts for better clarity and faster revision.</p>
+                
+                <!-- Cell Theory -->
+                <section class="content-section">
+                    <h2>2. Cell Theory</h2>
+                    <p>The Cell Theory was proposed by <strong>Schleiden (1838)</strong> and <strong>Schwann (1839)</strong>. Later, <strong>Virchow (1855)</strong> added the third point. The main points of the Cell Theory are:</p>
                     <ul>
-                        <li>Concept 1 related to Cell - Structure and Functions</li>
-                        <li>Concept 2 related to Cell - Structure and Functions</li>
-                        <li>Concept 3 related to Cell - Structure and Functions</li>
+                        <li>All living organisms are composed of one or more cells.</li>
+                        <li>The cell is the basic structural and functional unit of life.</li>
+                        <li>All new cells arise from pre-existing cells.</li>
                     </ul>
                 </section>
-                <section class='content-section'>
-                    <h2>3. Examples</h2>
-                    <p>Try these example questions to understand how the chapterâ€™s ideas are applied.</p>
+                
+                <!-- Types of Cells -->
+                <section class="content-section">
+                    <h2>3. Types of Cells</h2>
+                    <p>Based on the presence of a well-defined nucleus, cells are classified into two types:</p>
+                    
+                    <h3>3.1 Prokaryotic Cells</h3>
+                    <ul>
+                        <li>No well-defined nucleus (nuclear material is not enclosed by a membrane).</li>
+                        <li>Membrane-bound organelles are absent.</li>
+                        <li>Examples: Bacteria, Blue-green algae.</li>
+                    </ul>
+                    
+                    <h3>3.2 Eukaryotic Cells</h3>
+                    <ul>
+                        <li>Have a well-defined nucleus enclosed by a nuclear membrane.</li>
+                        <li>Membrane-bound organelles are present.</li>
+                        <li>Examples: Plant cells, Animal cells, Fungal cells.</li>
+                    </ul>
+                    
+                    <div class="example-box">
+                        <strong>📝 Example:</strong>
+                        <p>Bacteria are prokaryotic, while humans, plants, and animals are eukaryotic.</p>
+                    </div>
                 </section>
-                <section class='content-section'>
-                    <h2>4. Exercises</h2>
-                    <ol>
-                        <li>Practice question 1 for Cell - Structure and Functions</li>
-                        <li>Practice question 2 for Cell - Structure and Functions</li>
-                        <li>Practice question 3 for Cell - Structure and Functions</li>
-                        <li>Practice question 4 for Cell - Structure and Functions</li>
-                    </ol>
+                
+                <!-- Cell Structure and Organelles -->
+                <section class="content-section">
+                    <h2>4. Cell Structure and Organelles</h2>
+                    <p>A cell contains various organelles that perform specific functions. Here are the main organelles:</p>
+                    
+                    <h3>4.1 Cell Membrane (Plasma Membrane)</h3>
+                    <ul>
+                        <li>Outer boundary of the cell.</li>
+                        <li>Controls the movement of substances in and out of the cell (selectively permeable).</li>
+                        <li>Made up of lipids and proteins.</li>
+                    </ul>
+                    
+                    <h3>4.2 Nucleus</h3>
+                    <ul>
+                        <li>The "brain" or control center of the cell.</li>
+                        <li>Contains DNA (genetic material).</li>
+                        <li>Controls all cell activities.</li>
+                        <li>Has a nuclear membrane, nucleolus, and chromatin fibers.</li>
+                    </ul>
+                    
+                    <h3>4.3 Cytoplasm</h3>
+                    <ul>
+                        <li>Jelly-like substance between the cell membrane and nucleus.</li>
+                        <li>Contains water, salts, and various organelles.</li>
+                        <li>Site for many chemical reactions.</li>
+                    </ul>
+                    
+                    <h3>4.4 Mitochondria</h3>
+                    <ul>
+                        <li>Known as the "Powerhouse of the cell".</li>
+                        <li>Produces energy (ATP) through cellular respiration.</li>
+                        <li>Has a double membrane.</li>
+                    </ul>
+                    
+                    <h3>4.5 Ribosomes</h3>
+                    <ul>
+                        <li>Site of protein synthesis.</li>
+                        <li>Made of RNA and proteins.</li>
+                    </ul>
+                    
+                    <h3>4.6 Endoplasmic Reticulum (ER)</h3>
+                    <ul>
+                        <li>Network of membranes for transport.</li>
+                        <li>Rough ER (with ribosomes) - protein synthesis.</li>
+                        <li>Smooth ER (without ribosomes) - lipid synthesis.</li>
+                    </ul>
+                    
+                    <h3>4.7 Golgi Apparatus</h3>
+                    <ul>
+                        <li>Packages and transports materials within the cell.</li>
+                        <li>Modifies proteins and lipids.</li>
+                    </ul>
+                    
+                    <h3>4.8 Lysosomes</h3>
+                    <ul>
+                        <li>Known as the "Suicide bags of the cell".</li>
+                        <li>Contains digestive enzymes to break down waste.</li>
+                    </ul>
+                    
+                    <h3>4.9 Vacuoles</h3>
+                    <ul>
+                        <li>Store water, waste, and other materials.</li>
+                        <li>Plant cells have a large central vacuole.</li>
+                    </ul>
+                    
+                    <h3>4.10 Chloroplasts (Only in Plant Cells)</h3>
+                    <ul>
+                        <li>Site of photosynthesis.</li>
+                        <li>Contains chlorophyll (green pigment).</li>
+                        <li>Converts light energy into chemical energy.</li>
+                    </ul>
+                    
+                    <h3>4.11 Cell Wall (Only in Plant Cells)</h3>
+                    <ul>
+                        <li>Outer rigid layer outside the cell membrane.</li>
+                        <li>Provides structural support and protection.</li>
+                        <li>Made of cellulose.</li>
+                    </ul>
                 </section>
-                <section class='content-section'>
-                    <h2>5. Answers / Hints</h2>
-                    <p>Summarize the answer approach and important tips to solve exercises from this chapter.</p>
+                
+                <!-- Difference between Plant and Animal Cell -->
+                <section class="content-section">
+                    <h2>5. Difference between Plant Cell and Animal Cell</h2>
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr><th>Feature</th><th>Plant Cell</th><th>Animal Cell</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Cell Wall</td><td>Present (made of cellulose)</td><td>Absent</td></tr>
+                                <tr><td>Shape</td><td>Fixed, rectangular</td><td>Irregular, round</td></tr>
+                                <tr><td>Chloroplasts</td><td>Present</td><td>Absent</td></tr>
+                                <tr><td>Vacuoles</td><td>Large central vacuole</td><td>Small, temporary vacuoles</td></tr>
+                                <tr><td>Lysosomes</td><td>Rare</td><td>Present</td></tr>
+                                <tr><td>Nucleus</td><td>Present, at the periphery</td><td>Present, in the center</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
+                
+                <!-- Functions of Cell -->
+                <section class="content-section">
+                    <h2>6. Functions of a Cell</h2>
+                    <ul>
+                        <li><strong>Structural Support:</strong> Cells provide structure to the body.</li>
+                        <li><strong>Transport:</strong> Movement of substances across the cell membrane.</li>
+                        <li><strong>Energy Production:</strong> Mitochondria produce energy.</li>
+                        <li><strong>Protein Synthesis:</strong> Ribosomes make proteins.</li>
+                        <li><strong>Reproduction:</strong> Cells divide to produce new cells.</li>
+                        <li><strong>Waste Removal:</strong> Lysosomes digest waste materials.</li>
+                    </ul>
+                </section>
+                
+                <!-- Summary -->
+                <section class="content-section summary">
+                    <h2><i class="fas fa-clipboard-list"></i> Chapter Summary</h2>
+                    <ul>
+                        <li>The cell is the basic unit of life, discovered by Robert Hooke.</li>
+                        <li>Cell theory states that all living things are made of cells, cells are the basic unit of life, and new cells arise from existing cells.</li>
+                        <li>Cells are of two types: Prokaryotic (no nucleus) and Eukaryotic (with nucleus).</li>
+                        <li>Eukaryotic cells contain organelles like nucleus, mitochondria, ribosomes, ER, Golgi apparatus, etc.</li>
+                        <li>Plant cells have a cell wall, chloroplasts, and large vacuoles; animal cells do not.</li>
+                        <li>Each organelle performs a specific function to keep the cell alive.</li>
+                    </ul>
+                </section>
+                
+                <!-- Practice Questions -->
+                <section class="content-section practice-questions">
+                    <h2><i class="fas fa-question-circle"></i> Practice Questions</h2>
+                    
+                    <h3>Multiple Choice Questions</h3>
+                    <div class="question">
+                        <p><strong>1.</strong> Who discovered the cell?</p>
+                        <ul class="options">
+                            <li>A) Anton van Leeuwenhoek</li>
+                            <li>B) Robert Hooke</li>
+                            <li>C) Schleiden</li>
+                            <li>D) Virchow</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="question">
+                        <p><strong>2.</strong> Which organelle is known as the "Powerhouse of the cell"?</p>
+                        <ul class="options">
+                            <li>A) Nucleus</li>
+                            <li>B) Ribosome</li>
+                            <li>C) Mitochondria</li>
+                            <li>D) Golgi apparatus</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="question">
+                        <p><strong>3.</strong> Which of the following is present in plant cells but not in animal cells?</p>
+                        <ul class="options">
+                            <li>A) Nucleus</li>
+                            <li>B) Cell wall</li>
+                            <li>C) Mitochondria</li>
+                            <li>D) Ribosomes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="question">
+                        <p><strong>4.</strong> The jelly-like substance inside the cell is called:</p>
+                        <ul class="options">
+                            <li>A) Nucleoplasm</li>
+                            <li>B) Cytoplasm</li>
+                            <li>C) Cell sap</li>
+                            <li>D) Protoplasm</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="question">
+                        <p><strong>5.</strong> Which organelle is responsible for protein synthesis?</p>
+                        <ul class="options">
+                            <li>A) Ribosomes</li>
+                            <li>B) Lysosomes</li>
+                            <li>C) Vacuoles</li>
+                            <li>D) Nucleus</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Short Answer Questions</h3>
+                    <div class="question">
+                        <p><strong>1.</strong> What is a cell? Why is it called the basic unit of life?</p>
+                    </div>
+                    <div class="question">
+                        <p><strong>2.</strong> State the three main points of the Cell Theory.</p>
+                    </div>
+                    <div class="question">
+                        <p><strong>3.</strong> Differentiate between prokaryotic and eukaryotic cells.</p>
+                    </div>
+                    <div class="question">
+                        <p><strong>4.</strong> Write the functions of the following organelles: (a) Nucleus (b) Mitochondria (c) Ribosomes (d) Golgi apparatus</p>
+                    </div>
+                    <div class="question">
+                        <p><strong>5.</strong> List any four differences between plant cells and animal cells.</p>
+                    </div>
+                    
+                    <h3>Long Answer Questions</h3>
+                    <div class="question">
+                        <p><strong>1.</strong> Draw a well-labeled diagram of a typical plant cell and explain the functions of each organelle.</p>
+                    </div>
+                    <div class="question">
+                        <p><strong>2.</strong> Explain the structure and function of the nucleus. Why is it called the control center of the cell?</p>
+                    </div>
+                    <div class="question">
+                        <p><strong>3.</strong> Describe the differences between plant cells and animal cells with a suitable diagram.</p>
+                    </div>
+                </section>
+                
+                <!-- Answers / Hints -->
+                <section class="content-section answers">
+                    <h2><i class="fas fa-lightbulb"></i> Answers & Hints</h2>
+                    <details class="answer-box">
+                        <summary>Click to show answers</summary>
+                        <div class="answers-content">
+                            <h4>Multiple Choice Answers:</h4>
+                            <p><strong>1.</strong> B) Robert Hooke</p>
+                            <p><strong>2.</strong> C) Mitochondria</p>
+                            <p><strong>3.</strong> B) Cell wall</p>
+                            <p><strong>4.</strong> B) Cytoplasm</p>
+                            <p><strong>5.</strong> A) Ribosomes</p>
+                            
+                            <h4>Short Answer Hints:</h4>
+                            <p><strong>1.</strong> A cell is the smallest structural and functional unit of life. It is called the basic unit because all living organisms are made of cells.</p>
+                            <p><strong>2.</strong> (1) All living things are made of cells. (2) The cell is the basic unit of life. (3) All new cells arise from pre-existing cells.</p>
+                            <p><strong>3.</strong> Prokaryotic cells have no nucleus or membrane-bound organelles; Eukaryotic cells have a well-defined nucleus and membrane-bound organelles.</p>
+                            <p><strong>4.</strong> Nucleus: controls cell activities; Mitochondria: produce energy; Ribosomes: protein synthesis; Golgi apparatus: packaging and transport.</p>
+                            <p><strong>5.</strong> Plant cells have cell wall, chloroplasts, large vacuoles; Animal cells do not have these.</p>
+                        </div>
+                    </details>
+                </section>
+                
+                <!-- Related Video -->
+                <section class="content-section related-video">
+                    <h2><i class="fab fa-youtube"></i> Related Video</h2>
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Watch: Introduction to Cells - The Fundamental Unit of Life</p>
+                            <span>Replace with actual YouTube embed URL</span>
+                        </div>
+                        <!-- Replace with actual YouTube embed when ready -->
+                        <!-- <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+                    </div>
+                </section>
+                
+                <!-- Download Section -->
+                <section class="content-section download-section">
+                    <h2><i class="fas fa-file-pdf"></i> Download Notes</h2>
+                    <div class="download-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <div>
+                            <h3>PDF Version</h3>
+                            <p>Download complete notes for offline study</p>
+                        </div>
+                        <button class="download-pdf-btn" id="downloadPdfBtn2">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- Navigation to Next/Previous Chapter -->
+                <div class="chapter-navigation">
+                    <a href="#" class="nav-prev">
+                        <i class="fas fa-arrow-left"></i> Previous Chapter
+                    </a>
+                    <a href="#" class="nav-next">
+                        Next Chapter <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
-            <footer class='footer-note'>
-                <p>Auto-generated chapter page based on the site template. Improve content with detailed notes and examples for each chapter.</p>
-            </footer>
         </div>
     </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../../../index.html">🏠 Home</a></li>
+                        <li><a href="../../../notes.html">📚 Notes</a></li>
+                        <li><a href="../../../contact.html">📞 Contact</a></li>
+                        <li><a href="../../../about.html">ℹ️ About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Other Links</h3>
+                    <ul>
+                        <li><a href="#">📜 Privacy Policy</a></li>
+                        <li><a href="#">⚖️ Terms of Service</a></li>
+                        <li><a href="#">❓ FAQ</a></li>
+                        <li><a href="#">📝 Blog</a></li>
+                        <li><a href="#">⭐ Rate Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Notes by Class</h3>
+                    <ul>
+                        <li><a href="../../../notes.html?class=class8">📖 Class 8</a></li>
+                        <li><a href="../../../notes.html?class=class9">📖 Class 9</a></li>
+                        <li><a href="../../../notes.html?class=class10">📖 Class 10 (SEE)</a></li>
+                        <li><a href="../../../notes.html?class=class11">📖 Class 11</a></li>
+                        <li><a href="../../../notes.html?class=class12">📖 Class 12</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> gyanunotes@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 9814412941</li>
+                        <li><i class="fab fa-whatsapp"></i> 9814412941</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nawalparasi, Nepal</li>
+                        <li><i class="far fa-clock"></i> Mon-Fri: 9am - 6pm</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@gyanu-notes" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gyanunotes" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="social-handle">
+                        <p>@GyanuNotes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gyanu Notes. All rights reserved. | Made with <i class="fas fa-heart"></i> for students</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script type="module">
+        import { auth } from '../../../js/firebase-config.js';
+        
+        // Chapter specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Download PDF button
+            const downloadBtns = document.querySelectorAll('#downloadPdfBtn, #downloadPdfBtn2');
+            downloadBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const pdfUrl = '../../../pdfs/class8/science/ch1.pdf';
+                    window.open(pdfUrl, '_blank');
+                });
+            });
+            
+            // Save note button (requires login)
+            const saveBtn = document.getElementById('saveNoteBtn');
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    if (auth.currentUser) {
+                        this.innerHTML = '<i class="fas fa-bookmark"></i> Saved!';
+                        this.style.background = '#4CAF50';
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="far fa-bookmark"></i> Save';
+                            this.style.background = '';
+                        }, 2000);
+                    } else {
+                        window.location.href = '../../../login.html';
+                    }
+                });
+            }
+            
+            // Share button
+            const shareBtn = document.getElementById('shareBtn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'Class 8 Science - Cell Structure and Functions',
+                            text: 'Check out these free study notes from Gyanu Notes!',
+                            url: window.location.href
+                        });
+                    } else {
+                        navigator.clipboard.writeText(window.location.href);
+                        alert('Link copied to clipboard!');
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="../../../js/main.js"></script>
+   
 </body>
 </html>
