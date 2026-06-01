@@ -1336,27 +1336,3 @@ body.dark-mode .team-subtitle {
         font-size: 20px;
     }
 }
-/* Dropdown - Hidden by default */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    min-width: 200px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    z-index: 1000;
-    overflow: hidden;
-    margin-top: 12px;
-}
-
-/* Show dropdown only on hover when logged in */
-.profile-dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* But ensure logged out users don't see it */
-body:not(.logged-in) .dropdown-content {
-    display: none !important;
-}
