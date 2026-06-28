@@ -42,7 +42,6 @@
             <li><a href="notes.html">Notes</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
             <li><a href="about.html">About Us</a></li>
-
         </ul>
     </nav>
 
@@ -52,12 +51,18 @@
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search notes by subject, class, or topic...">
             <button id="searchSubmit"><i class="fas fa-search"></i></button>
-        </div>`n        <div id="searchResults" class="search-results"></div>
+        </div>
+        <div id="searchResults" class="search-results"></div>
     </div>
 
     <!-- ==================== CONTACT PAGE MAIN CONTENT ==================== -->
     <main class="contact-main">
         <div class="container">
+            
+            <!-- ===== NEW: SECRET WELCOME BUTTON (Hidden in Plain Sight) ===== -->
+            <div class="secret-welcome" onclick="revealSecret()" style="cursor: default; text-align: center; padding: 5px 0; user-select: none;">
+                <span style="color: #c92d2d; font-size: 30px; opacity: 0.9; transition: 0.2s; letter-spacing: 2px;">Welcome</span>
+            </div>
             
             <!-- Page Header -->
             <div class="contact-header">
@@ -224,6 +229,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -325,6 +331,18 @@
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
 
+    <!-- ==================== SECRET BUTTON SCRIPT (NEW) ==================== -->
+    <script>
+        function revealSecret() {
+            alert('🔓 Welcome to Gyanu Notes!');
+            // You can change this to do anything you want later
+            // Examples:
+            // - Redirect to a hidden page: window.location.href = 'secret.html';
+            // - Show hidden content: document.getElementById('hiddenContent').style.display = 'block';
+            // - Open a secret link: window.open('https://example.com', '_blank');
+        }
+    </script>
+
     <!-- FAQ Accordion Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -342,6 +360,108 @@
             });
         });
     </script>
+<script>
+    // ===== LOCK SYSTEM FUNCTIONS =====
+    
+    // Correct credentials
+    const VALID_USERNAME = '9867229032';
+    const VALID_PASSWORD = 'December252007@'; // <-- CHANGE THIS TO YOUR PASSWORD
+    
+    // Open the lock modal
+    function revealSecret() {
+        document.getElementById('lockModal').style.display = 'flex';
+        document.getElementById('lockError').style.display = 'none';
+        document.getElementById('lockUsername').value = '';
+        document.getElementById('lockPassword').value = '';
+        document.getElementById('lockUsername').focus();
+    }
+    
+    // Verify login credentials
+    function verifyLogin() {
+        const username = document.getElementById('lockUsername').value.trim();
+        const password = document.getElementById('lockPassword').value.trim();
+        const errorEl = document.getElementById('lockError');
+        
+        if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+            // Success - Redirect to hidden page
+            window.location.href = 'hidden-page.html';
+        } else {
+            // Show error
+            errorEl.style.display = 'flex';
+            document.getElementById('lockUsername').style.borderColor = '#f44336';
+            document.getElementById('lockPassword').style.borderColor = '#f44336';
+            
+            // Shake animation
+            const modal = document.querySelector('.lock-modal-content');
+            modal.style.animation = 'shake 0.5s ease';
+            setTimeout(() => {
+                modal.style.animation = 'slideUp 0.3s ease';
+            }, 500);
+        }
+    }
+    
+    // Close the lock modal
+    function closeLockModal() {
+        document.getElementById('lockModal').style.display = 'none';
+        document.getElementById('lockError').style.display = 'none';
+    }
+    
+    // Enter key support
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('lockPassword').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyLogin();
+            }
+        });
+        document.getElementById('lockUsername').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('lockPassword').focus();
+            }
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('lockModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLockModal();
+            }
+        });
+    });
+</script>
+
+<!-- ==================== LOGIN/LOCK MODAL ==================== -->
+<div id="lockModal" class="lock-modal" style="display: none;">
+    <div class="lock-modal-content">
+        <div class="lock-header">
+            <i class="fas fa-lock"></i>
+            <h2>🔒 Access Required</h2>
+            <p>Please enter your credentials to continue</p>
+        </div>
+        
+        <div class="lock-body">
+            <div class="lock-input-group">
+                <label><i class="fas fa-user"></i> Username</label>
+                <input type="text" id="lockUsername" placeholder="Enter username" autocomplete="off">
+            </div>
+            
+            <div class="lock-input-group">
+                <label><i class="fas fa-key"></i> Password</label>
+                <input type="password" id="lockPassword" placeholder="Enter password">
+            </div>
+            
+            <div id="lockError" class="lock-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i> Invalid username or password. Please try again.
+            </div>
+            
+            <button class="lock-btn" onclick="verifyLogin()">
+                <i class="fas fa-unlock"></i> Unlock
+            </button>
+            
+            <button class="lock-close-btn" onclick="closeLockModal()">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

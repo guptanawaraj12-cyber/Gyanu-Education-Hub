@@ -1221,5 +1221,188 @@ body.dark-mode .dropdown-content hr {
     background: transparent !important;
 }
 
+/* ===== LOCK MODAL STYLES ===== */
+.lock-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.lock-modal-content {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.lock-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.lock-header i {
+    font-size: 48px;
+    color: #2E7D32;
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.lock-header h2 {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.lock-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.lock-input-group {
+    margin-bottom: 20px;
+}
+
+.lock-input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.lock-input-group label i {
+    margin-right: 8px;
+    color: #2E7D32;
+}
+
+.lock-input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+    background: #f9fafb;
+}
+
+.lock-input-group input:focus {
+    border-color: #2E7D32;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    background: white;
+}
+
+.lock-error {
+    background: #ffebee;
+    color: #f44336;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lock-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2E7D32;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lock-btn:hover {
+    background: #1B5E20;
+    transform: translateY(-2px);
+}
+
+.lock-close-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #666;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.lock-close-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Dark Mode Lock Modal */
+body.dark-mode .lock-modal-content {
+    background: #1e1e1e;
+}
+
+body.dark-mode .lock-header h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .lock-header p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .lock-input-group label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .lock-input-group input {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .lock-input-group input:focus {
+    border-color: #4CAF50;
+}
+
+body.dark-mode .lock-error {
+    background: #2a2a2a;
+    color: #f44336;
+}
+
+body.dark-mode .lock-close-btn {
+    color: #b0b0b0;
+}
+
+body.dark-mode .lock-close-btn:hover {
+    background: #2a2a2a;
+}
+
 
 
