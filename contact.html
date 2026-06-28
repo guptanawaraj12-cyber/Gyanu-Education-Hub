@@ -394,6 +394,41 @@
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
 
+    <!-- ==================== LOGIN/LOCK MODAL ==================== -->
+<div id="lockModal" class="lock-modal" style="display: none;">
+    <div class="lock-modal-content">
+        <div class="lock-header">
+            <i class="fas fa-lock"></i>
+            <h2>🔒 Access Required</h2>
+            <p>Please enter your credentials to continue</p>
+        </div>
+        
+        <div class="lock-body">
+            <div class="lock-input-group">
+                <label><i class="fas fa-user"></i> Username</label>
+                <input type="text" id="lockUsername" placeholder="Enter username" autocomplete="off">
+            </div>
+            
+            <div class="lock-input-group">
+                <label><i class="fas fa-key"></i> Password</label>
+                <input type="password" id="lockPassword" placeholder="Enter password">
+            </div>
+            
+            <div id="lockError" class="lock-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i> Invalid username or password. Please try again.
+            </div>
+            
+            <button class="lock-btn" onclick="verifyLogin()">
+                <i class="fas fa-unlock"></i> Unlock
+            </button>
+            
+            <button class="lock-close-btn" onclick="closeLockModal()">
+                <i class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
     <!-- ==================== SECRET BUTTON SCRIPT (NEW) ==================== -->
     <script>
         function revealSecret() {
@@ -490,41 +525,5 @@
         });
     });
 </script>
-
-<!-- ==================== LOGIN/LOCK MODAL ==================== -->
-<div id="lockModal" class="lock-modal" style="display: none;">
-    <div class="lock-modal-content">
-        <div class="lock-header">
-            <i class="fas fa-lock"></i>
-            <h2>🔒 Access Required</h2>
-            <p>Please enter your credentials to continue</p>
-        </div>
-        
-        <div class="lock-body">
-            <div class="lock-input-group">
-                <label><i class="fas fa-user"></i> Username</label>
-                <input type="text" id="lockUsername" placeholder="Enter username" autocomplete="off">
-            </div>
-            
-            <div class="lock-input-group">
-                <label><i class="fas fa-key"></i> Password</label>
-                <input type="password" id="lockPassword" placeholder="Enter password">
-            </div>
-            
-            <div id="lockError" class="lock-error" style="display: none;">
-                <i class="fas fa-exclamation-circle"></i> Invalid username or password. Please try again.
-            </div>
-            
-            <button class="lock-btn" onclick="verifyLogin()">
-                <i class="fas fa-unlock"></i> Unlock
-            </button>
-            
-            <button class="lock-close-btn" onclick="closeLockModal()">
-                <i class="fas fa-times"></i> Cancel
-            </button>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
