@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question Papers - Gyanu Education Hub</title>
+  <meta name="description" content="Download free PDF question papers for SEE and NEB exams. Practice with past papers." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nawarajgupta.com.np/papers/" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Question Papers - Gyanu Education Hub" />
+  <meta property="og:description" content="Download free PDF question papers for SEE and NEB exams." />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://nawarajgupta.com.np/papers/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+
+  <style>
+    /* ===== PAPERS PAGE STYLES ===== */
+
+    /* Search & Filter Bar */
+    .search-filter-bar {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .search-filter-bar .search-box {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+
+    .search-filter-bar .search-box input {
+      width: 100%;
+      padding: 12px 16px 12px 44px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .search-filter-bar .search-box input:focus {
+      border-color: var(--blue-primary);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    }
+
+    .search-filter-bar .search-box .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+    }
+
+    .search-filter-bar .filters {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-filter-bar .filters select {
+      padding: 11px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      cursor: pointer;
+      outline: none;
+      transition: var(--transition);
+      min-width: 130px;
+    }
+
+    .search-filter-bar .filters select:focus {
+      border-color: var(--blue-primary);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    }
+
+    .search-filter-bar .results-count {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* Paper Card */
+    .paper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .paper-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .paper-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--blue-primary);
+    }
+
+    .paper-card .paper-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .paper-card .paper-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .paper-card .paper-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .paper-card .paper-meta .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+    }
+
+    .paper-card .paper-meta .badge-class {
+      background: var(--blue-light);
+      color: var(--blue-primary);
+    }
+
+    .paper-card .paper-meta .badge-subject {
+      background: #fce7f3;
+      color: #be185d;
+    }
+
+    .paper-card .paper-meta .badge-year {
+      background: #fef3c7;
+      color: #f59e0b;
+    }
+
+    .paper-card .paper-meta .badge-new {
+      background: #dcfce7;
+      color: #22c55e;
+    }
+
+    .paper-card .paper-meta .badge-old {
+      background: #fef3c7;
+      color: #f59e0b;
+    }
+
+    .paper-card .paper-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .paper-card .paper-footer .download-count {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .paper-card .paper-footer .paper-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .paper-card .paper-footer .btn-preview-pdf {
+      font-family: var(--font-body);
+      background: #8b5cf6;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .paper-card .paper-footer .btn-preview-pdf:hover {
+      background: #7c3aed;
+    }
+
+    .paper-card .paper-footer .btn-download {
+      font-family: var(--font-body);
+      background: var(--blue-primary);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .paper-card .paper-footer .btn-download:hover {
+      background: var(--blue-hover);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+    }
+
+    .empty-state .empty-icon {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .empty-state h3 {
+      font-family: var(--font-heading);
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    /* Load More Button */
+    .load-more-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .load-more-container .btn-load-more {
+      font-family: var(--font-body);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      padding: 12px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .load-more-container .btn-load-more:hover {
+      background: var(--blue-primary);
+      color: #fff;
+      border-color: var(--blue-primary);
+    }
+
+    /* ===== PDF PREVIEW MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .modal-content {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      width: 92%;
+      max-width: 1000px;
+      max-height: 92vh;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      animation: slideUp 0.3s ease;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+    }
+
+    .modal-header h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-header h3 .badge-pdf {
+      background: #8b5cf6;
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0 8px;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: #ef4444;
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      padding: 0;
+      height: 70vh;
+      background: #f1f5f9;
+      position: relative;
+    }
+
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .modal-footer {
+      padding: 12px 24px;
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .modal-footer .footer-left {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .modal-footer .footer-right {
+      display: flex;
+      gap: 12px;
+    }
+
+    .modal-footer .footer-right a {
+      font-family: var(--font-body);
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .modal-footer .footer-right .btn-download-modal {
+      background: var(--blue-primary);
+      color: #fff;
+    }
+
+    .modal-footer .footer-right .btn-download-modal:hover {
+      background: var(--blue-hover);
+    }
+
+    .modal-footer .footer-right .btn-close-modal {
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-footer .footer-right .btn-close-modal:hover {
+      background: var(--border-color);
+    }
+
+    .modal-loading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      gap: 16px;
+    }
+
+    .modal-loading .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--border-color);
+      border-top-color: var(--blue-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    body.dark-mode .modal-body {
+      background: #0f172a;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .search-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+      }
+
+      .search-filter-bar .search-box {
+        min-width: unset;
+      }
+
+      .search-filter-bar .filters {
+        flex-direction: column;
+      }
+
+      .search-filter-bar .filters select {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .search-filter-bar .results-count {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .paper-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .paper-card {
+        padding: 18px;
+      }
+
+      .paper-card .paper-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+      }
+
+      .paper-card .paper-footer .paper-actions {
+        justify-content: stretch;
+      }
+
+      .paper-card .paper-footer .paper-actions .btn-preview-pdf,
+      .paper-card .paper-footer .paper-actions .btn-download {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+
+      .modal-content {
+        width: 95%;
+        max-height: 95vh;
+      }
+
+      .modal-body {
+        height: 55vh;
+      }
+
+      .modal-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .modal-footer .footer-right {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .paper-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-card {
+        padding: 16px;
+      }
+
+      .modal-body {
+        height: 45vh;
+      }
+
+      .modal-header h3 {
+        font-size: 0.85rem;
+      }
+
+      .modal-footer .footer-right a {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" />  Gyanu Education Hub
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../notes/">Notes</a></li>
+        <li><a href="../books/">Books</a></li>
+        <li><a href="../papers/" class="active">Papers</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../contact/">Contact</a></li>
+        <li>
+          <button class="dark-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAPERS PAGE ===== -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>📋 Question Papers</h1>
+        <p>Download free PDF question papers for SEE and NEB exams. Practice with past papers.</p>
+      </div>
+    </section>
+
+    <!-- Papers Section -->
+    <section style="padding: 40px 20px 80px; background: var(--bg-primary);">
+      <div class="container">
+
+        <!-- Search & Filter Bar -->
+        <div class="search-filter-bar">
+          <div class="search-box">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            <input type="text" id="searchInput" placeholder="Search papers by title, subject, or year..." />
+          </div>
+          <div class="filters">
+            <select id="classFilter">
+              <option value="all">All Classes</option>
+            </select>
+            <select id="subjectFilter">
+              <option value="all">All Subjects</option>
+            </select>
+            <select id="yearFilter">
+              <option value="all">All Years</option>
+            </select>
+            <select id="sortFilter">
+              <option value="latest">Latest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="downloads">Most Downloaded</option>
+              <option value="az">A-Z</option>
+            </select>
+          </div>
+          <span class="results-count" id="resultsCount">Showing 0 papers</span>
+        </div>
+
+        <!-- Paper Grid -->
+        <div class="paper-grid" id="paperGrid">
+          <!-- Loaded dynamically from papers.json -->
+          <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body); padding: 40px 0;">
+            ⏳ Loading question papers...
+          </p>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container">
+          <button class="btn-load-more" id="loadMoreBtn">Load More</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PDF PREVIEW MODAL ===== -->
+  <div class="modal-overlay" id="pdfModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">
+          📄 Loading PDF...
+          <span class="badge-pdf">PDF Preview</span>
+        </h3>
+        <button class="modal-close" id="modalClose" aria-label="Close Preview">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <div class="modal-loading">
+          <div class="spinner"></div>
+          <span>⏳ Loading PDF preview...</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span class="footer-left" id="modalFooterInfo">📄 Preview mode • Scroll to read</span>
+        <div class="footer-right">
+          <a href="#" id="modalDownloadLink" class="btn-download-modal" target="_blank">
+            📥 Download PDF
+          </a>
+          <button class="btn-close-modal" id="modalCloseBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-col">
+        <h3>📚 Gyanu Education Hub</h3>
+        <p class="footer-mission">
+          Dedicated to providing free, high-quality educational resources for every Nepali student.
+          Study smarter, not harder!
+        </p>
+        <div class="footer-badges">
+          <span class="badge-free">🌟 100% Free</span>
+          <span class="badge-trusted">🛡️ Trusted</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="../notes/">📝 Study Notes</a></li>
+          <li><a href="../books/">📚 Textbooks</a></li>
+          <li><a href="../papers/">📋 Question Papers</a></li>
+          <li><a href="../about/">📖 About</a></li>
+          <li><a href="../contact/">📧 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <span class="contact-icon">📧</span>
+            <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-icon">📞</span>
+            <a href="tel:+9779814412941">9814412941</a>
+          </li>
+          <li>
+            <span class="contact-icon">📍</span>
+            <span>Nawalparasi, Nepal</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Follow Us + Newsletter -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-icon youtube" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-icon instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="newsletter">
+          <p class="newsletter-text">📩 Get updates on new question papers!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+            <input type="email" placeholder="Your email..." required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">
+          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
+          Made with ❤️ for Nepali students.
+        </p>
+        <div class="footer-legal">
+          <a href="../privacy-policy/">Privacy Policy</a>
+          <span class="divider">|</span>
+          <a href="../terms/">Terms of Service</a>
+          <span class="divider">|</span>
+          <a href="../report-issue/">⚠️ Report Issue</a>
+        </div>
+        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MAIN JAVASCRIPT ===== -->
+  <script>
+    // === DARK MODE ===
+    const darkToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    darkToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+
+    // === HAMBURGER MENU ===
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // === BACK TO TOP ===
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.style.display = 'inline-flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // === PDF PREVIEW MODAL ===
+    function openPDFPreview(title, filePath) {
+      const modal = document.getElementById('pdfModal');
+      const titleEl = document.getElementById('modalTitle');
+      const bodyEl = document.getElementById('modalBody');
+      const downloadLink = document.getElementById('modalDownloadLink');
+      const footerInfo = document.getElementById('modalFooterInfo');
+
+      titleEl.innerHTML = `📄 ${title} <span class="badge-pdf">PDF Preview</span>`;
+      downloadLink.href = filePath;
+      footerInfo.textContent = `📄 Previewing: ${title} • Scroll to read`;
+
+      bodyEl.innerHTML = `
+        <div class="modal-loading">
+          <div class="spinner"></div>
+          <span>⏳ Loading PDF preview...</span>
+        </div>
+      `;
+      modal.classList.add('active');
+
+      const embedUrl = `https://docs.google.com/viewer?embedded=true&url=${encodeURIComponent(filePath)}`;
+
+      setTimeout(() => {
+        bodyEl.innerHTML = `
+          <iframe src="${embedUrl}" allowfullscreen></iframe>
+        `;
+      }, 600);
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePDFPreview() {
+      const modal = document.getElementById('pdfModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('modalClose').addEventListener('click', closePDFPreview);
+    document.getElementById('modalCloseBtn').addEventListener('click', closePDFPreview);
+
+    document.getElementById('pdfModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePDFPreview();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePDFPreview();
+      }
+    });
+
+    // === PAPERS DATA MANAGEMENT ===
+    let allPapers = [];
+    let filteredPapers = [];
+    let visibleCount = 12;
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+    // === LOAD PAPERS ===
+    async function loadPapers() {
+      try {
+        const response = await fetch('../data/papers.json');
+        if (!response.ok) throw new Error('Failed to load data');
+        const data = await response.json();
+
+        allPapers = data.papers || [];
+
+        // Populate filter options
+        populateFilters(allPapers);
+
+        // Apply filters and render
+        applyFilters();
+
+        if (allPapers.length === 0) {
+          document.getElementById('paperGrid').innerHTML = `
+            <div class="empty-state" style="grid-column: 1/-1;">
+              <span class="empty-icon">📋</span>
+              <h3>No Question Papers Available</h3>
+              <p>Check back soon! We're adding more past exam papers.</p>
+            </div>
+          `;
+          loadMoreBtn.style.display = 'none';
+        }
+      } catch (error) {
+        console.error('Error loading papers:', error);
+        document.getElementById('paperGrid').innerHTML = `
+          <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
+            ⚠️ Failed to load question papers. Please refresh the page.
+          </p>
+        `;
+      }
+    }
+
+    // === POPULATE FILTERS ===
+    function populateFilters(papers) {
+      const classFilter = document.getElementById('classFilter');
+      const subjectFilter = document.getElementById('subjectFilter');
+      const yearFilter = document.getElementById('yearFilter');
+
+      // Get unique classes, subjects, and years
+      const classes = [...new Set(papers.map(p => p.class).filter(Boolean))].sort();
+      const subjects = [...new Set(papers.map(p => p.subject).filter(Boolean))].sort();
+      const years = [...new Set(papers.map(p => p.year).filter(Boolean))].sort().reverse();
+
+      // Populate class filter
+      classes.forEach(cls => {
+        const option = document.createElement('option');
+        option.value = cls;
+        option.textContent = cls;
+        classFilter.appendChild(option);
+      });
+
+      // Populate subject filter
+      subjects.forEach(sub => {
+        const option = document.createElement('option');
+        option.value = sub;
+        option.textContent = sub;
+        subjectFilter.appendChild(option);
+      });
+
+      // Populate year filter
+      years.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearFilter.appendChild(option);
+      });
+    }
+
+    // === APPLY FILTERS ===
+    function applyFilters() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+      const classValue = document.getElementById('classFilter').value;
+      const subjectValue = document.getElementById('subjectFilter').value;
+      const yearValue = document.getElementById('yearFilter').value;
+      const sortValue = document.getElementById('sortFilter').value;
+
+      // Filter
+      filteredPapers = allPapers.filter(paper => {
+        const matchSearch = paper.title.toLowerCase().includes(searchTerm) ||
+                           (paper.subject && paper.subject.toLowerCase().includes(searchTerm)) ||
+                           (paper.year && paper.year.toLowerCase().includes(searchTerm)) ||
+                           (paper.class && paper.class.toLowerCase().includes(searchTerm));
+        const matchClass = classValue === 'all' || paper.class === classValue;
+        const matchSubject = subjectValue === 'all' || paper.subject === subjectValue;
+        const matchYear = yearValue === 'all' || paper.year === yearValue;
+        return matchSearch && matchClass && matchSubject && matchYear;
+      });
+
+      // Sort
+      switch (sortValue) {
+        case 'latest':
+          filteredPapers.sort((a, b) => {
+            // Sort by year descending (latest first)
+            if (a.year !== b.year) {
+              return (b.year || '').localeCompare(a.year || '');
+            }
+            return new Date(b.dateAdded) - new Date(a.dateAdded);
+          });
+          break;
+        case 'oldest':
+          filteredPapers.sort((a, b) => {
+            if (a.year !== b.year) {
+              return (a.year || '').localeCompare(b.year || '');
+            }
+            return new Date(a.dateAdded) - new Date(b.dateAdded);
+          });
+          break;
+        case 'downloads':
+          filteredPapers.sort((a, b) => (b.downloads || 0) - (a.downloads || 0));
+          break;
+        case 'az':
+          filteredPapers.sort((a, b) => a.title.localeCompare(b.title));
+          break;
+      }
+
+      // Reset visible count
+      visibleCount = 12;
+      renderPapers();
+    }
+
+    // === RENDER PAPERS ===
+    function renderPapers() {
+      const grid = document.getElementById('paperGrid');
+      const resultsCount = document.getElementById('resultsCount');
+
+      const visiblePapers = filteredPapers.slice(0, visibleCount);
+      const totalPapers = filteredPapers.length;
+
+      // Update results count
+      resultsCount.textContent = `Showing ${visiblePapers.length} of ${totalPapers} papers`;
+
+      // Show/hide load more button
+      if (visiblePapers.length < totalPapers) {
+        loadMoreBtn.style.display = 'inline-block';
+        loadMoreBtn.textContent = `Load More (${visiblePapers.length}/${totalPapers})`;
+      } else {
+        loadMoreBtn.style.display = 'none';
+      }
+
+      if (visiblePapers.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state" style="grid-column: 1/-1;">
+            <span class="empty-icon">🔍</span>
+            <h3>No Papers Found</h3>
+            <p>Try adjusting your search or filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      visiblePapers.forEach(paper => {
+        const isNew = (new Date(paper.dateAdded) > new Date(Date.now() - 3 * 24 * 60 * 60 * 1000));
+        const isOld = (paper.year && parseInt(paper.year) <= 2080);
+        html += `
+          <div class="paper-card">
+            <span class="paper-icon">${paper.icon || '📋'}</span>
+            <div class="paper-title">${paper.title}</div>
+            <div class="paper-meta">
+              ${paper.class ? `<span class="badge badge-class">${paper.class}</span>` : ''}
+              ${paper.subject ? `<span class="badge badge-subject">${paper.subject}</span>` : ''}
+              ${paper.year ? `<span class="badge badge-year">📅 ${paper.year}</span>` : ''}
+              ${isNew ? '<span class="badge badge-new">🆕 NEW</span>' : ''}
+              ${isOld ? '<span class="badge badge-old">🏅 Old is Gold</span>' : ''}
+            </div>
+            <div class="paper-footer">
+              <span class="download-count">⬇️ ${paper.downloads || 0} downloads</span>
+              <div class="paper-actions">
+                <button class="btn-preview-pdf" onclick="openPDFPreview('${paper.title.replace(/'/g, "\\'")}', '${paper.filePath}')">
+                  👁️ Preview
+                </button>
+                <a href="${paper.filePath}" class="btn-download" target="_blank" download>
+                  📥 Download
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      grid.innerHTML = html;
+    }
+
+    // === LOAD MORE ===
+    loadMoreBtn.addEventListener('click', function() {
+      visibleCount += 12;
+      renderPapers();
+    });
+
+    // === EVENT LISTENERS ===
+    document.getElementById('searchInput').addEventListener('input', applyFilters);
+    document.getElementById('classFilter').addEventListener('change', applyFilters);
+    document.getElementById('subjectFilter').addEventListener('change', applyFilters);
+    document.getElementById('yearFilter').addEventListener('change', applyFilters);
+    document.getElementById('sortFilter').addEventListener('change', applyFilters);
+
+    // Load papers when page loads
+    document.addEventListener('DOMContentLoaded', loadPapers);
+  </script>
+
+</body>
+</html>

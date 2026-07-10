@@ -1,0 +1,92 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Class 10 Mathematics Textbook",
+      "author": "CDC Nepal",
+      "class": "Class 10",
+      "subject": "Mathematics",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "📐",
+      "downloads": 152,
+      "dateAdded": "2026-07-10"
+    },
+    {
+      "id": 2,
+      "title": "Class 10 Science Textbook",
+      "author": "CDC Nepal",
+      "class": "Class 10",
+      "subject": "Science",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "🔬",
+      "downloads": 89,
+      "dateAdded": "2026-07-09"
+    },
+    {
+      "id": 3,
+      "title": "Class 11 Physics Textbook",
+      "author": "CDC Nepal",
+      "class": "Class 11",
+      "subject": "Physics",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "⚛️",
+      "downloads": 67,
+      "dateAdded": "2026-07-08"
+    },
+    {
+      "id": 4,
+      "title": "Class 12 Chemistry Reference Book",
+      "author": "Asmita Publication",
+      "class": "Class 12",
+      "subject": "Chemistry",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "🧪",
+      "downloads": 45,
+      "dateAdded": "2026-07-07"
+    },
+    {
+      "id": 5,
+      "title": "Class 8 Science Book",
+      "author": "CDC Nepal",
+      "class": "Class 8",
+      "subject": "Science",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "🔬",
+      "downloads": 78,
+      "dateAdded": "2026-07-06"
+    },
+    {
+      "id": 6,
+      "title": "Class 9 Mathematics Textbook",
+      "author": "CDC Nepal",
+      "class": "Class 9",
+      "subject": "Mathematics",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "📐",
+      "downloads": 56,
+      "dateAdded": "2026-07-05"
+    },
+    {
+      "id": 7,
+      "title": "Class 11 Mathematics Textbook",
+      "author": "CDC Nepal",
+      "class": "Class 11",
+      "subject": "Mathematics",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "📐",
+      "downloads": 92,
+      "dateAdded": "2026-07-04"
+    },
+    {
+      "id": 8,
+      "title": "Class 12 Biology Textbook",
+      "author": "CDC Nepal",
+      "class": "Class 12",
+      "subject": "Biology",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_BOOK_ID",
+      "icon": "🧬",
+      "downloads": 34,
+      "dateAdded": "2026-07-03"
+    }
+  ]
+}

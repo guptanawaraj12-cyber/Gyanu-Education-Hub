@@ -1,0 +1,338 @@
+{
+  "classes": [
+    {
+      "class": "Class 8",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📐",
+          "chapters": [
+            {
+              "id": "8-math-1",
+              "title": "Chapter 1: Sets",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-8-math-ch1.html",
+              "downloads": 45,
+              "dateAdded": "2026-07-10"
+            },
+            {
+              "id": "8-math-2",
+              "title": "Chapter 2: Algebra",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-8-math-ch2.html",
+              "downloads": 38,
+              "dateAdded": "2026-07-09"
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "icon": "🔬",
+          "chapters": [
+            {
+              "id": "8-sci-1",
+              "title": "Chapter 1: Cell Biology",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-8-sci-ch1.html",
+              "downloads": 52,
+              "dateAdded": "2026-07-08"
+            }
+          ]
+        },
+        {
+          "name": "Nepali",
+          "icon": "📖",
+          "chapters": []
+        },
+        {
+          "name": "English",
+          "icon": "📝",
+          "chapters": []
+        },
+        {
+          "name": "Social Studies",
+          "icon": "🌍",
+          "chapters": []
+        },
+        {
+          "name": "Computer",
+          "icon": "💻",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "class": "Class 9",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📐",
+          "chapters": []
+        },
+        {
+          "name": "Science",
+          "icon": "🔬",
+          "chapters": []
+        },
+        {
+          "name": "Nepali",
+          "icon": "📖",
+          "chapters": []
+        },
+        {
+          "name": "English",
+          "icon": "📝",
+          "chapters": []
+        },
+        {
+          "name": "Social Studies",
+          "icon": "🌍",
+          "chapters": []
+        },
+        {
+          "name": "Computer",
+          "icon": "💻",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "class": "Class 10",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📐",
+          "chapters": [
+            {
+              "id": "10-math-1",
+              "title": "Chapter 1: Sets and Functions",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-math-ch1.html",
+              "downloads": 152,
+              "dateAdded": "2026-07-10"
+            },
+            {
+              "id": "10-math-2",
+              "title": "Chapter 2: Algebra",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-math-ch2.html",
+              "downloads": 89,
+              "dateAdded": "2026-07-09"
+            },
+            {
+              "id": "10-math-3",
+              "title": "Chapter 3: Trigonometry",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-math-ch3.html",
+              "downloads": 210,
+              "dateAdded": "2026-07-08"
+            },
+            {
+              "id": "10-math-4",
+              "title": "Chapter 4: Geometry",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-math-ch4.html",
+              "downloads": 67,
+              "dateAdded": "2026-07-07"
+            },
+            {
+              "id": "10-math-5",
+              "title": "Chapter 5: Statistics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-math-ch5.html",
+              "downloads": 45,
+              "dateAdded": "2026-07-06"
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "icon": "🔬",
+          "chapters": [
+            {
+              "id": "10-sci-1",
+              "title": "Chapter 1: Chemical Reactions",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-sci-ch1.html",
+              "downloads": 76,
+              "dateAdded": "2026-07-10"
+            },
+            {
+              "id": "10-sci-2",
+              "title": "Chapter 2: Electricity",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-10-sci-ch2.html",
+              "downloads": 54,
+              "dateAdded": "2026-07-09"
+            }
+          ]
+        },
+        {
+          "name": "Nepali",
+          "icon": "📖",
+          "chapters": []
+        },
+        {
+          "name": "English",
+          "icon": "📝",
+          "chapters": []
+        },
+        {
+          "name": "Social Studies",
+          "icon": "🌍",
+          "chapters": []
+        },
+        {
+          "name": "Computer",
+          "icon": "💻",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "class": "Class 11",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📐",
+          "chapters": []
+        },
+        {
+          "name": "Physics",
+          "icon": "⚛️",
+          "chapters": []
+        },
+        {
+          "name": "Chemistry",
+          "icon": "🧪",
+          "chapters": []
+        },
+        {
+          "name": "Biology",
+          "icon": "🧬",
+          "chapters": []
+        },
+        {
+          "name": "Nepali",
+          "icon": "📖",
+          "chapters": []
+        },
+        {
+          "name": "English",
+          "icon": "📝",
+          "chapters": []
+        },
+        {
+          "name": "Social Studies",
+          "icon": "🌍",
+          "chapters": []
+        },
+        {
+          "name": "Computer",
+          "icon": "💻",
+          "chapters": []
+        },
+        {
+          "name": "Accountancy",
+          "icon": "📊",
+          "chapters": []
+        },
+        {
+          "name": "Economics",
+          "icon": "📈",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "class": "Class 12",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "icon": "📐",
+          "chapters": []
+        },
+        {
+          "name": "Physics",
+          "icon": "⚛️",
+          "chapters": []
+        },
+        {
+          "name": "Chemistry",
+          "icon": "🧪",
+          "chapters": []
+        },
+        {
+          "name": "Biology",
+          "icon": "🧬",
+          "chapters": []
+        },
+        {
+          "name": "Nepali",
+          "icon": "📖",
+          "chapters": []
+        },
+        {
+          "name": "English",
+          "icon": "📝",
+          "chapters": []
+        },
+        {
+          "name": "Social Studies",
+          "icon": "🌍",
+          "chapters": []
+        },
+        {
+          "name": "Computer",
+          "icon": "💻",
+          "chapters": []
+        },
+        {
+          "name": "Accountancy",
+          "icon": "📊",
+          "chapters": []
+        },
+        {
+          "name": "Economics",
+          "icon": "📈",
+          "chapters": []
+        }
+      ]
+    }
+  ],
+  "trending": [
+    {
+      "id": "trend-1",
+      "title": "Trigonometry Formulas & Tricks",
+      "subject": "Mathematics",
+      "class": "Class 10",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+      "htmlPath": "../notes-content/sample-note.html",
+      "icon": "📐",
+      "downloads": 210,
+      "dateAdded": "2026-07-08"
+    },
+    {
+      "id": "trend-2",
+      "title": "Chemical Reactions & Equations",
+      "subject": "Science",
+      "class": "Class 10",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+      "htmlPath": "../notes-content/sample-note.html",
+      "icon": "🧪",
+      "downloads": 185,
+      "dateAdded": "2026-07-07"
+    },
+    {
+      "id": "trend-3",
+      "title": "Nepali Grammar Guide",
+      "subject": "Nepali",
+      "class": "Class 12",
+      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+      "htmlPath": "../notes-content/sample-note.html",
+      "icon": "📖",
+      "downloads": 167,
+      "dateAdded": "2026-07-06"
+    }
+  ]
+}

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Gyanu Education Hub</title>
+  <meta name="description" content="Gyanu Education Hub provides free educational resources for Nepali students. Learn about our mission, vision, and founders." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nawarajgupta.com.np/about/" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="About - Gyanu Education Hub" />
+  <meta property="og:description" content="Gyanu Education Hub provides free educational resources for Nepali students." />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://nawarajgupta.com.np/about/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+
+  <style>
+    /* ===== ABOUT PAGE STYLES ===== */
+
+    /* Hero Section */
+    .about-hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .about-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+    }
+
+    .about-hero h1 span {
+      color: var(--blue-primary);
+    }
+
+    .about-hero p {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: #475569;
+      max-width: 600px;
+      margin: 12px auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    body.dark-mode .about-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+    }
+
+    body.dark-mode .about-hero h1 {
+      color: #f1f5f9;
+    }
+
+    body.dark-mode .about-hero p {
+      color: #94a3b8;
+    }
+
+    /* Mission & Vision Cards */
+    .mission-vision-section {
+      padding: 60px 20px;
+      background: var(--bg-primary);
+      transition: background 0.3s ease;
+    }
+
+    .mission-vision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .mv-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .mv-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--blue-primary);
+    }
+
+    .mv-card .mv-icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .mv-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .mv-card p {
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 60px 20px;
+      background: var(--bg-secondary);
+      transition: background 0.3s ease;
+    }
+
+    .values-section .section-title {
+      font-family: var(--font-heading);
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .values-section .section-subtitle {
+      font-family: var(--font-body);
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .value-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: var(--blue-primary);
+    }
+
+    .value-card .value-icon {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .value-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Story Section */
+    .story-section {
+      padding: 60px 20px;
+      background: var(--bg-primary);
+      transition: background 0.3s ease;
+    }
+
+    .story-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .story-text h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .story-text p {
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .story-text p strong {
+      color: var(--text-primary);
+    }
+
+    .story-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .story-image .story-icon-wrapper {
+      font-size: 10rem;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .story-image .story-icon-wrapper:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 50px rgba(14, 165, 233, 0.15);
+    }
+
+    body.dark-mode .story-image .story-icon-wrapper {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+
+    /* ===== FOUNDER & CO-FOUNDER SECTION ===== */
+    .founder-section {
+      padding: 60px 20px;
+      background: var(--bg-secondary);
+      transition: background 0.3s ease;
+    }
+
+    .founder-section .section-title {
+      font-family: var(--font-heading);
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .founder-section .section-subtitle {
+      font-family: var(--font-body);
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .founder-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .founder-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--blue-primary);
+    }
+
+    .founder-card .founder-image-wrapper {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      overflow: hidden;
+      border: 4px solid var(--blue-primary);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
+      transition: var(--transition);
+    }
+
+    .founder-card:hover .founder-image-wrapper {
+      transform: scale(1.05);
+      border-color: var(--blue-hover);
+    }
+
+    .founder-card .founder-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .founder-card .founder-name {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .founder-card .founder-role {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--blue-primary);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .founder-card .founder-bio {
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .founder-card .founder-social {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .founder-card .founder-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      font-size: 1rem;
+      transition: var(--transition);
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+    }
+
+    .founder-card .founder-social a:hover {
+      transform: translateY(-4px);
+    }
+
+    .founder-card .founder-social .social-youtube:hover {
+      background: #ff0000;
+      color: #fff;
+      border-color: #ff0000;
+    }
+
+    .founder-card .founder-social .social-facebook:hover {
+      background: #1877f2;
+      color: #fff;
+      border-color: #1877f2;
+    }
+
+    .founder-card .founder-social .social-instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    /* Quick Stats Section */
+    .about-stats-section {
+      padding: 60px 20px;
+      background: var(--bg-primary);
+      transition: background 0.3s ease;
+    }
+
+    .about-stats-section .section-title {
+      font-family: var(--font-heading);
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .about-stats-section .section-subtitle {
+      font-family: var(--font-body);
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .about-stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--blue-primary);
+    }
+
+    .about-stat-card .stat-number {
+      font-family: var(--font-heading);
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--blue-primary);
+    }
+
+    .about-stat-card .stat-label {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* CTA Section */
+    .about-cta-section {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      transition: background 0.3s ease;
+    }
+
+    .about-cta-container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--bg-card);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border-color);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .about-cta-container h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .about-cta-container p {
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .about-cta-container .btn-primary {
+      display: inline-block;
+      background: var(--blue-primary);
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .about-cta-container .btn-primary:hover {
+      background: var(--blue-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+    }
+
+    body.dark-mode .about-cta-section {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    body.dark-mode .about-cta-container {
+      background: var(--bg-card);
+      border-color: var(--border-color);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .founder-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        padding: 50px 20px 40px;
+      }
+
+      .about-hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .about-hero p {
+        font-size: 1rem;
+      }
+
+      .mission-vision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .story-image .story-icon-wrapper {
+        width: 200px;
+        height: 200px;
+        font-size: 7rem;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .founder-card {
+        padding: 24px 20px;
+      }
+
+      .founder-card .founder-image-wrapper {
+        width: 100px;
+        height: 100px;
+      }
+
+      .founder-card .founder-name {
+        font-size: 1.2rem;
+      }
+
+      .about-cta-container {
+        padding: 30px 20px;
+      }
+
+      .about-cta-container h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .about-hero p {
+        font-size: 0.95rem;
+      }
+
+      .mv-card {
+        padding: 24px 18px;
+      }
+
+      .mv-card h2 {
+        font-size: 1.3rem;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .about-stat-card .stat-number {
+        font-size: 1.8rem;
+      }
+
+      .about-stat-card .stat-label {
+        font-size: 0.8rem;
+      }
+
+      .about-cta-container {
+        padding: 24px 16px;
+      }
+
+      .about-cta-container h2 {
+        font-size: 1.3rem;
+      }
+
+      .founder-card {
+        padding: 20px 16px;
+      }
+
+      .founder-card .founder-image-wrapper {
+        width: 80px;
+        height: 80px;
+      }
+
+      .founder-card .founder-name {
+        font-size: 1rem;
+      }
+
+      .founder-card .founder-role {
+        font-size: 0.8rem;
+      }
+
+      .founder-card .founder-bio {
+        font-size: 0.85rem;
+      }
+
+      .founder-card .founder-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+
+      .story-image .story-icon-wrapper {
+        width: 150px;
+        height: 150px;
+        font-size: 5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" /> Gyanu Education Hub
+        </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../notes/">Notes</a></li>
+        <li><a href="../books/">Books</a></li>
+        <li><a href="../papers/">Papers</a></li>
+        <li><a href="../about/" class="active">About</a></li>
+        <li><a href="../contact/">Contact</a></li>
+        <li>
+          <button class="dark-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== ABOUT PAGE ===== -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>About <span>Gyanu Education Hub</span></h1>
+        <p>Your trusted partner in education – free, accessible, and always growing.</p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision-section">
+      <div class="mission-vision-grid container">
+        <div class="mv-card">
+          <span class="mv-icon">🎯</span>
+          <h2>Our Mission</h2>
+          <p>
+            To provide every Nepali student with free, high-quality educational resources
+            – regardless of their background or location. We believe that access to education
+            should never be a barrier to success.
+          </p>
+        </div>
+        <div class="mv-card">
+          <span class="mv-icon">👁️</span>
+          <h2>Our Vision</h2>
+          <p>
+            A Nepal where every student has access to the study materials they need to
+            succeed in their exams and build a brighter future. We envision a community
+            of learners, teachers, and supporters sharing knowledge freely.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values-section">
+      <div class="container">
+        <h2 class="section-title">💎 Our Values</h2>
+        <p class="section-subtitle">The principles that guide everything we do.</p>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">✅</span>
+            <h3>Quality</h3>
+            <p>Curated, accurate, and exam-focused content. Every resource is carefully reviewed before being published.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🌍</span>
+            <h3>Accessibility</h3>
+            <p>Free for everyone, anytime, anywhere. No sign-ups, no logins, no hidden charges.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <h3>Community</h3>
+            <p>Built by students, for students. We are a community of learners, teachers, and supporters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story-section">
+      <div class="story-container">
+        <div class="story-text">
+          <h2>📖 Our Story</h2>
+          <p>
+            <strong>Gyanu Education Hub</strong> was born from a simple idea: <strong>education should be free.</strong>
+          </p>
+          <p>
+            As students ourselves, we know how expensive textbooks and study materials can be.
+            We started this platform to share our own notes, question papers, and resources
+            with fellow students across Nepal.
+          </p>
+          <p>
+            Today, Gyanu Education Hub has grown into a community of learners, teachers, and
+            supporters who believe in the power of shared knowledge. We are constantly adding
+            new content – and we're just getting started!
+          </p>
+        </div>
+        <div class="story-image">
+          <div class="story-icon-wrapper">📚</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOUNDER & CO-FOUNDER SECTION ===== -->
+    <section class="founder-section">
+      <div class="container">
+        <h2 class="section-title">👨‍🏫 Meet Our Team</h2>
+        <p class="section-subtitle">
+          Two passionate individuals working together to make education free for every Nepali student.
+        </p>
+
+        <div class="founder-grid">
+
+          <!-- Founder Card - Nawaraj Gupta -->
+          <div class="founder-card">
+            <div class="founder-image-wrapper">
+              <img src="../assets/images/nawaraj.jpeg" alt="Nawaraj Gupta" class="founder-photo" />
+            </div>
+            <h3 class="founder-name">Nawaraj Gupta</h3>
+            <p class="founder-role">🌟 Founder & Content Curator</p>
+            <p class="founder-bio">
+              Passionate about education and technology. Nawaraj started Gyanu Education Hub
+              to help students across Nepal access free, high-quality study materials.
+              He believes that every student deserves a fair chance to succeed.
+            </p>
+            <div class="founder-social">
+              <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-youtube" title="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://www.facebook.com/itz.nawaraj/" target="_blank" class="social-facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Co-Founder Card - Gyanendra Gupta -->
+          <div class="founder-card">
+            <div class="founder-image-wrapper">
+              <img src="../assets/images/gyanendra.jpeg" alt="Gyanendra Gupta" class="founder-photo" />
+            </div>
+            <h3 class="founder-name">Gyanendra Gupta</h3>
+            <p class="founder-role">🤝 Co-Founder & Advisor</p>
+            <p class="founder-bio">
+              A dedicated educator and mentor, Gyanendra brings years of experience and wisdom
+              to Gyanu Education Hub. His guidance and support have been instrumental in shaping
+              this platform into a reliable resource for Nepali students.
+            </p>
+            <div class="founder-social">
+              <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-youtube" title="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="about-stats-section">
+      <div class="container">
+        <h2 class="section-title">📊 Our Impact</h2>
+        <p class="section-subtitle">The numbers behind Gyanu Education Hub.</p>
+
+        <div class="about-stats-grid">
+          <div class="about-stat-card">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">📄 Study Notes</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="stat-number">45+</span>
+            <span class="stat-label">📚 Textbooks</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">📋 Question Papers</span>
+          </div>
+          <div class="about-stat-card">
+            <span class="stat-number">1,200+</span>
+            <span class="stat-label">👩‍🎓 Students Helped</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="about-cta-section">
+      <div class="about-cta-container">
+        <h2>📧 Get in Touch</h2>
+        <p>
+          Have questions, feedback, or suggestions? We'd love to hear from you!
+          Your input helps us make Gyanu Education Hub better for everyone.
+        </p>
+        <a href="../contact/" class="btn-primary">📧 Contact Us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-col">
+        <h3>📚 Gyanu Education Hub</h3>
+        <p class="footer-mission">
+          Dedicated to providing free, high-quality educational resources for every Nepali student.
+          Study smarter, not harder!
+        </p>
+        <div class="footer-badges">
+          <span class="badge-free">🌟 100% Free</span>
+          <span class="badge-trusted">🛡️ Trusted</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="../notes/">📝 Study Notes</a></li>
+          <li><a href="../books/">📚 Textbooks</a></li>
+          <li><a href="../papers/">📋 Question Papers</a></li>
+          <li><a href="../about/">📖 About</a></li>
+          <li><a href="../contact/">📧 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <span class="contact-icon">📧</span>
+            <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-icon">📞</span>
+            <a href="tel:+9779814412941">9814412941</a>
+          </li>
+          <li>
+            <span class="contact-icon">📍</span>
+            <span>Nawalparasi, Nepal</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Follow Us + Newsletter -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-icon youtube" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-icon instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="newsletter">
+          <p class="newsletter-text">📩 Get updates on new resources!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+            <input type="email" placeholder="Your email..." required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">
+          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
+          Made with ❤️ for Nepali students.
+        </p>
+        <div class="footer-legal">
+          <a href="../privacy-policy/">Privacy Policy</a>
+          <span class="divider">|</span>
+          <a href="../terms/">Terms of Service</a>
+          <span class="divider">|</span>
+          <a href="../report-issue/">⚠️ Report Issue</a>
+        </div>
+        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MAIN JAVASCRIPT ===== -->
+  <script>
+    // === DARK MODE ===
+    const darkToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    darkToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+
+    // === HAMBURGER MENU ===
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // === BACK TO TOP ===
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.style.display = 'inline-flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

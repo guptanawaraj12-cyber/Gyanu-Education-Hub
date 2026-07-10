@@ -1,493 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Nawaraj Gupta | Creator of Gyanu Notes</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gyanu Education Hub - Free Notes, Books & Question Papers for Nepali Students</title>
+  <meta name="description" content="Download free PDF notes, textbooks, and question papers for Class 8 to 12. All subjects covered. Study for free at Gyanu Education Hub." />
+  <meta name="keywords" content="Class 10 notes, Class 11 physics, Class 12 math, SEE question papers, NEB notes, free educational resources Nepal" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nawarajgupta.com.np/" />
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a2e0f 0%, #1a5e20 50%, #0d2e0f 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Gyanu Education Hub - Free Notes, Books & Question Papers" />
+  <meta property="og:description" content="Download free PDF notes, textbooks, and question papers for Class 8 to 12. Study for free!" />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://nawarajgupta.com.np/" />
+  <meta property="og:type" content="website" />
 
-        /* Main Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 40px;
-        }
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
-        /* Split Layout */
-        .split-layout {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-            width: 100%;
-            flex-wrap: wrap;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        /* LEFT SIDE - Text Content */
-        .left-content {
-            flex: 1;
-            min-width: 280px;
-            animation: slideInLeft 0.8s ease;
-        }
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-        /* Om Symbol Styles */
-        .om-symbol {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .om-image {
-            width: 70px;
-            height: auto;
-            display: inline-block;
-            filter: drop-shadow(0 2px 5px rgba(34, 32, 32, 0.2));
-            transition: transform 0.3s ease;
-        }
-
-        .om-image:hover {
-            transform: scale(1.25);
-        }
-
-        .greeting {
-            font-size: 18px;
-            color: #FFC107;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .name {
-            font-size: 64px;
-            font-weight: 800;
-            font-style: italic;
-            color: white;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .name span {
-            color: #FFC107;
-            border-bottom: 4px solid #FFC107;
-            display: inline-block;
-            font-style: italic;
-        }
-
-        .title {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 25px;
-        }
-
-        .description {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            margin-bottom: 35px;
-            max-width: 500px;
-        }
-
-        /* CTA Button */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #FFC107, #FF9800);
-            color: #1a1a1a;
-            padding: 14px 40px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            margin-bottom: 40px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #FFD700, #FFB300);
-        }
-
-        .cta-btn i {
-            transition: transform 0.3s;
-        }
-
-        .cta-btn:hover i {
-            transform: translateX(8px);
-        }
-
-        /* Stats */
-        .stats {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item h3 {
-            font-size: 24px;
-            font-weight: 800;
-            color: #FFC107;
-        }
-
-        .stat-item p {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Social Links */
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            background: #FFC107;
-            color: #1a1a1a;
-            transform: translateY(-5px);
-        }
-
-        /* RIGHT SIDE - BIG CIRCULAR PHOTO */
-        .right-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: slideInRight 0.8s ease;
-        }
-
-        .big-photo {
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #FFC107, #FF9800);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-            transition: all 0.5s ease;
-            cursor: pointer;
-            animation: float 5s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .big-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top 20% center;
-            transition: transform 0.5s;
-        }
-
-        .big-photo:hover {
-            transform: scale(1.02);
-            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .big-photo:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-80px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(80px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        /* ========== RESPONSIVE FIXES ========== */
-        
-        @media (max-width: 1024px) {
-            .big-photo {
-                width: 320px;
-                height: 320px;
-            }
-            .name {
-                font-size: 52px;
-            }
-            .container {
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .split-layout {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-            }
-            
-            .left-content {
-                text-align: center;
-                order: 1;
-            }
-            
-            .right-content {
-                order: 2;
-                margin-top: 0;
-            }
-            
-            .om-symbol {
-                text-align: center;
-            }
-            
-            .description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .greeting {
-                justify-content: center;
-            }
-            
-            .stats {
-                justify-content: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .big-photo {
-                width: 280px;
-                height: 280px;
-            }
-            
-            .container {
-                padding: 50px 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .big-photo {
-                width: 220px;
-                height: 220px;
-            }
-            
-            .name {
-                font-size: 36px;
-            }
-            
-            .om-image {
-                width: 51px;
-            }
-            
-            .greeting {
-                font-size: 14px;
-            }
-            
-            .title {
-                font-size: 14px;
-            }
-            
-            .description {
-                font-size: 13px;
-            }
-            
-            .cta-btn {
-                padding: 12px 28px;
-                font-size: 14px;
-            }
-            
-            .stat-item h3 {
-                font-size: 20px;
-            }
-            
-            .stat-item p {
-                font-size: 10px;
-            }
-            
-            .container {
-                padding: 40px 20px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .big-photo {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .name {
-                font-size: 28px;
-            }
-            
-            .om-image {
-                width: 35px;
-            }
-            
-            .stats {
-                gap: 15px;
-            }
-        }
-    </style>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+  <img src="assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" />  Gyanu Education Hub
+</a>    
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="notes/">Notes</a></li>
+        <li><a href="books/">Books</a></li>
+        <li><a href="papers/">Papers</a></li>
+        <li><a href="about/">About</a></li>
+        <li><a href="contact/">Contact</a></li>
+        <li>
+          <button class="dark-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section">
+    <div class="hero-content container">
+      <h1>Your Free <span>Educational</span> Resource Hub</h1>
+      <p>Access high-quality notes, textbooks, and exam papers for Class 8 to 12 – all in one place. 100% free for every Nepali student.</p>
+      <div class="hero-buttons">
+        <a href="notes/" class="btn-primary">📚 Browse Notes</a>
+        <a href="books/" class="btn-outline">📖 View Books</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUICK STATS ===== -->
+  <section class="stats-section">
+    <div class="stats-grid container">
+      <div class="stat-card">
+        <span class="stat-number" id="statNotes">150+</span>
+        <span class="stat-label">📄 Study Notes</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="statBooks">45+</span>
+        <span class="stat-label">📚 Textbooks</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="statPapers">30+</span>
+        <span class="stat-label">📋 Question Papers</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="statStudents">1,200+</span>
+        <span class="stat-label">👩‍🎓 Students Helped</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR CLASSES ===== -->
+  <section class="popular-section">
     <div class="container">
-        <div class="split-layout">
-            
-            <!-- LEFT SIDE - Text Content -->
-            <div class="left-content">
-                
-                <!-- Om Symbol -->
-                <div class="om-symbol">
-                    <img src="images/om.jpeg" alt="Om" class="om-image">
-                </div>
-                
-                <div class="greeting">
-                    <i class="fas fa-hand-peace"></i> 
-                    <span>Namaste, I AM</span>
-                </div>
-                
-                <div class="name">
-                    NAWARAJ <br>
-                    <span>Welcome</span>
-                </div>
-                
-                <div class="title">
-                    📚 Founder of Gyanu Notes | Free Education Advocate
-                </div>
-                
-                <div class="description">
-                    I believe every student deserves quality education without spending a single rupee. 
-                    That's why I created Gyanu Notes — a free platform with 500+ study notes for 
-                    Class 8 to 12 students in Nepal.
-                </div>
-                
-                <!-- CTA Button -->
-                <a href="home.html" class="cta-btn">
-                    📚 WANT FREE NOTES? CLICK HERE <i class="fas fa-arrow-right"></i>
-                </a>
-                
-                <!-- Stats -->
-                <div class="stats">
-                    <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Free Notes</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>15+</h3>
-                        <p>Subjects</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>5</h3>
-                        <p>Classes (8-12)</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>1K+</h3>
-                        <p>Students</p>
-                    </div>
-                </div>
-                
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a href="https://youtube.com/@gyanu-notes" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/gyanunotes" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            
-            <!-- RIGHT SIDE - BIG CIRCULAR PHOTO -->
-            <div class="right-content">
-                <div class="big-photo" id="bigPhoto">
-                    <img src="images/nawaraj.jpeg" alt="Nawaraj">
-                </div>
-            </div>
-            
+      <h2>🚀 Popular Classes</h2>
+      <p class="subtitle">Jump straight to the most requested study materials.</p>
+      <div class="popular-grid">
+        <a href="notes-class/?class=Class%2010" class="popular-card">
+          <span class="icon">📘</span>
+          <span class="label">Class 10</span>
+        </a>
+        <a href="notes-class/?class=Class%2012" class="popular-card">
+          <span class="icon">📘</span>
+          <span class="label">Class 12</span>
+        </a>
+        <a href="notes-class/?class=Class%2011" class="popular-card">
+          <span class="icon">📘</span>
+          <span class="label">Class 11</span>
+        </a>
+        <a href="notes-class/?class=Class%208" class="popular-card">
+          <span class="icon">📘</span>
+          <span class="label">Class 8</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BROWSE BY CATEGORY ===== -->
+  <section class="category-section">
+    <div class="container">
+      <h2>📚 Browse by Category</h2>
+      <p class="subtitle">Choose what you want to study today.</p>
+      <div class="category-grid">
+        <div class="category-card">
+          <span class="icon">📝</span>
+          <h3>Study Notes</h3>
+          <p>Complete chapter-wise notes for all subjects. Class 8 to 12.</p>
+          <a href="notes/" class="btn-sm">Explore Notes →</a>
         </div>
+        <div class="category-card">
+          <span class="icon">📚</span>
+          <h3>Textbooks</h3>
+          <p>Download full PDF textbooks for free. Reference books included.</p>
+          <a href="books/" class="btn-sm">Browse Books →</a>
+        </div>
+        <div class="category-card">
+          <span class="icon">📋</span>
+          <h3>Question Papers</h3>
+          <p>Old is gold! Practice with past exam papers for SEE and NEB.</p>
+          <a href="papers/" class="btn-sm">View Papers →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRENDING RESOURCES ===== -->
+  <section class="trending-section" id="trendingSection">
+    <div class="container">
+      <h2>🔥 Trending Resources</h2>
+      <p class="subtitle">Most popular notes and books downloaded by students this week.</p>
+      <div class="trending-grid" id="trendingGrid">
+        <!-- Loaded dynamically from JavaScript -->
+        <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body);">⏳ Loading trending resources...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why-section">
+    <div class="container">
+      <h2>✅ Why Choose Gyanu Education Hub?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="icon">🎯</span>
+          <h3>Free for Everyone</h3>
+          <p>No hidden charges, no logins, no sign-ups required. Just download and study.</p>
+        </div>
+        <div class="why-card">
+          <span class="icon">📱</span>
+          <h3>Access Anywhere</h3>
+          <p>Study from your phone, tablet, or laptop – anytime, anywhere.</p>
+        </div>
+        <div class="why-card">
+          <span class="icon">🔄</span>
+          <h3>Regularly Updated</h3>
+          <p>New notes, books, and papers added every week. Always growing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-col">
+        <h3>📚 Gyanu Education Hub</h3>
+        <p class="footer-mission">
+          Dedicated to providing free, high-quality educational resources for every Nepali student.
+          Study smarter, not harder!
+        </p>
+        <div class="footer-badges">
+          <span class="badge-free">🌟 100% Free</span>
+          <span class="badge-trusted">🛡️ Trusted</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="notes/">📝 Study Notes</a></li>
+          <li><a href="books/">📚 Textbooks</a></li>
+          <li><a href="papers/">📋 Question Papers</a></li>
+          <li><a href="about/">📖 About</a></li>
+          <li><a href="contact/">📧 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <span class="contact-icon">📧</span>
+            <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-icon">📞</span>
+            <a href="tel:+9779814412941">9814412941</a>
+          </li>
+          <li>
+            <span class="contact-icon">📍</span>
+            <span>Nawalparasi, Nepal</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Follow Us + Newsletter -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-icon youtube" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-icon instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="newsletter">
+          <p class="newsletter-text">📩 Get updates on new notes!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+            <input type="email" placeholder="Your email..." required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
     </div>
 
-    <script>
-        // 3D Tilt Effect for Big Photo
-        const photo = document.getElementById('bigPhoto');
-        
-        if (photo) {
-            photo.addEventListener('mousemove', (e) => {
-                const rect = photo.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 15;
-                const rotateY = (x - centerX) / 15;
-                
-                photo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            });
-            
-            photo.addEventListener('mouseleave', () => {
-                photo.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-            });
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">
+          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
+          Made with ❤️ for Nepali students.
+        </p>
+        <div class="footer-legal">
+          <a href="privacy-policy/">Privacy Policy</a>
+          <span class="divider">|</span>
+          <a href="terms/">Terms of Service</a>
+          <span class="divider">|</span>
+          <a href="report-issue/">⚠️ Report Issue</a>
+        </div>
+        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MAIN JAVASCRIPT ===== -->
+  <script>
+    // === DARK MODE ===
+    const darkToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    darkToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+
+    // === HAMBURGER MENU ===
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // === BACK TO TOP ===
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.style.display = 'inline-flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // === LOAD TRENDING RESOURCES ===
+    async function loadTrending() {
+      const grid = document.getElementById('trendingGrid');
+
+      try {
+        const response = await fetch('data/notes.json');
+        if (!response.ok) throw new Error('Failed to load data');
+        const data = await response.json();
+
+        const trendingItems = data.trending || [];
+
+        if (trendingItems.length === 0) {
+          grid.innerHTML = `
+            <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body);">
+              No trending resources yet. Check back soon!
+            </p>
+          `;
+          return;
         }
-    </script>
-    
+
+        let html = '';
+        trendingItems.forEach(item => {
+          const isNew = (new Date(item.dateAdded) > new Date(Date.now() - 3 * 24 * 60 * 60 * 1000));
+          html += `
+            <div class="resource-card">
+              <span class="card-icon">${item.icon || '📄'}</span>
+              <h4>${item.title}</h4>
+              <p class="card-subject">${item.subject} • ${item.class}</p>
+              <div class="card-meta">
+                <span class="badge badge-subject">${item.subject}</span>
+                <span class="badge badge-class">${item.class}</span>
+                ${isNew ? '<span class="badge badge-new">🆕 NEW</span>' : ''}
+                <span class="badge badge-trending">🔥 Trending</span>
+              </div>
+              <div class="card-footer">
+                <span class="download-count">⬇️ ${item.downloads || 0} downloads</span>
+                <a href="${item.filePath}" class="download-btn" target="_blank">Download PDF</a>
+              </div>
+            </div>
+          `;
+        });
+
+        grid.innerHTML = html;
+      } catch (error) {
+        console.error('Error loading trending:', error);
+        grid.innerHTML = `
+          <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body);">
+            ⚠️ Failed to load trending resources. Please refresh the page.
+          </p>
+        `;
+      }
+    }
+
+    // Load trending when page loads
+    document.addEventListener('DOMContentLoaded', loadTrending);
+  </script>
+
 </body>
 </html>

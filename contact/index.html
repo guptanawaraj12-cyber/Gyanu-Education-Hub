@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Gyanu Education Hub</title>
+  <meta name="description" content="Contact Gyanu Education Hub. Send us your questions, feedback, or suggestions. We'd love to hear from you!" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nawarajgupta.com.np/contact/" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Contact - Gyanu Education Hub" />
+  <meta property="og:description" content="Contact Gyanu Education Hub. Send us your questions, feedback, or suggestions." />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://nawarajgupta.com.np/contact/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+
+  <style>
+    /* ===== CONTACT PAGE STYLES ===== */
+
+    /* Contact Container */
+    .contact-section {
+      padding: 60px 20px 80px;
+      background: var(--bg-primary);
+      transition: background 0.3s ease;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* ===== CONTACT FORM ===== */
+    .contact-form-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contact-form-wrapper h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrapper .form-subtitle {
+      font-family: var(--font-body);
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .contact-form-wrapper .form-group {
+      margin-bottom: 20px;
+    }
+
+    .contact-form-wrapper .form-group label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact-form-wrapper .form-group label .required {
+      color: #ef4444;
+    }
+
+    .contact-form-wrapper .form-group input,
+    .contact-form-wrapper .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .contact-form-wrapper .form-group input:focus,
+    .contact-form-wrapper .form-group textarea:focus {
+      border-color: var(--blue-primary);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    }
+
+    .contact-form-wrapper .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form-wrapper .submit-btn {
+      font-family: var(--font-body);
+      background: var(--blue-primary);
+      color: #fff;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .contact-form-wrapper .submit-btn:hover {
+      background: var(--blue-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+    }
+
+    .contact-form-wrapper .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Form Status Messages */
+    #formStatus {
+      font-family: var(--font-body);
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    #formStatus.success {
+      display: block;
+      background: #dcfce7;
+      color: #16a34a;
+      border: 1px solid #86efac;
+    }
+
+    #formStatus.error {
+      display: block;
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fca5a5;
+    }
+
+    #formStatus.loading {
+      display: block;
+      background: #dbeafe;
+      color: #2563eb;
+      border: 1px solid #93c5fd;
+    }
+
+    body.dark-mode #formStatus.success {
+      background: #1e293b;
+      color: #4ade80;
+      border-color: #22c55e;
+    }
+
+    body.dark-mode #formStatus.error {
+      background: #1e293b;
+      color: #f87171;
+      border-color: #ef4444;
+    }
+
+    body.dark-mode #formStatus.loading {
+      background: #1e293b;
+      color: #60a5fa;
+      border-color: #3b82f6;
+    }
+
+    /* ===== CONTACT INFO ===== */
+    .contact-info-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contact-info-card:hover {
+      border-color: var(--blue-primary);
+    }
+
+    .contact-info-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .contact-info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-info-item .info-icon {
+      font-size: 1.2rem;
+      width: 36px;
+      height: 36px;
+      background: var(--bg-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-primary);
+      flex-shrink: 0;
+    }
+
+    .contact-info-item .info-text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .contact-info-item .info-text a {
+      color: var(--blue-primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-info-item .info-text a:hover {
+      color: var(--blue-hover);
+      text-decoration: underline;
+    }
+
+    /* Social Icons in Contact Info */
+    .contact-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .contact-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-social a:hover {
+      transform: translateY(-4px);
+    }
+
+    .contact-social .social-youtube:hover {
+      background: #ff0000;
+      color: #fff;
+      border-color: #ff0000;
+    }
+
+    .contact-social .social-facebook:hover {
+      background: #1877f2;
+      color: #fff;
+      border-color: #1877f2;
+    }
+
+    .contact-social .social-instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    /* Quick Response Badge */
+    .quick-response {
+      background: #dcfce7;
+      color: #16a34a;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    body.dark-mode .quick-response {
+      background: #1e293b;
+      color: #4ade80;
+    }
+
+    /* ===== QUICK LINKS ===== */
+    .quick-links-section {
+      margin-top: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .quick-links-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .quick-links-grid a {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    .quick-links-grid a:hover {
+      background: var(--bg-primary);
+      color: var(--blue-primary);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-form-wrapper {
+        padding: 24px 18px;
+      }
+
+      .contact-form-wrapper h2 {
+        font-size: 1.3rem;
+      }
+
+      .contact-info-card {
+        padding: 20px 16px;
+      }
+
+      .quick-links-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-form-wrapper {
+        padding: 18px 14px;
+      }
+
+      .contact-form-wrapper h2 {
+        font-size: 1.1rem;
+      }
+
+      .contact-form-wrapper .form-group input,
+      .contact-form-wrapper .form-group textarea {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+      }
+
+      .contact-info-item .info-text {
+        font-size: 0.9rem;
+      }
+
+      .quick-links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" /> Gyanu Education Hub 
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../notes/">Notes</a></li>
+        <li><a href="../books/">Books</a></li>
+        <li><a href="../papers/">Papers</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../contact/" class="active">Contact</a></li>
+        <li>
+          <button class="dark-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== CONTACT PAGE ===== -->
+  <main>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>📧 Contact Us</h1>
+        <p>Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>📝 Send a Message</h2>
+          <p class="form-subtitle">Fill in the form below and we'll get back to you within 24 hours.</p>
+
+          <form id="contactForm">
+            <!-- Web3Forms Access Key (Replace with your actual key) -->
+            <input type="hidden" name="access_key" value="1faf2630-a720-4238-b659-b8d1dc4a541b" />
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div class="form-group">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="e.g., Ram Sharma" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="e.g., ram@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              📧 Send Message
+            </button>
+
+            <div id="formStatus"></div>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-wrapper">
+
+          <!-- Contact Details -->
+          <div class="contact-info-card">
+            <h3>📍 Get in Touch</h3>
+
+            <div class="contact-info-item">
+              <span class="info-icon">📧</span>
+              <span class="info-text">
+                <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
+              </span>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="info-icon">📞</span>
+              <span class="info-text">
+                <a href="tel:+9779814412941">9814412941</a>
+              </span>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="info-icon">📍</span>
+              <span class="info-text">Nawalparasi, Nepal</span>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="info-icon">🕒</span>
+              <span class="info-text">Mon-Fri: 9:00 AM - 5:00 PM</span>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="info-icon">⚡</span>
+              <span class="info-text">
+                We reply within 24 hours!
+                <span class="quick-response">✅ Quick Response</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="contact-info-card">
+            <h3>🔗 Follow Us</h3>
+            <p style="font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Stay connected for daily study tips, new notes, and exam updates.
+            </p>
+            <div class="contact-social">
+              <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-youtube" title="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="quick-links-section">
+            <h3>📚 Quick Links</h3>
+            <div class="quick-links-grid">
+              <a href="../notes/">📝 Study Notes</a>
+              <a href="../books/">📚 Textbooks</a>
+              <a href="../papers/">📋 Question Papers</a>
+              <a href="../about/">📖 About</a>
+              <a href="../report-issue/">⚠️ Report Issue</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Column -->
+      <div class="footer-col">
+        <h3>📚 Gyanu Education Hub</h3>
+        <p class="footer-mission">
+          Dedicated to providing free, high-quality educational resources for every Nepali student.
+          Study smarter, not harder!
+        </p>
+        <div class="footer-badges">
+          <span class="badge-free">🌟 100% Free</span>
+          <span class="badge-trusted">🛡️ Trusted</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="../notes/">📝 Study Notes</a></li>
+          <li><a href="../books/">📚 Textbooks</a></li>
+          <li><a href="../papers/">📋 Question Papers</a></li>
+          <li><a href="../about/">📖 About</a></li>
+          <li><a href="../contact/">📧 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <span class="contact-icon">📧</span>
+            <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-icon">📞</span>
+            <a href="tel:+9779814412941">9814412941</a>
+          </li>
+          <li>
+            <span class="contact-icon">📍</span>
+            <span>Nawalparasi, Nepal</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Follow Us + Newsletter -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://youtube.com/@gyanu-notes" target="_blank" class="social-icon youtube" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1BDqvNoDzg/" target="_blank" class="social-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/gyanunotes" target="_blank" class="social-icon instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="newsletter">
+          <p class="newsletter-text">📩 Get updates on new resources!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+            <input type="email" placeholder="Your email..." required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">
+          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
+          Made with ❤️ for Nepali students.
+        </p>
+        <div class="footer-legal">
+          <a href="../privacy-policy/">Privacy Policy</a>
+          <span class="divider">|</span>
+          <a href="../terms/">Terms of Service</a>
+          <span class="divider">|</span>
+          <a href="../report-issue/">⚠️ Report Issue</a>
+        </div>
+        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MAIN JAVASCRIPT ===== -->
+  <script>
+    // === DARK MODE ===
+    const darkToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    darkToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+
+    // === HAMBURGER MENU ===
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // === BACK TO TOP ===
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.style.display = 'inline-flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // === CONTACT FORM HANDLER (Web3Forms) ===
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      const statusDiv = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Show loading state
+        statusDiv.className = 'loading';
+        statusDiv.textContent = '⏳ Sending your message...';
+        statusDiv.style.display = 'block';
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⏳ Sending...';
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            statusDiv.className = 'success';
+            statusDiv.textContent = '✅ Message sent successfully! We\'ll get back to you soon.';
+            form.reset();
+          } else {
+            statusDiv.className = 'error';
+            statusDiv.textContent = '❌ ' + json.message;
+          }
+        })
+        .catch(error => {
+          statusDiv.className = 'error';
+          statusDiv.textContent = '❌ Something went wrong. Please try again.';
+          console.error('Error:', error);
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '📧 Send Message';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1: Chemical Reactions - Gyanu Education Hub</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 40px 20px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #0ea5e9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #0284c7;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .meta {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 32px 0 16px;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 24px 0 12px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    ul,
+    ol {
+      margin: 12px 0 20px 28px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .highlight-box strong {
+      color: #0f172a;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 16px 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0ea5e9;
+      margin: 20px 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .example-box {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example-box strong {
+      color: #92400e;
+    }
+
+    .example-box .solution {
+      margin-top: 10px;
+      color: #0f172a;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 16px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    code {
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-download:hover {
+      background: #0284c7;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #f1f5f9;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      .container {
+        background: #1e293b;
+        color: #f1f5f9;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #f1f5f9;
+      }
+      p,
+      ul,
+      ol,
+      td {
+        color: #cbd5e1;
+      }
+      .meta {
+        color: #94a3b8;
+        border-bottom-color: #334155;
+      }
+      .highlight-box {
+        background: #1e293b;
+        border-left-color: #0ea5e9;
+      }
+      .example-box {
+        background: #1e293b;
+        border-color: #f59e0b;
+      }
+      .example-box strong {
+        color: #fcd34d;
+      }
+      .formula-box {
+        background: #0f172a;
+        border-color: #334155;
+      }
+      th {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      code {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      .footer-note {
+        border-top-color: #334155;
+      }
+      .back-link {
+        color: #38bdf8;
+      }
+      .back-link:hover {
+        color: #7dd3fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+      .container {
+        padding: 28px 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px 14px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .formula-box {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+      }
+      table {
+        font-size: 0.8rem;
+      }
+      th,
+      td {
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Back Link -->
+    <a href="../notes-chapters/?class=Class%2010&subject=Science" class="back-link">
+      ← Back to Chapters
+    </a>
+
+    <!-- Title -->
+    <h1>Chapter 1: Chemical Reactions and Equations</h1>
+    <div class="meta">
+      🔬 Science • Class 10 • 📅 Updated: July 10, 2026
+    </div>
+
+    <!-- ===== INTRODUCTION ===== -->
+    <h2>1. Introduction</h2>
+    <p>
+      A <strong>chemical reaction</strong> is a process in which one or more substances (reactants) are transformed into one or more new substances (products). During a chemical reaction, bonds between atoms break and new bonds form.
+    </p>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> In a chemical reaction, atoms are neither created nor destroyed. They are simply rearranged. This is the <strong>Law of Conservation of Mass</strong>.
+    </div>
+
+    <!-- ===== OBSERVATIONS ===== -->
+    <h2>2. Observations of Chemical Reactions</h2>
+    <p>You can identify a chemical reaction by observing one or more of these changes:</p>
+    <ul>
+      <li><strong>Change in state:</strong> Solid → Liquid → Gas (e.g., burning of candle wax).</li>
+      <li><strong>Change in color:</strong> Green iron nails turn reddish-brown when kept in copper sulphate solution.</li>
+      <li><strong>Evolution of gas:</strong> Bubbles or fizzing (e.g., zinc + hydrochloric acid → hydrogen gas).</li>
+      <li><strong>Change in temperature:</strong> Exothermic (releases heat) or Endothermic (absorbs heat).</li>
+      <li><strong>Formation of a precipitate:</strong> A solid forms from two liquids (e.g., AgNO₃ + NaCl → AgCl ↓).</li>
+    </ul>
+
+    <!-- ===== CHEMICAL EQUATIONS ===== -->
+    <h2>3. Chemical Equations</h2>
+    <p>
+      A <strong>chemical equation</strong> is a symbolic representation of a chemical reaction using chemical formulas and symbols.
+    </p>
+
+    <h3>3.1 Reactants and Products</h3>
+    <ul>
+      <li><strong>Reactants:</strong> The substances that react together (left side of the arrow).</li>
+      <li><strong>Products:</strong> The new substances formed (right side of the arrow).</li>
+    </ul>
+
+    <div class="formula-box">
+      Reactants → Products
+    </div>
+
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      Hydrogen + Oxygen → Water<br />
+      <code>2H₂ + O₂ → 2H₂O</code>
+    </div>
+
+    <h3>3.2 Balanced vs Unbalanced Equations</h3>
+    <p>
+      A <strong>balanced equation</strong> has the same number of atoms of each element on both sides. This follows the <strong>Law of Conservation of Mass</strong>.
+    </p>
+
+    <div class="example-box">
+      <strong>Unbalanced:</strong> H₂ + O₂ → H₂O (Oxygen atoms: 2 on left, 1 on right)<br /><br />
+      <strong>Balanced:</strong> <code>2H₂ + O₂ → 2H₂O</code> (4 H atoms, 2 O atoms on both sides)
+    </div>
+
+    <!-- ===== BALANCING EQUATIONS ===== -->
+    <h2>4. How to Balance a Chemical Equation</h2>
+    <p><strong>Step-by-step method (Hit and Trial):</strong></p>
+    <ol>
+      <li>Write the unbalanced equation (skeleton equation).</li>
+      <li>Count the number of atoms of each element on both sides.</li>
+      <li>Add coefficients (numbers in front of formulas) to balance atoms.</li>
+      <li><strong>Never change subscripts</strong> inside a chemical formula.</li>
+      <li>Start with the most complex molecule first, then balance the rest.</li>
+    </ol>
+
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      Fe + H₂O → Fe₃O₄ + H₂<br /><br />
+      <strong>Step 1:</strong> Count atoms:<br />
+      Left: Fe=1, H=2, O=1 &nbsp;|&nbsp; Right: Fe=3, H=2, O=4<br /><br />
+      <strong>Step 2:</strong> Balance Fe: <code>3Fe + H₂O → Fe₃O₄ + H₂</code><br />
+      <strong>Step 3:</strong> Balance O: <code>3Fe + 4H₂O → Fe₃O₄ + H₂</code><br />
+      <strong>Step 4:</strong> Balance H: <code>3Fe + 4H₂O → Fe₃O₄ + 4H₂</code><br /><br />
+      <strong>Final Balanced Equation:</strong><br />
+      <code>3Fe + 4H₂O → Fe₃O₄ + 4H₂</code>
+    </div>
+
+    <!-- ===== TYPES OF REACTIONS ===== -->
+    <h2>5. Types of Chemical Reactions</h2>
+
+    <h3>5.1 Combination Reaction</h3>
+    <p>Two or more substances combine to form a single product.</p>
+    <div class="formula-box">
+      A + B → AB
+    </div>
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      <code>2Mg + O₂ → 2MgO</code> (Magnesium burns in oxygen to form magnesium oxide)
+    </div>
+
+    <h3>5.2 Decomposition Reaction</h3>
+    <p>A single substance breaks down into two or more simpler substances.</p>
+    <div class="formula-box">
+      AB → A + B
+    </div>
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      <code>CaCO₃ → CaO + CO₂</code> (Heating calcium carbonate gives calcium oxide and carbon dioxide)
+    </div>
+
+    <h3>5.3 Displacement Reaction</h3>
+    <p>A more reactive element displaces a less reactive element from its compound.</p>
+    <div class="formula-box">
+      A + BC → AC + B
+    </div>
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      <code>Fe + CuSO₄ → FeSO₄ + Cu</code> (Iron displaces copper from copper sulphate)
+    </div>
+
+    <h3>5.4 Double Displacement Reaction</h3>
+    <p>Two compounds exchange ions to form two new compounds.</p>
+    <div class="formula-box">
+      AB + CD → AD + CB
+    </div>
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      <code>AgNO₃ + NaCl → AgCl ↓ + NaNO₃</code> (Silver nitrate + sodium chloride gives silver chloride precipitate)
+    </div>
+
+    <h3>5.5 Oxidation and Reduction (Redox)</h3>
+    <ul>
+      <li><strong>Oxidation:</strong> Gain of oxygen or loss of hydrogen.</li>
+      <li><strong>Reduction:</strong> Loss of oxygen or gain of hydrogen.</li>
+    </ul>
+    <div class="example-box">
+      <strong>Example:</strong><br />
+      <code>CuO + H₂ → Cu + H₂O</code><br />
+      CuO loses oxygen → <strong>Reduction</strong> (Cu is reduced)<br />
+      H₂ gains oxygen → <strong>Oxidation</strong> (H₂ is oxidized)
+    </div>
+
+    <!-- ===== SUMMARY TABLE ===== -->
+    <h2>6. Summary: Types of Reactions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Combination</strong></td>
+          <td>A + B → AB</td>
+          <td>2Mg + O₂ → 2MgO</td>
+        </tr>
+        <tr>
+          <td><strong>Decomposition</strong></td>
+          <td>AB → A + B</td>
+          <td>CaCO₃ → CaO + CO₂</td>
+        </tr>
+        <tr>
+          <td><strong>Displacement</strong></td>
+          <td>A + BC → AC + B</td>
+          <td>Fe + CuSO₄ → FeSO₄ + Cu</td>
+        </tr>
+        <tr>
+          <td><strong>Double Displacement</strong></td>
+          <td>AB + CD → AD + CB</td>
+          <td>AgNO₃ + NaCl → AgCl + NaNO₃</td>
+        </tr>
+        <tr>
+          <td><strong>Redox</strong></td>
+          <td>Oxidation + Reduction</td>
+          <td>CuO + H₂ → Cu + H₂O</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ===== IMPORTANT EQUATIONS TO REMEMBER ===== -->
+    <h2>7. Important Equations</h2>
+
+    <div class="formula-box">
+      Burning of Magnesium: 2Mg + O₂ → 2MgO
+    </div>
+    <div class="formula-box">
+      Heating of Calcium Carbonate: CaCO₃ → CaO + CO₂
+    </div>
+    <div class="formula-box">
+      Iron + Copper Sulphate: Fe + CuSO₄ → FeSO₄ + Cu
+    </div>
+    <div class="formula-box">
+      Silver Nitrate + Sodium Chloride: AgNO₃ + NaCl → AgCl + NaNO₃
+    </div>
+    <div class="formula-box">
+      Rusting of Iron: 4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃
+    </div>
+
+    <!-- ===== PDF DOWNLOAD ===== -->
+    <a href="https://drive.google.com/uc?export=download&id=YOUR_PDF_ID" class="btn-download" target="_blank">
+      📥 Download PDF Notes
+    </a>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      📚 Gyanu Education Hub • Free for every Nepali student
+    </div>
+
+  </div>
+
+</body>
+</html>
