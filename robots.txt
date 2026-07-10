@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nawarajgupta.com.np/sitemap.xml
