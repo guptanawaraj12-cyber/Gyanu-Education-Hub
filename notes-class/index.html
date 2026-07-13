@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subjects - Gyanu Education Hub</title>
+  <title>Subjects - Gyanu Notes</title>
   <meta name="description" content="Browse subjects for your class. Download free PDF notes for all subjects." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nawarajgupta.com.np/notes-class/" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Subjects - Gyanu Education Hub" />
+  <meta property="og:title" content="Subjects - Gyanu Notes" />
   <meta property="og:description" content="Browse subjects for your class. Download free PDF notes." />
-  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/logo.jpeg" />
   <meta property="og:url" content="https://nawarajgupta.com.np/notes-class/" />
   <meta property="og:type" content="website" />
 
@@ -26,17 +26,46 @@
 
   <!-- Favicon -->
   <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gyanu Notes",
+    "description": "Free educational resources for Nepali students. Download notes, textbooks, and question papers for Class 8-12.",
+    "url": "https://nawarajgupta.com.np/",
+    "logo": "https://nawarajgupta.com.np/assets/images/logo.jpeg",
+    "foundingDate": "2026",
+    "founder": {
+      "@type": "Person",
+      "name": "Nawaraj Gupta"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "gyanunotes@gmail.com",
+      "telephone": "+977-9814412941",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English", "Nepali"]
+    },
+    "sameAs": [
+      "https://youtube.com/@gyanu-notes",
+      "https://www.facebook.com/share/1BDqvNoDzg/",
+      "https://www.instagram.com/gyanunotes"
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">
-        <img src="../assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" />  Gyanu Education Hub
+      <a href="../" class="nav-logo">
+        <img src="../assets/images/logo.jpeg" alt="Gyanu Notes" style="height: 55px; width: auto; margin-right: 8px;" />  Gyanu Notes
       </a>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="../">Home</a></li>
         <li><a href="../notes/" class="active">Notes</a></li>
         <li><a href="../books/">Books</a></li>
         <li><a href="../papers/">Papers</a></li>
@@ -61,7 +90,7 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1>📖 Subjects</h1>
+        <h1> Subjects</h1>
         <p id="classDisplay">Loading class...</p>
       </div>
     </section>
@@ -69,20 +98,20 @@
     <!-- Subject Grid -->
     <section class="subject-grid-section">
       <div class="container">
-        <h2 class="section-title">📚 Select Your Subject</h2>
+        <h2 class="section-title"> Select Your Subject</h2>
         <p class="section-subtitle">Choose a subject to see all chapters and download notes.</p>
 
         <div class="subject-grid" id="subjectGrid">
           <!-- Loaded dynamically from notes.json -->
           <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body); padding: 40px 0;">
-            ⏳ Loading subjects...
+             Loading subjects...
           </p>
         </div>
 
         <!-- Back Button -->
         <div style="text-align: center; margin-top: 40px;">
           <a href="../notes/" class="btn-outline" style="display: inline-block;">
-            ← Back to Classes
+             Back to Classes
           </a>
         </div>
       </div>
@@ -95,14 +124,14 @@
     <div class="footer-container">
       <!-- Brand Column -->
       <div class="footer-col">
-        <h3>📚 Gyanu Education Hub</h3>
+        <h3> Gyanu Notes</h3>
         <p class="footer-mission">
           Dedicated to providing free, high-quality educational resources for every Nepali student.
           Study smarter, not harder!
         </p>
         <div class="footer-badges">
-          <span class="badge-free">🌟 100% Free</span>
-          <span class="badge-trusted">🛡️ Trusted</span>
+          <span class="badge-free"> 100% Free</span>
+          <span class="badge-trusted"> Trusted</span>
         </div>
       </div>
 
@@ -110,11 +139,11 @@
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="../notes/">📝 Study Notes</a></li>
-          <li><a href="../books/">📚 Textbooks</a></li>
-          <li><a href="../papers/">📋 Question Papers</a></li>
-          <li><a href="../about/">📖 About</a></li>
-          <li><a href="../contact/">📧 Contact</a></li>
+          <li><a href="../notes/"> Study Notes</a></li>
+          <li><a href="../books/"> Textbooks</a></li>
+          <li><a href="../papers/"> Question Papers</a></li>
+          <li><a href="../about/"> About</a></li>
+          <li><a href="../contact/"> Contact</a></li>
         </ul>
       </div>
 
@@ -123,15 +152,15 @@
         <h3>Contact Info</h3>
         <ul class="footer-contact">
           <li>
-            <span class="contact-icon">📧</span>
+            <span class="contact-icon"></span>
             <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
           </li>
           <li>
-            <span class="contact-icon">📞</span>
+            <span class="contact-icon"></span>
             <a href="tel:+9779814412941">9814412941</a>
           </li>
           <li>
-            <span class="contact-icon">📍</span>
+            <span class="contact-icon"></span>
             <span>Nawalparasi, Nepal</span>
           </li>
         </ul>
@@ -153,8 +182,8 @@
         </div>
 
         <div class="newsletter">
-          <p class="newsletter-text">📩 Get updates on new notes!</p>
-          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+          <p class="newsletter-text"> Get updates on new notes!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert(' Thank you for subscribing!');">
             <input type="email" placeholder="Your email..." required />
             <button type="submit">Join</button>
           </form>
@@ -166,17 +195,17 @@
     <div class="footer-bottom">
       <div class="footer-bottom-container">
         <p class="copyright">
-          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
-          Made with ❤️ for Nepali students.
+          &copy; 2026 <strong>Gyanu Notes</strong>. All rights reserved.
+          Made with  for Nepali students.
         </p>
         <div class="footer-legal">
           <a href="../privacy-policy/">Privacy Policy</a>
           <span class="divider">|</span>
           <a href="../terms/">Terms of Service</a>
           <span class="divider">|</span>
-          <a href="../report-issue/">⚠️ Report Issue</a>
+          <a href="../report-issue/"> Report Issue</a>
         </div>
-        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+        <button class="back-to-top" id="backToTop" title="Back to Top"></button>
       </div>
     </div>
   </footer>
@@ -249,7 +278,7 @@
         classDisplay.textContent = 'No class selected. Please go back and select a class.';
         grid.innerHTML = `
           <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-            ⚠️ No class selected. Please <a href="../notes/" style="color: var(--blue-primary);">go back</a> and select a class.
+             No class selected. Please <a href="../notes/" style="color: var(--blue-primary);">go back</a> and select a class.
           </p>
         `;
         return;
@@ -268,7 +297,7 @@
         if (!selectedClass) {
           grid.innerHTML = `
             <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-              ⚠️ No subjects found for ${className}. Please check back later.
+               No subjects found for ${className}. Please check back later.
             </p>
           `;
           return;
@@ -279,7 +308,7 @@
         if (subjects.length === 0) {
           grid.innerHTML = `
             <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body); padding: 40px 0;">
-              📭 No subjects available for ${className} yet. Check back soon!
+               No subjects available for ${className} yet. Check back soon!
             </p>
           `;
           return;
@@ -290,7 +319,7 @@
           const chapterCount = subject.chapters ? subject.chapters.length : 0;
           html += `
             <a href="../notes-chapters/?class=${encodeURIComponent(className)}&subject=${encodeURIComponent(subject.name)}" class="subject-card">
-              <span class="subject-icon">${subject.icon || '📖'}</span>
+              <span class="subject-icon">${subject.icon || ''}</span>
               <span class="subject-name">${subject.name}</span>
               <span class="subject-chapters">${chapterCount} Chapters</span>
             </a>
@@ -302,7 +331,7 @@
         console.error('Error loading subjects:', error);
         grid.innerHTML = `
           <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-            ⚠️ Failed to load subjects. Please refresh the page.
+             Failed to load subjects. Please refresh the page.
           </p>
         `;
       }
@@ -314,3 +343,4 @@
 
 </body>
 </html>
+

@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Books - Gyanu Education Hub</title>
+  <title>Books - Gyanu Notes</title>
   <meta name="description" content="Download free PDF textbooks for Class 8 to 12. All subjects covered." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nawarajgupta.com.np/books/" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Books - Gyanu Education Hub" />
+  <meta property="og:title" content="Books - Gyanu Notes" />
   <meta property="og:description" content="Download free PDF textbooks for Class 8 to 12. All subjects covered." />
-  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/logo.jpeg" />
   <meta property="og:url" content="https://nawarajgupta.com.np/books/" />
   <meta property="og:type" content="website" />
 
@@ -26,6 +26,39 @@
 
   <!-- Favicon -->
   <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+  <!-- ===== FAVICON ===== -->
+  <link rel="icon" type="image/x-icon" href="https://nawarajgupta.com.np/assets/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://nawarajgupta.com.np/assets/images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://nawarajgupta.com.np/assets/images/favicon-32x32.png" />
+
+  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gyanu Notes",
+    "description": "Free educational resources for Nepali students. Download notes, textbooks, and question papers for Class 8-12.",
+    "url": "https://nawarajgupta.com.np/",
+    "logo": "https://nawarajgupta.com.np/assets/images/logo.jpeg",
+    "foundingDate": "2026",
+    "founder": {
+      "@type": "Person",
+      "name": "Nawaraj Gupta"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "gyanunotes@gmail.com",
+      "telephone": "+977-9814412941",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English", "Nepali"]
+    },
+    "sameAs": [
+      "https://youtube.com/@gyanu-notes",
+      "https://www.facebook.com/share/1BDqvNoDzg/",
+      "https://www.instagram.com/gyanunotes"
+    ]
+  }
+  </script>
 
   <style>
     /* ===== BOOKS PAGE STYLES ===== */
@@ -566,10 +599,10 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">
-        <img src="../assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" /> Gyanu Education Hub </a>
+      <a href="../" class="nav-logo">
+        <img src="../assets/images/logo.jpeg" alt="Gyanu Notes" style="height: 55px; width: auto; margin-right: 8px;" /> Gyanu Notes </a>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="../">Home</a></li>
         <li><a href="../notes/">Notes</a></li>
         <li><a href="../books/" class="active">Books</a></li>
         <li><a href="../papers/">Papers</a></li>
@@ -594,7 +627,7 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1>📚 Textbooks & Reference Books</h1>
+        <h1> Textbooks & Reference Books</h1>
         <p>Download free PDF textbooks for Class 8 to 12. All subjects covered.</p>
       </div>
     </section>
@@ -629,7 +662,7 @@
         <div class="book-grid" id="bookGrid">
           <!-- Loaded dynamically from books.json -->
           <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body); padding: 40px 0;">
-            ⏳ Loading books...
+             Loading books...
           </p>
         </div>
 
@@ -648,7 +681,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 id="modalTitle">
-          📄 Loading PDF...
+           Loading PDF...
           <span class="badge-pdf">PDF Preview</span>
         </h3>
         <button class="modal-close" id="modalClose" aria-label="Close Preview">
@@ -658,14 +691,14 @@
       <div class="modal-body" id="modalBody">
         <div class="modal-loading">
           <div class="spinner"></div>
-          <span>⏳ Loading PDF preview...</span>
+          <span> Loading PDF preview...</span>
         </div>
       </div>
       <div class="modal-footer">
-        <span class="footer-left" id="modalFooterInfo">📄 Preview mode • Scroll to read</span>
+        <span class="footer-left" id="modalFooterInfo"> Preview mode  Scroll to read</span>
         <div class="footer-right">
           <a href="#" id="modalDownloadLink" class="btn-download-modal" target="_blank">
-            📥 Download PDF
+             Download PDF
           </a>
           <button class="btn-close-modal" id="modalCloseBtn">Close</button>
         </div>
@@ -678,14 +711,14 @@
     <div class="footer-container">
       <!-- Brand Column -->
       <div class="footer-col">
-        <h3>📚 Gyanu Education Hub</h3>
+        <h3> Gyanu Notes</h3>
         <p class="footer-mission">
           Dedicated to providing free, high-quality educational resources for every Nepali student.
           Study smarter, not harder!
         </p>
         <div class="footer-badges">
-          <span class="badge-free">🌟 100% Free</span>
-          <span class="badge-trusted">🛡️ Trusted</span>
+          <span class="badge-free"> 100% Free</span>
+          <span class="badge-trusted"> Trusted</span>
         </div>
       </div>
 
@@ -693,11 +726,11 @@
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="../notes/">📝 Study Notes</a></li>
-          <li><a href="../books/">📚 Textbooks</a></li>
-          <li><a href="../papers/">📋 Question Papers</a></li>
-          <li><a href="../about/">📖 About</a></li>
-          <li><a href="../contact/">📧 Contact</a></li>
+          <li><a href="../notes/"> Study Notes</a></li>
+          <li><a href="../books/"> Textbooks</a></li>
+          <li><a href="../papers/"> Question Papers</a></li>
+          <li><a href="../about/"> About</a></li>
+          <li><a href="../contact/"> Contact</a></li>
         </ul>
       </div>
 
@@ -706,15 +739,15 @@
         <h3>Contact Info</h3>
         <ul class="footer-contact">
           <li>
-            <span class="contact-icon">📧</span>
+            <span class="contact-icon"></span>
             <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
           </li>
           <li>
-            <span class="contact-icon">📞</span>
+            <span class="contact-icon"></span>
             <a href="tel:+9779814412941">9814412941</a>
           </li>
           <li>
-            <span class="contact-icon">📍</span>
+            <span class="contact-icon"></span>
             <span>Nawalparasi, Nepal</span>
           </li>
         </ul>
@@ -736,8 +769,8 @@
         </div>
 
         <div class="newsletter">
-          <p class="newsletter-text">📩 Get updates on new books!</p>
-          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+          <p class="newsletter-text"> Get updates on new books!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert(' Thank you for subscribing!');">
             <input type="email" placeholder="Your email..." required />
             <button type="submit">Join</button>
           </form>
@@ -749,17 +782,17 @@
     <div class="footer-bottom">
       <div class="footer-bottom-container">
         <p class="copyright">
-          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
-          Made with ❤️ for Nepali students.
+          &copy; 2026 <strong>Gyanu Notes</strong>. All rights reserved.
+          Made with  for Nepali students.
         </p>
         <div class="footer-legal">
           <a href="../privacy-policy/">Privacy Policy</a>
           <span class="divider">|</span>
           <a href="../terms/">Terms of Service</a>
           <span class="divider">|</span>
-          <a href="../report-issue/">⚠️ Report Issue</a>
+          <a href="../report-issue/"> Report Issue</a>
         </div>
-        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+        <button class="back-to-top" id="backToTop" title="Back to Top"></button>
       </div>
     </div>
   </footer>
@@ -823,14 +856,14 @@
       const downloadLink = document.getElementById('modalDownloadLink');
       const footerInfo = document.getElementById('modalFooterInfo');
 
-      titleEl.innerHTML = `📄 ${title} <span class="badge-pdf">PDF Preview</span>`;
+      titleEl.innerHTML = ` ${title} <span class="badge-pdf">PDF Preview</span>`;
       downloadLink.href = filePath;
-      footerInfo.textContent = `📄 Previewing: ${title} • Scroll to read`;
+      footerInfo.textContent = ` Previewing: ${title}  Scroll to read`;
 
       bodyEl.innerHTML = `
         <div class="modal-loading">
           <div class="spinner"></div>
-          <span>⏳ Loading PDF preview...</span>
+          <span> Loading PDF preview...</span>
         </div>
       `;
       modal.classList.add('active');
@@ -891,7 +924,7 @@
         if (allBooks.length === 0) {
           document.getElementById('bookGrid').innerHTML = `
             <div class="empty-state" style="grid-column: 1/-1;">
-              <span class="empty-icon">📚</span>
+              <span class="empty-icon"></span>
               <h3>No Books Available</h3>
               <p>Check back soon! We're adding more textbooks.</p>
             </div>
@@ -902,7 +935,7 @@
         console.error('Error loading books:', error);
         document.getElementById('bookGrid').innerHTML = `
           <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-            ⚠️ Failed to load books. Please refresh the page.
+             Failed to load books. Please refresh the page.
           </p>
         `;
       }
@@ -991,7 +1024,7 @@
       if (visibleBooks.length === 0) {
         grid.innerHTML = `
           <div class="empty-state" style="grid-column: 1/-1;">
-            <span class="empty-icon">🔍</span>
+            <span class="empty-icon"></span>
             <h3>No Books Found</h3>
             <p>Try adjusting your search or filters.</p>
           </div>
@@ -1004,22 +1037,22 @@
         const isNew = (new Date(book.dateAdded) > new Date(Date.now() - 3 * 24 * 60 * 60 * 1000));
         html += `
           <div class="book-card">
-            <span class="book-icon">${book.icon || '📚'}</span>
+            <span class="book-icon">${book.icon || ''}</span>
             <div class="book-title">${book.title}</div>
             <div class="book-author">${book.author || 'Unknown Author'}</div>
             <div class="book-meta">
               ${book.class ? `<span class="badge badge-class">${book.class}</span>` : ''}
               ${book.subject ? `<span class="badge badge-subject">${book.subject}</span>` : ''}
-              ${isNew ? '<span class="badge badge-new">🆕 NEW</span>' : ''}
+              ${isNew ? '<span class="badge badge-new"> NEW</span>' : ''}
             </div>
             <div class="book-footer">
-              <span class="download-count">⬇️ ${book.downloads || 0} downloads</span>
+              <span class="download-count"> ${book.downloads || 0} downloads</span>
               <div class="book-actions">
                 <button class="btn-preview-pdf" onclick="openPDFPreview('${book.title.replace(/'/g, "\\'")}', '${book.filePath}')">
-                  👁️ Preview
+                   Preview
                 </button>
                 <a href="${book.filePath}" class="btn-download" target="_blank" download>
-                  📥 Download
+                   Download
                 </a>
               </div>
             </div>
@@ -1048,3 +1081,4 @@
 
 </body>
 </html>
+

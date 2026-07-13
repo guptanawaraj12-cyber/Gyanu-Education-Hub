@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chapters - Gyanu Education Hub</title>
+  <title>Chapters - Gyanu Notes</title>
   <meta name="description" content="Download free PDF notes chapter-wise. All subjects covered." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://nawarajgupta.com.np/notes-chapters/" />
 
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Chapters - Gyanu Education Hub" />
+  <meta property="og:title" content="Chapters - Gyanu Notes" />
   <meta property="og:description" content="Download free PDF notes chapter-wise. All subjects covered." />
-  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/og-image.jpg" />
+  <meta property="og:image" content="https://nawarajgupta.com.np/assets/images/logo.jpeg" />
   <meta property="og:url" content="https://nawarajgupta.com.np/notes-chapters/" />
   <meta property="og:type" content="website" />
 
@@ -26,6 +26,35 @@
 
   <!-- Favicon -->
   <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- ===== JSON-LD STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Gyanu Notes",
+    "description": "Free educational resources for Nepali students. Download notes, textbooks, and question papers for Class 8-12.",
+    "url": "https://nawarajgupta.com.np/",
+    "logo": "https://nawarajgupta.com.np/assets/images/logo.jpeg",
+    "foundingDate": "2026",
+    "founder": {
+      "@type": "Person",
+      "name": "Nawaraj Gupta"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "gyanunotes@gmail.com",
+      "telephone": "+977-9814412941",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English", "Nepali"]
+    },
+    "sameAs": [
+      "https://youtube.com/@gyanu-notes",
+      "https://www.facebook.com/share/1BDqvNoDzg/",
+      "https://www.instagram.com/gyanunotes"
+    ]
+  }
+  </script>
 
   <style>
     /* ===== CHAPTER CARD ===== */
@@ -438,12 +467,11 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-    <a href="../index.html" class="nav-logo">
-        <img src="../assets/images/logo.png" alt="Gyanu Education Hub" style="height: 55px; width: auto; margin-right: 8px;" />  Gyanu Education Hub
- </a>
+    <a href="../" class="nav-logo">
+        <img src="../assets/images/logo.jpeg" alt="Gyanu Notes" style="height: 55px; width: auto; margin-right: 8px;" />  Gyanu Notes
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="../">Home</a></li>
         <li><a href="../notes/" class="active">Notes</a></li>
         <li><a href="../books/">Books</a></li>
         <li><a href="../papers/">Papers</a></li>
@@ -468,7 +496,7 @@
     <!-- Page Header -->
     <section class="page-header">
       <div class="container">
-        <h1>📄 Chapters</h1>
+        <h1> Chapters</h1>
         <p id="pageInfo">Loading...</p>
       </div>
     </section>
@@ -476,20 +504,20 @@
     <!-- Chapter Grid -->
     <section class="chapter-grid-section">
       <div class="container">
-        <h2 class="section-title">📖 Select a Chapter</h2>
+        <h2 class="section-title"> Select a Chapter</h2>
         <p class="section-subtitle">Preview PDF, read HTML notes, or download for offline study.</p>
 
         <div class="chapter-grid" id="chapterGrid">
           <!-- Loaded dynamically from notes.json -->
           <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body); padding: 40px 0;">
-            ⏳ Loading chapters...
+             Loading chapters...
           </p>
         </div>
 
         <!-- Back Button -->
         <div style="text-align: center; margin-top: 40px;">
           <a href="javascript:history.back()" class="btn-outline" style="display: inline-block;">
-            ← Back to Subjects
+             Back to Subjects
           </a>
         </div>
       </div>
@@ -502,7 +530,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 id="modalTitle">
-          📄 Loading PDF...
+           Loading PDF...
           <span class="badge-pdf">PDF Preview</span>
         </h3>
         <button class="modal-close" id="modalClose" aria-label="Close Preview">
@@ -512,14 +540,14 @@
       <div class="modal-body" id="modalBody">
         <div class="modal-loading">
           <div class="spinner"></div>
-          <span>⏳ Loading PDF preview...</span>
+          <span> Loading PDF preview...</span>
         </div>
       </div>
       <div class="modal-footer">
-        <span class="footer-left" id="modalFooterInfo">📄 Preview mode • Scroll to read</span>
+        <span class="footer-left" id="modalFooterInfo"> Preview mode  Scroll to read</span>
         <div class="footer-right">
           <a href="#" id="modalDownloadLink" class="btn-download-modal" target="_blank">
-            📥 Download PDF
+             Download PDF
           </a>
           <button class="btn-close-modal" id="modalCloseBtn">Close</button>
         </div>
@@ -532,14 +560,14 @@
     <div class="footer-container">
       <!-- Brand Column -->
       <div class="footer-col">
-        <h3>📚 Gyanu Education Hub</h3>
+        <h3> Gyanu Notes</h3>
         <p class="footer-mission">
           Dedicated to providing free, high-quality educational resources for every Nepali student.
           Study smarter, not harder!
         </p>
         <div class="footer-badges">
-          <span class="badge-free">🌟 100% Free</span>
-          <span class="badge-trusted">🛡️ Trusted</span>
+          <span class="badge-free"> 100% Free</span>
+          <span class="badge-trusted"> Trusted</span>
         </div>
       </div>
 
@@ -547,11 +575,11 @@
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul class="footer-links">
-          <li><a href="../notes/">📝 Study Notes</a></li>
-          <li><a href="../books/">📚 Textbooks</a></li>
-          <li><a href="../papers/">📋 Question Papers</a></li>
-          <li><a href="../about/">📖 About</a></li>
-          <li><a href="../contact/">📧 Contact</a></li>
+          <li><a href="../notes/"> Study Notes</a></li>
+          <li><a href="../books/"> Textbooks</a></li>
+          <li><a href="../papers/"> Question Papers</a></li>
+          <li><a href="../about/"> About</a></li>
+          <li><a href="../contact/"> Contact</a></li>
         </ul>
       </div>
 
@@ -560,15 +588,15 @@
         <h3>Contact Info</h3>
         <ul class="footer-contact">
           <li>
-            <span class="contact-icon">📧</span>
+            <span class="contact-icon"></span>
             <a href="mailto:gyanunotes@gmail.com">gyanunotes@gmail.com</a>
           </li>
           <li>
-            <span class="contact-icon">📞</span>
+            <span class="contact-icon"></span>
             <a href="tel:+9779814412941">9814412941</a>
           </li>
           <li>
-            <span class="contact-icon">📍</span>
+            <span class="contact-icon"></span>
             <span>Nawalparasi, Nepal</span>
           </li>
         </ul>
@@ -590,8 +618,8 @@
         </div>
 
         <div class="newsletter">
-          <p class="newsletter-text">📩 Get updates on new notes!</p>
-          <form id="newsletterForm" onsubmit="event.preventDefault(); alert('✅ Thank you for subscribing!');">
+          <p class="newsletter-text"> Get updates on new notes!</p>
+          <form id="newsletterForm" onsubmit="event.preventDefault(); alert(' Thank you for subscribing!');">
             <input type="email" placeholder="Your email..." required />
             <button type="submit">Join</button>
           </form>
@@ -603,17 +631,17 @@
     <div class="footer-bottom">
       <div class="footer-bottom-container">
         <p class="copyright">
-          &copy; 2026 <strong>Gyanu Education Hub</strong>. All rights reserved.
-          Made with ❤️ for Nepali students.
+          &copy; 2026 <strong>Gyanu Notes</strong>. All rights reserved.
+          Made with  for Nepali students.
         </p>
         <div class="footer-legal">
           <a href="../privacy-policy/">Privacy Policy</a>
           <span class="divider">|</span>
           <a href="../terms/">Terms of Service</a>
           <span class="divider">|</span>
-          <a href="../report-issue/">⚠️ Report Issue</a>
+          <a href="../report-issue/"> Report Issue</a>
         </div>
-        <button class="back-to-top" id="backToTop" title="Back to Top">⬆</button>
+        <button class="back-to-top" id="backToTop" title="Back to Top"></button>
       </div>
     </div>
   </footer>
@@ -686,15 +714,15 @@
       const downloadLink = document.getElementById('modalDownloadLink');
       const footerInfo = document.getElementById('modalFooterInfo');
 
-      titleEl.innerHTML = `📄 ${title} <span class="badge-pdf">PDF Preview</span>`;
+      titleEl.innerHTML = ` ${title} <span class="badge-pdf">PDF Preview</span>`;
       downloadLink.href = filePath;
-      footerInfo.textContent = `📄 Previewing: ${title} • Scroll to read`;
+      footerInfo.textContent = ` Previewing: ${title}  Scroll to read`;
 
       // Show loading with spinner
       bodyEl.innerHTML = `
         <div class="modal-loading">
           <div class="spinner"></div>
-          <span>⏳ Loading PDF preview...</span>
+          <span> Loading PDF preview...</span>
         </div>
       `;
       modal.classList.add('active');
@@ -746,13 +774,13 @@
         pageInfo.textContent = 'No class or subject selected. Please go back and select again.';
         grid.innerHTML = `
           <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-            ⚠️ Missing class or subject. Please <a href="../notes/" style="color: var(--blue-primary);">go back</a> and start over.
+             Missing class or subject. Please <a href="../notes/" style="color: var(--blue-primary);">go back</a> and start over.
           </p>
         `;
         return;
       }
 
-      pageInfo.textContent = `${className} • ${subjectName}`;
+      pageInfo.textContent = `${className}  ${subjectName}`;
 
       try {
         const response = await fetch('../data/notes.json');
@@ -765,7 +793,7 @@
         if (!selectedClass) {
           grid.innerHTML = `
             <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-              ⚠️ Class "${className}" not found.
+               Class "${className}" not found.
             </p>
           `;
           return;
@@ -777,7 +805,7 @@
         if (!selectedSubject) {
           grid.innerHTML = `
             <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-              ⚠️ Subject "${subjectName}" not found for ${className}.
+               Subject "${subjectName}" not found for ${className}.
             </p>
           `;
           return;
@@ -788,7 +816,7 @@
         if (chapters.length === 0) {
           grid.innerHTML = `
             <p style="text-align:center; grid-column: 1/-1; color: var(--text-secondary); font-family: var(--font-body); padding: 40px 0;">
-              📭 No chapters available for ${subjectName} (${className}) yet. Check back soon!
+               No chapters available for ${subjectName} (${className}) yet. Check back soon!
             </p>
           `;
           return;
@@ -805,7 +833,7 @@
           if (chapter.filePath) {
             actionsHtml += `
               <button class="btn-preview-pdf" onclick="openPDFPreview('${chapter.title.replace(/'/g, "\\'")}', '${chapter.filePath}')">
-                👁️ Preview PDF
+                 Preview PDF
               </button>
             `;
           }
@@ -814,7 +842,7 @@
           if (chapter.htmlPath) {
             actionsHtml += `
               <a href="${chapter.htmlPath}" class="btn-read" target="_blank">
-                📖 Read Notes
+                 Read Notes
               </a>
             `;
           }
@@ -823,7 +851,7 @@
           if (chapter.filePath) {
             actionsHtml += `
               <a href="${chapter.filePath}" class="btn-download" target="_blank" download>
-                📥 Download PDF
+                 Download PDF
               </a>
             `;
           }
@@ -833,8 +861,8 @@
               <div class="chapter-info">
                 <div class="chapter-title">${chapter.title}</div>
                 <div class="chapter-meta">
-                  <span>⬇️ ${chapter.downloads || 0} downloads</span>
-                  ${isNew ? '<span style="color: #22c55e; font-weight: 600;">🆕 NEW</span>' : ''}
+                  <span> ${chapter.downloads || 0} downloads</span>
+                  ${isNew ? '<span style="color: #22c55e; font-weight: 600;"> NEW</span>' : ''}
                 </div>
               </div>
               <div class="chapter-actions">
@@ -849,7 +877,7 @@
         console.error('Error loading chapters:', error);
         grid.innerHTML = `
           <p style="text-align:center; grid-column: 1/-1; color: #ef4444; font-family: var(--font-body); padding: 40px 0;">
-            ⚠️ Failed to load chapters. Please refresh the page.
+             Failed to load chapters. Please refresh the page.
           </p>
         `;
       }
@@ -861,3 +889,4 @@
 
 </body>
 </html>
+
