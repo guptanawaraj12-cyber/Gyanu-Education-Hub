@@ -6,38 +6,12 @@
         {
           "name": "Mathematics",
           "icon": "📐",
-          "chapters": [
-            {
-              "id": "8-math-1",
-              "title": "Chapter 1: Sets",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-8-math-ch1.html",
-              "downloads": 45,
-              "dateAdded": "2026-07-10"
-            },
-            {
-              "id": "8-math-2",
-              "title": "Chapter 2: Algebra",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-8-math-ch2.html",
-              "downloads": 38,
-              "dateAdded": "2026-07-09"
-            }
-          ]
+          "chapters": []
         },
         {
           "name": "Science",
           "icon": "🔬",
-          "chapters": [
-            {
-              "id": "8-sci-1",
-              "title": "Chapter 1: Cell Biology",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-8-sci-ch1.html",
-              "downloads": 52,
-              "dateAdded": "2026-07-08"
-            }
-          ]
+          "chapters": []
         },
         {
           "name": "Nepali",
@@ -102,70 +76,12 @@
         {
           "name": "Mathematics",
           "icon": "📐",
-          "chapters": [
-            {
-              "id": "10-math-1",
-              "title": "Chapter 1: Sets and Functions",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-math-ch1.html",
-              "downloads": 152,
-              "dateAdded": "2026-07-10"
-            },
-            {
-              "id": "10-math-2",
-              "title": "Chapter 2: Algebra",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-math-ch2.html",
-              "downloads": 89,
-              "dateAdded": "2026-07-09"
-            },
-            {
-              "id": "10-math-3",
-              "title": "Chapter 3: Trigonometry",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-math-ch3.html",
-              "downloads": 210,
-              "dateAdded": "2026-07-08"
-            },
-            {
-              "id": "10-math-4",
-              "title": "Chapter 4: Geometry",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-math-ch4.html",
-              "downloads": 67,
-              "dateAdded": "2026-07-07"
-            },
-            {
-              "id": "10-math-5",
-              "title": "Chapter 5: Statistics",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-math-ch5.html",
-              "downloads": 45,
-              "dateAdded": "2026-07-06"
-            }
-          ]
+          "chapters": []
         },
         {
           "name": "Science",
           "icon": "🔬",
-          "chapters": [
-            {
-              "id": "10-sci-1",
-              "title": "Chapter 1: Chemical Reactions",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-sci-ch1.html",
-              "downloads": 76,
-              "dateAdded": "2026-07-10"
-            },
-            {
-              "id": "10-sci-2",
-              "title": "Chapter 2: Electricity",
-              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-              "htmlPath": "../notes-content/class-10-sci-ch2.html",
-              "downloads": 54,
-              "dateAdded": "2026-07-09"
-            }
-          ]
+          "chapters": []
         },
         {
           "name": "Nepali",
@@ -255,12 +171,382 @@
         {
           "name": "Physics",
           "icon": "⚛️",
-          "chapters": []
+          "chapters": [
+            {
+              "id": "12-phys-1",
+              "title": "Chapter 1: Rotational Dynamics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch1.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-2",
+              "title": "Chapter 2: Periodic Motion",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch2.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-3",
+              "title": "Chapter 3: Fluid Statics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch3.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-4",
+              "title": "Chapter 4: First Law of Thermodynamics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch4.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-5",
+              "title": "Chapter 5: Second Law of Thermodynamics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch5.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-6",
+              "title": "Chapter 6: Wave Motion",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch6.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-7",
+              "title": "Chapter 7: Mechanical Waves",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch7.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-8",
+              "title": "Chapter 8: Waves in Pipes and Strings",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch8.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-9",
+              "title": "Chapter 9: Acoustics Phenomena",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch9.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-10",
+              "title": "Chapter 10: Nature and Propagation of Light",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch10.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-11",
+              "title": "Chapter 11: Interference",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch11.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-12",
+              "title": "Chapter 12: Diffraction",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch12.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-13",
+              "title": "Chapter 13: Polarisation",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch13.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-14",
+              "title": "Chapter 14: Electrical Circuit",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch14.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-15",
+              "title": "Chapter 15: Thermoelectric Effect",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch15.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-16",
+              "title": "Chapter 16: Magnetic Field",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch16.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-17",
+              "title": "Chapter 17: Magnetic Properties of Materials",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch17.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-18",
+              "title": "Chapter 18: Electromagnetic Induction",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch18.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-19",
+              "title": "Chapter 19: Alternating Current",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch19.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-20",
+              "title": "Chapter 20: Electrons",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch20.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-21",
+              "title": "Chapter 21: Photons",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch21.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-22",
+              "title": "Chapter 22: Semiconductor Devices",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch22.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-23",
+              "title": "Chapter 23: Quantisation of Energy",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch23.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-24",
+              "title": "Chapter 24: Radioactivity and Nuclear Reaction",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch24.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-phys-25",
+              "title": "Chapter 25: Recent Trends in Physics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-phys-ch25.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            }
+          ]
         },
         {
           "name": "Chemistry",
           "icon": "🧪",
-          "chapters": []
+          "chapters": [
+            {
+              "id": "12-chem-1",
+              "title": "Chapter 1: Volumetric Analysis",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch1.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-2",
+              "title": "Chapter 2: Ionic Equilibrium",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch2.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-3",
+              "title": "Chapter 3: Chemical Kinetics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch3.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-4",
+              "title": "Chapter 4: Thermodynamics",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch4.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-5",
+              "title": "Chapter 5: Electrochemistry",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch5.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-6",
+              "title": "Chapter 6: Transition Metals",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch6.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-7",
+              "title": "Chapter 7: Studies of Heavy Metals",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch7.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-8",
+              "title": "Chapter 8: Haloalkanes",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch8.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-9",
+              "title": "Chapter 9: Haloarenes",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch9.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-10",
+              "title": "Chapter 10: Alcohols",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch10.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-11",
+              "title": "Chapter 11: Phenols",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch11.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-12",
+              "title": "Chapter 12: Ethers",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch12.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-13",
+              "title": "Chapter 13: Aldehydes and Ketones",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch13.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-14",
+              "title": "Chapter 14: Carboxylic Acid and its Derivatives",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch14.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-15",
+              "title": "Chapter 15: Nitro Compounds",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch15.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-16",
+              "title": "Chapter 16: Amines",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch16.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-17",
+              "title": "Chapter 17: Organometallic Compounds",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch17.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-18",
+              "title": "Chapter 18: Chemistry in the Service of Mankind",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch18.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-19",
+              "title": "Chapter 19: Cement",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch19.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-20",
+              "title": "Chapter 20: Paper and Pulp",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch20.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            },
+            {
+              "id": "12-chem-21",
+              "title": "Chapter 21: Nuclear Chemistry and Applications of Radioactivity",
+              "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
+              "htmlPath": "../notes-content/class-12-chem-ch21.html",
+              "downloads": 0,
+              "dateAdded": "2026-07-14"
+            }
+          ]
         },
         {
           "name": "Biology",
@@ -303,36 +589,25 @@
   "trending": [
     {
       "id": "trend-1",
-      "title": "Trigonometry Formulas & Tricks",
-      "subject": "Mathematics",
-      "class": "Class 10",
+      "title": "Class 12 Physics - Rotational Dynamics",
+      "subject": "Physics",
+      "class": "Class 12",
       "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-      "htmlPath": "../notes-content/sample-note.html",
-      "icon": "📐",
-      "downloads": 210,
-      "dateAdded": "2026-07-08"
+      "htmlPath": "../notes-content/class-12-phys-ch1.html",
+      "icon": "⚛️",
+      "downloads": 0,
+      "dateAdded": "2026-07-14"
     },
     {
       "id": "trend-2",
-      "title": "Chemical Reactions & Equations",
-      "subject": "Science",
-      "class": "Class 10",
-      "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-      "htmlPath": "../notes-content/sample-note.html",
-      "icon": "🧪",
-      "downloads": 185,
-      "dateAdded": "2026-07-07"
-    },
-    {
-      "id": "trend-3",
-      "title": "Nepali Grammar Guide",
-      "subject": "Nepali",
+      "title": "Class 12 Chemistry - Volumetric Analysis",
+      "subject": "Chemistry",
       "class": "Class 12",
       "filePath": "https://drive.google.com/uc?export=download&id=YOUR_PDF_ID",
-      "htmlPath": "../notes-content/sample-note.html",
-      "icon": "📖",
-      "downloads": 167,
-      "dateAdded": "2026-07-06"
+      "htmlPath": "../notes-content/class-12-chem-ch1.html",
+      "icon": "🧪",
+      "downloads": 0,
+      "dateAdded": "2026-07-14"
     }
   ]
 }

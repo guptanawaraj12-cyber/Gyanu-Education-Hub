@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 1: Rotational Dynamics - Full Detailed Note</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 40px 20px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #0ea5e9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #0284c7;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .meta {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .meta .tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0ea5e9;
+      padding: 2px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .toc {
+      background: #f1f5f9;
+      padding: 24px 28px;
+      border-radius: 12px;
+      margin: 24px 0 32px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .toc h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    .toc ul li {
+      margin-bottom: 6px;
+      color: #334155;
+      font-size: 0.9rem;
+    }
+
+    .toc ul li a {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+
+    .toc ul li a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #0ea5e9;
+    }
+
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 28px 0 12px;
+    }
+
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 20px 0 8px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    ul,
+    ol {
+      margin: 12px 0 20px 28px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .highlight-box strong {
+      color: #0f172a;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 16px 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #0ea5e9;
+      margin: 20px 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: auto;
+    }
+
+    .formula-box-small {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0ea5e9;
+      margin: 16px 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: auto;
+    }
+
+    .example-box {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example-box strong {
+      color: #92400e;
+    }
+
+    .example-box .solution {
+      margin-top: 10px;
+      color: #0f172a;
+    }
+
+    .derivation-box {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 20px 24px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: auto;
+    }
+
+    .derivation-box .step {
+      margin: 8px 0;
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    .derivation-box .step-number {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    .key-point-box {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .key-point-box strong {
+      color: #065f46;
+    }
+
+    .application-box {
+      background: #e0e7ff;
+      border: 1px solid #818cf8;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .application-box strong {
+      color: #4338ca;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-download:hover {
+      background: #0284c7;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #f1f5f9;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      .container {
+        background: #1e293b;
+        color: #f1f5f9;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #f1f5f9;
+      }
+      p,
+      ul,
+      ol,
+      td {
+        color: #cbd5e1;
+      }
+      .meta {
+        color: #94a3b8;
+        border-bottom-color: #334155;
+      }
+      .meta .tag {
+        background: #1e293b;
+        color: #38bdf8;
+      }
+      .toc {
+        background: #0f172a;
+        border-color: #334155;
+      }
+      .toc ul li {
+        color: #cbd5e1;
+      }
+      .highlight-box {
+        background: #1e293b;
+        border-left-color: #0ea5e9;
+      }
+      .example-box {
+        background: #1e293b;
+        border-color: #f59e0b;
+      }
+      .example-box strong {
+        color: #fcd34d;
+      }
+      .formula-box,
+      .formula-box-small {
+        background: #0f172a;
+        border-color: #334155;
+        color: #38bdf8;
+      }
+      .derivation-box {
+        background: #0f172a;
+        border-color: #334155;
+      }
+      .derivation-box .step {
+        color: #f1f5f9;
+      }
+      .derivation-box .step-number {
+        background: #0ea5e9;
+        color: #fff;
+      }
+      .key-point-box {
+        background: #064e3b;
+        border-color: #34d399;
+      }
+      .key-point-box strong {
+        color: #6ee7b7;
+      }
+      .application-box {
+        background: #1e1b4b;
+        border-color: #818cf8;
+      }
+      .application-box strong {
+        color: #a5b4fc;
+      }
+      th {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      .footer-note {
+        border-top-color: #334155;
+      }
+      .back-link {
+        color: #38bdf8;
+      }
+      .back-link:hover {
+        color: #7dd3fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+      .container {
+        padding: 28px 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      .toc ul {
+        columns: 1;
+      }
+      .meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px 14px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .formula-box {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+      }
+      table {
+        font-size: 0.8rem;
+      }
+      th,
+      td {
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Back Link -->
+    <a href="../notes-chapters/?class=Class%2012&subject=Physics" class="back-link">← Back to Chapters</a>
+
+    <h1>Chapter 1: Rotational Dynamics</h1>
+    <div class="meta">
+      <span>⚛️ Physics • Class 12</span>
+      <span>📅 Updated: July 19, 2026</span>
+      <span class="tag">📖 Full Detailed Note</span>
+      <span class="tag">🏆 NEB Syllabus</span>
+      <span class="tag">📝 All Derivations Included</span>
+    </div>
+
+    <!-- ===== TABLE OF CONTENTS ===== -->
+    <div class="toc">
+      <h3>📑 Table of Contents</h3>
+      <ul>
+        <li><a href="#introduction">1. Introduction to Rotational Dynamics</a></li>
+        <li><a href="#kinematics">2. Angular Kinematics</a></li>
+        <li><a href="#relation">3. Relation Between Linear and Angular Quantities</a></li>
+        <li><a href="#derivation-angular">4. Derivation of Angular Motion Equations</a></li>
+        <li><a href="#moment">5. Moment of Inertia</a></li>
+        <li><a href="#derivation-moment">6. Derivation of Moment of Inertia Formulas</a></li>
+        <li><a href="#radius">7. Radius of Gyration</a></li>
+        <li><a href="#torque">8. Torque and Angular Acceleration</a></li>
+        <li><a href="#derivation-torque">9. Derivation of τ = Iα</a></li>
+        <li><a href="#work">10. Work and Power in Rotational Motion</a></li>
+        <li><a href="#angular">11. Angular Momentum</a></li>
+        <li><a href="#derivation-angular-momentum">12. Conservation of Angular Momentum</a></li>
+        <li><a href="#rolling">13. Kinetic Energy of a Rolling Body</a></li>
+        <li><a href="#theorems">14. Theorems of Moment of Inertia</a></li>
+        <li><a href="#derivation-theorems">15. Derivations of Theorems</a></li>
+        <li><a href="#formulas">16. Important Formulas</a></li>
+        <li><a href="#examples">17. Solved Examples</a></li>
+        <li><a href="#practice">18. Practice Problems</a></li>
+        <li><a href="#applications">19. Real-Life Applications</a></li>
+      </ul>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 1. INTRODUCTION ===== -->
+    <!-- ======================================== -->
+    <h2 id="introduction">1. Introduction to Rotational Dynamics</h2>
+
+    <p>
+      <strong>Rotational dynamics</strong> is the branch of classical mechanics that deals with the motion of rigid bodies rotating about a fixed axis. It is the rotational analogue of <strong>translational dynamics</strong> (linear motion).
+    </p>
+
+    <p>
+      A rigid body is defined as a body in which the distance between any two particles remains constant during motion. In rotational motion, every particle of the body moves in a circular path about a fixed axis, with the same angular displacement, angular velocity, and angular acceleration.
+    </p>
+
+    <h3>1.1 Analogies Between Linear and Rotational Motion</h3>
+
+    <p>
+      The following table shows the analogy between linear and rotational quantities:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Linear Quantity</th>
+          <th>Symbol</th>
+          <th>Rotational Quantity</th>
+          <th>Symbol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Displacement</td><td>s</td><td>Angular Displacement</td><td>θ</td></tr>
+        <tr><td>Velocity</td><td>v</td><td>Angular Velocity</td><td>ω</td></tr>
+        <tr><td>Acceleration</td><td>a</td><td>Angular Acceleration</td><td>α</td></tr>
+        <tr><td>Mass</td><td>m</td><td>Moment of Inertia</td><td>I</td></tr>
+        <tr><td>Force</td><td>F</td><td>Torque</td><td>τ</td></tr>
+        <tr><td>Momentum</td><td>p</td><td>Angular Momentum</td><td>L</td></tr>
+        <tr><td>Kinetic Energy</td><td>KE = ½mv²</td><td>Rotational KE</td><td>KE = ½Iω²</td></tr>
+        <tr><td>Newton's Second Law</td><td>F = ma</td><td>Rotational Law</td><td>τ = Iα</td></tr>
+        <tr><td>Work</td><td>W = Fs</td><td>Rotational Work</td><td>W = τθ</td></tr>
+        <tr><td>Power</td><td>P = Fv</td><td>Rotational Power</td><td>P = τω</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> The beauty of rotational dynamics is that all linear equations have exact rotational counterparts. Understanding this analogy makes learning rotational dynamics much easier.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 2. ANGULAR KINEMATICS ===== -->
+    <!-- ======================================== -->
+    <h2 id="kinematics">2. Angular Kinematics</h2>
+
+    <h3>2.1 Angular Displacement (θ)</h3>
+    <p>
+      The angle through which a body rotates about a fixed axis is called <strong>angular displacement</strong>. It is measured in <strong>radians (rad)</strong>.
+    </p>
+    <div class="formula-box">
+      θ = s / r
+    </div>
+    <p>
+      Where <strong>s</strong> is the arc length and <strong>r</strong> is the radius of the circular path.
+    </p>
+    <p>
+      <strong>Note:</strong> 1 revolution = 2π radians = 360°
+    </p>
+
+    <h3>2.2 Angular Velocity (ω)</h3>
+    <p>
+      The rate of change of angular displacement with respect to time is called <strong>angular velocity</strong>.
+    </p>
+    <div class="formula-box">
+      ω = dθ / dt
+    </div>
+    <p>
+      For uniform circular motion, angular velocity is constant:
+    </p>
+    <div class="formula-box">
+      ω = 2π / T = 2πf
+    </div>
+    <p>
+      Where <strong>T</strong> is the time period and <strong>f</strong> is the frequency.
+    </p>
+
+    <h3>2.3 Angular Acceleration (α)</h3>
+    <p>
+      The rate of change of angular velocity with respect to time is called <strong>angular acceleration</strong>.
+    </p>
+    <div class="formula-box">
+      α = dω / dt
+    </div>
+    <p>
+      When α is constant, the motion is said to have <strong>uniform angular acceleration</strong>.
+    </p>
+
+    <!-- ======================================== -->
+    <!-- ===== 3. RELATION ===== -->
+    <!-- ======================================== -->
+    <h2 id="relation">3. Relation Between Linear and Angular Quantities</h2>
+
+    <p>
+      For a particle moving in a circular path of radius <strong>r</strong>, the relations between linear and angular quantities are:
+    </p>
+
+    <h3>3.1 Linear Displacement</h3>
+    <div class="formula-box">
+      s = rθ
+    </div>
+
+    <h3>3.2 Linear Velocity</h3>
+    <div class="formula-box">
+      v = rω
+    </div>
+
+    <h3>3.3 Tangential Acceleration</h3>
+    <div class="formula-box">
+      a<sub>t</sub> = rα
+    </div>
+
+    <h3>3.4 Centripetal Acceleration</h3>
+    <div class="formula-box">
+      a<sub>c</sub> = rω² = v²/r
+    </div>
+
+    <div class="key-point-box">
+      <strong>💡 Key Point:</strong> In circular motion, there are two types of acceleration:
+      <ul>
+        <li><strong>Tangential acceleration (a<sub>t</sub>):</strong> Changes the speed (magnitude of velocity)</li>
+        <li><strong>Centripetal acceleration (a<sub>c</sub>):</strong> Changes the direction of velocity</li>
+      </ul>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 4. DERIVATION OF ANGULAR MOTION EQUATIONS ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-angular">4. Derivation of Angular Motion Equations</h2>
+
+    <p>
+      For uniform angular acceleration (α = constant), the equations of angular motion are derived below.
+    </p>
+
+    <h3>4.1 First Equation: ω = ω₀ + αt</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Angular acceleration is defined as: α = dω / dt</div>
+      <div class="step"><span class="step-number">2</span> Rearranging: dω = α dt</div>
+      <div class="step"><span class="step-number">3</span> Integrating both sides from initial to final:</div>
+      <div class="step" style="padding-left: 30px;">∫<sub>ω₀</sub><sup>ω</sup> dω = ∫<sub>0</sub><sup>t</sup> α dt</div>
+      <div class="step"><span class="step-number">4</span> Since α is constant:</div>
+      <div class="step" style="padding-left: 30px;">[ω]<sub>ω₀</sub><sup>ω</sup> = α [t]<sub>0</sub><sup>t</sup></div>
+      <div class="step"><span class="step-number">5</span> Evaluating:</div>
+      <div class="step" style="padding-left: 30px;">ω − ω₀ = αt</div>
+      <div class="step"><span class="step-number">6</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">ω = ω₀ + αt</div>
+    </div>
+
+    <h3>4.2 Second Equation: θ = ω₀t + ½αt²</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Angular velocity is defined as: ω = dθ / dt</div>
+      <div class="step"><span class="step-number">2</span> Substituting ω = ω₀ + αt:</div>
+      <div class="step" style="padding-left: 30px;">dθ / dt = ω₀ + αt</div>
+      <div class="step"><span class="step-number">3</span> Rearranging: dθ = (ω₀ + αt) dt</div>
+      <div class="step"><span class="step-number">4</span> Integrating from initial to final:</div>
+      <div class="step" style="padding-left: 30px;">∫<sub>0</sub><sup>θ</sup> dθ = ∫<sub>0</sub><sup>t</sup> (ω₀ + αt) dt</div>
+      <div class="step"><span class="step-number">5</span> Evaluating:</div>
+      <div class="step" style="padding-left: 30px;">[θ]<sub>0</sub><sup>θ</sup> = [ω₀t + ½αt²]<sub>0</sub><sup>t</sup></div>
+      <div class="step" style="padding-left: 30px;">θ = ω₀t + ½αt²</div>
+      <div class="step"><span class="step-number">6</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">θ = ω₀t + ½αt²</div>
+    </div>
+
+    <h3>4.3 Third Equation: ω² = ω₀² + 2αθ</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> From the definition: α = dω / dt and ω = dθ / dt</div>
+      <div class="step"><span class="step-number">2</span> We can write: α = ω dω / dθ</div>
+      <div class="step"><span class="step-number">3</span> Rearranging: ω dω = α dθ</div>
+      <div class="step"><span class="step-number">4</span> Integrating:</div>
+      <div class="step" style="padding-left: 30px;">∫<sub>ω₀</sub><sup>ω</sup> ω dω = ∫<sub>0</sub><sup>θ</sup> α dθ</div>
+      <div class="step"><span class="step-number">5</span> Evaluating:</div>
+      <div class="step" style="padding-left: 30px;">[ω²/2]<sub>ω₀</sub><sup>ω</sup> = [αθ]<sub>0</sub><sup>θ</sup></div>
+      <div class="step" style="padding-left: 30px;">(ω²/2) − (ω₀²/2) = αθ</div>
+      <div class="step"><span class="step-number">6</span> Multiplying both sides by 2:</div>
+      <div class="step" style="padding-left: 30px;">ω² − ω₀² = 2αθ</div>
+      <div class="step"><span class="step-number">7</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">ω² = ω₀² + 2αθ</div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 5. MOMENT OF INERTIA ===== -->
+    <!-- ======================================== -->
+    <h2 id="moment">5. Moment of Inertia</h2>
+
+    <p>
+      <strong>Moment of inertia (I)</strong> is the rotational analogue of mass in linear motion. It is a measure of an object's resistance to changes in its rotational motion.
+    </p>
+
+    <h3>5.1 Definition</h3>
+    <p>
+      The moment of inertia of a body about a given axis is defined as the sum of the products of the mass of each particle and the square of its perpendicular distance from the axis of rotation.
+    </p>
+    <div class="formula-box">
+      I = Σ m<sub>i</sub>r<sub>i</sub>²
+    </div>
+    <p>
+      For a continuous body:
+    </p>
+    <div class="formula-box">
+      I = ∫ r² dm
+    </div>
+
+    <h3>5.2 Factors Affecting Moment of Inertia</h3>
+    <ul>
+      <li><strong>Mass of the body:</strong> I ∝ M (more mass → more inertia)</li>
+      <li><strong>Distribution of mass:</strong> I ∝ r² (mass farther from axis → more inertia)</li>
+      <li><strong>Shape of the body:</strong> Different shapes have different I for the same mass</li>
+      <li><strong>Axis of rotation:</strong> I is different for different axes</li>
+    </ul>
+
+    <h3>5.3 Physical Significance of Moment of Inertia</h3>
+    <p>
+      Moment of inertia is a measure of the <strong>rotational inertia</strong> of a body. The larger the moment of inertia, the more difficult it is to:
+    </p>
+    <ul>
+      <li>Start the body rotating (if at rest)</li>
+      <li>Stop the body rotating (if already rotating)</li>
+      <li>Change the angular velocity of the body</li>
+    </ul>
+
+    <div class="key-point-box">
+      <strong>💡 Key Point:</strong> Moment of inertia depends on the <strong>distribution of mass</strong> about the axis, not just the total mass. A body with mass concentrated at the center has a smaller moment of inertia than a body with mass spread out.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 6. DERIVATION OF MOMENT OF INERTIA FORMULAS ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-moment">6. Derivation of Moment of Inertia Formulas</h2>
+
+    <h3>6.1 Moment of Inertia of a Uniform Rod</h3>
+
+    <h4>6.1.1 About an Axis Through the Center (Perpendicular to the Rod)</h4>
+    <p>
+      Consider a uniform rod of length <strong>L</strong> and mass <strong>M</strong>. The axis passes through the center of mass (O) and is perpendicular to the rod.
+    </p>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Linear mass density: λ = M/L</div>
+      <div class="step"><span class="step-number">2</span> Consider a small element of length dx at distance x from the center:</div>
+      <div class="step" style="padding-left: 30px;">dm = λ dx</div>
+      <div class="step"><span class="step-number">3</span> Moment of inertia of this element:</div>
+      <div class="step" style="padding-left: 30px;">dI = x² dm = x²λ dx</div>
+      <div class="step"><span class="step-number">4</span> Total moment of inertia:</div>
+      <div class="step" style="padding-left: 30px;">I = ∫ dI = ∫<sub>−L/2</sub><sup>L/2</sup> x²λ dx</div>
+      <div class="step"><span class="step-number">5</span> Substituting λ = M/L:</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) ∫<sub>−L/2</sub><sup>L/2</sup> x² dx</div>
+      <div class="step"><span class="step-number">6</span> Evaluating the integral:</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [x³/3]<sub>−L/2</sub><sup>L/2</sup></div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [(L/2)³/3 − (−L/2)³/3]</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [(L³/8)/3 − (−L³/8)/3]</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [L³/24 − (−L³/24)]</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [L³/12]</div>
+      <div class="step"><span class="step-number">7</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I<sub>center</sub> = ¹⁄₁₂ ML²</div>
+    </div>
+
+    <h4>6.1.2 About an Axis Through One End (Perpendicular to the Rod)</h4>
+    <p>
+      Consider a uniform rod of length <strong>L</strong> and mass <strong>M</strong>. The axis passes through one end (A) and is perpendicular to the rod.
+    </p>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Linear mass density: λ = M/L</div>
+      <div class="step"><span class="step-number">2</span> Consider a small element of length dx at distance x from the end A:</div>
+      <div class="step" style="padding-left: 30px;">dm = λ dx</div>
+      <div class="step"><span class="step-number">3</span> Moment of inertia of this element:</div>
+      <div class="step" style="padding-left: 30px;">dI = x² dm = x²λ dx</div>
+      <div class="step"><span class="step-number">4</span> Total moment of inertia:</div>
+      <div class="step" style="padding-left: 30px;">I = ∫ dI = ∫<sub>0</sub><sup>L</sup> x²λ dx</div>
+      <div class="step"><span class="step-number">5</span> Substituting λ = M/L:</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) ∫<sub>0</sub><sup>L</sup> x² dx</div>
+      <div class="step"><span class="step-number">6</span> Evaluating the integral:</div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [x³/3]<sub>0</sub><sup>L</sup></div>
+      <div class="step" style="padding-left: 30px;">I = (M/L) [L³/3]</div>
+      <div class="step"><span class="step-number">7</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I<sub>end</sub> = ⅓ ML²</div>
+    </div>
+
+    <h3>6.2 Moment of Inertia of a Solid Sphere</h3>
+    <p>
+      Consider a solid sphere of radius <strong>R</strong> and mass <strong>M</strong>. The axis passes through the diameter.
+    </p>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Volume of sphere: V = ⁴⁄₃πR³</div>
+      <div class="step"><span class="step-number">2</span> Mass density: ρ = M/V = 3M/(4πR³)</div>
+      <div class="step"><span class="step-number">3</span> Consider a spherical shell of radius r and thickness dr:</div>
+      <div class="step" style="padding-left: 30px;">dV = 4πr² dr</div>
+      <div class="step" style="padding-left: 30px;">dm = ρ dV = 4πρr² dr</div>
+      <div class="step"><span class="step-number">4</span> Moment of inertia of a spherical shell about diameter: dI = ⅔r² dm</div>
+      <div class="step"><span class="step-number">5</span> Total moment of inertia:</div>
+      <div class="step" style="padding-left: 30px;">I = ∫ dI = ∫<sub>0</sub><sup>R</sup> ⅔r²(4πρr² dr)</div>
+      <div class="step" style="padding-left: 30px;">I = ⅔(4πρ) ∫<sub>0</sub><sup>R</sup> r⁴ dr</div>
+      <div class="step" style="padding-left: 30px;">I = ⁸⁄₃πρ [r⁵/5]<sub>0</sub><sup>R</sup></div>
+      <div class="step" style="padding-left: 30px;">I = ⁸⁄₃πρ (R⁵/5)</div>
+      <div class="step"><span class="step-number">6</span> Substituting ρ = 3M/(4πR³):</div>
+      <div class="step" style="padding-left: 30px;">I = ⁸⁄₃π × 3M/(4πR³) × (R⁵/5)</div>
+      <div class="step" style="padding-left: 30px;">I = ⅖ MR²</div>
+      <div class="step"><span class="step-number">7</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I<sub>solid sphere</sub> = ⅖ MR²</div>
+    </div>
+
+    <h3>6.3 Moment of Inertia of a Solid Disc</h3>
+    <p>
+      Consider a solid disc of radius <strong>R</strong> and mass <strong>M</strong>. The axis passes through the center and is perpendicular to the plane of the disc.
+    </p>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Area of disc: A = πR²</div>
+      <div class="step"><span class="step-number">2</span> Area density: σ = M/πR²</div>
+      <div class="step"><span class="step-number">3</span> Consider a ring of radius r and thickness dr:</div>
+      <div class="step" style="padding-left: 30px;">dA = 2πr dr</div>
+      <div class="step" style="padding-left: 30px;">dm = σ dA = 2πσr dr</div>
+      <div class="step"><span class="step-number">4</span> Moment of inertia of the ring about the center: dI = r² dm</div>
+      <div class="step" style="padding-left: 30px;">dI = r²(2πσr dr) = 2πσr³ dr</div>
+      <div class="step"><span class="step-number">5</span> Total moment of inertia:</div>
+      <div class="step" style="padding-left: 30px;">I = ∫ dI = ∫<sub>0</sub><sup>R</sup> 2πσr³ dr</div>
+      <div class="step" style="padding-left: 30px;">I = 2πσ [r⁴/4]<sub>0</sub><sup>R</sup></div>
+      <div class="step" style="padding-left: 30px;">I = 2πσ (R⁴/4) = ½πσR⁴</div>
+      <div class="step"><span class="step-number">6</span> Substituting σ = M/πR²:</div>
+      <div class="step" style="padding-left: 30px;">I = ½π(M/πR²)R⁴ = ½MR²</div>
+      <div class="step"><span class="step-number">7</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I<sub>disc</sub> = ½ MR²</div>
+    </div>
+
+    <h3>6.4 Moment of Inertia of a Thin Hoop/Ring</h3>
+    <p>
+      Consider a thin hoop of radius <strong>R</strong> and mass <strong>M</strong>. The axis passes through the center and is perpendicular to the plane of the hoop.
+    </p>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> All mass is at distance R from the axis.</div>
+      <div class="step"><span class="step-number">2</span> Moment of inertia: I = Σ m<sub>i</sub>R² = R²Σm<sub>i</sub> = MR²</div>
+      <div class="step"><span class="step-number">3</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I<sub>hoop</sub> = MR²</div>
+    </div>
+
+    <h3>6.5 Moment of Inertia of Common Shapes (Summary Table)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Shape</th>
+          <th>Axis</th>
+          <th>Moment of Inertia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hoop/Ring</td><td>Through center (perpendicular to plane)</td><td>MR²</td></tr>
+        <tr><td>Hoop/Ring</td><td>Along diameter</td><td>½MR²</td></tr>
+        <tr><td>Disc</td><td>Through center (perpendicular to plane)</td><td>½MR²</td></tr>
+        <tr><td>Disc</td><td>Along diameter</td><td>¼MR²</td></tr>
+        <tr><td>Solid Cylinder</td><td>Through center (perpendicular to plane)</td><td>½MR²</td></tr>
+        <tr><td>Solid Sphere</td><td>Through diameter</td><td>⅖MR²</td></tr>
+        <tr><td>Hollow Sphere</td><td>Through diameter</td><td>⅔MR²</td></tr>
+        <tr><td>Rod (length L)</td><td>Through center (perpendicular to rod)</td><td>¹⁄₁₂ML²</td></tr>
+        <tr><td>Rod (length L)</td><td>Through one end (perpendicular to rod)</td><td>⅓ML²</td></tr>
+        <tr><td>Rectangular Lamina</td><td>Through center (perpendicular to plane)</td><td>¹⁄₁₂M(a² + b²)</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ======================================== -->
+    <!-- ===== 7. RADIUS OF GYRATION ===== -->
+    <!-- ======================================== -->
+    <h2 id="radius">7. Radius of Gyration</h2>
+
+    <p>
+      The <strong>radius of gyration (K)</strong> of a body about an axis of rotation is defined as the distance from the axis at which the entire mass of the body can be assumed to be concentrated to give the same moment of inertia.
+    </p>
+
+    <div class="formula-box">
+      I = MK²
+    </div>
+
+    <div class="formula-box">
+      K = √(I / M)
+    </div>
+
+    <p>
+      Where <strong>M</strong> is the total mass of the body and <strong>I</strong> is its moment of inertia.
+    </p>
+
+    <h3>7.1 Examples of Radius of Gyration</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Body</th>
+          <th>Moment of Inertia</th>
+          <th>Radius of Gyration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hoop (axis through center)</td><td>MR²</td><td>K = R</td></tr>
+        <tr><td>Disc (axis through center)</td><td>½MR²</td><td>K = R/√2</td></tr>
+        <tr><td>Solid Sphere</td><td>⅖MR²</td><td>K = R√(2/5)</td></tr>
+        <tr><td>Rod (center axis)</td><td>¹⁄₁₂ML²</td><td>K = L/(2√3)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> The radius of gyration depends on the distribution of mass about the axis of rotation. For a given body, it is different for different axes. It is measured in <strong>meters (m)</strong>.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 8. TORQUE ===== -->
+    <!-- ======================================== -->
+    <h2 id="torque">8. Torque and Angular Acceleration</h2>
+
+    <p>
+      <strong>Torque (τ)</strong> is the rotational analogue of force. It is the <strong>turning effect</strong> of a force.
+    </p>
+
+    <h3>8.1 Definition of Torque</h3>
+    <p>
+      Torque is defined as the product of the force and the perpendicular distance from the axis of rotation (moment arm).
+    </p>
+    <div class="formula-box">
+      τ = F × r = Fr sinθ
+    </div>
+    <p>
+      Where:
+      <ul>
+        <li><strong>F</strong> = magnitude of the force</li>
+        <li><strong>r</strong> = distance from the axis to the point of application</li>
+        <li><strong>θ</strong> = angle between the force vector and the position vector</li>
+      </ul>
+    </p>
+
+    <h3>8.2 Vector Form of Torque</h3>
+    <div class="formula-box">
+      τ = r × F
+    </div>
+    <p>
+      The direction of torque is given by the right-hand rule.
+    </p>
+
+    <h3>8.3 Relation Between Torque and Angular Acceleration</h3>
+    <p>
+      For a rigid body rotating about a fixed axis, the torque is related to angular acceleration by:
+    </p>
+    <div class="formula-box">
+      τ = Iα
+    </div>
+    <p>
+      This is the <strong>rotational analogue of Newton's second law</strong> (F = ma).
+    </p>
+
+    <div class="key-point-box">
+      <strong>💡 Key Point:</strong> Just as force causes linear acceleration, torque causes angular acceleration. The moment of inertia plays the same role in rotation that mass plays in linear motion.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 9. DERIVATION OF τ = Iα ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-torque">9. Full Derivation of τ = Iα</h2>
+
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Consider a rigid body rotating about a fixed axis with angular acceleration α.</div>
+      <div class="step"><span class="step-number">2</span> For a particle of mass m<sub>i</sub> at distance r<sub>i</sub> from the axis:</div>
+      <div class="step"><span class="step-number">3</span> The tangential acceleration of the particle: a<sub>ti</sub> = r<sub>i</sub>α</div>
+      <div class="step"><span class="step-number">4</span> The tangential force on the particle: F<sub>i</sub> = m<sub>i</sub>a<sub>ti</sub> = m<sub>i</sub>r<sub>i</sub>α</div>
+      <div class="step"><span class="step-number">5</span> The torque on the particle: τ<sub>i</sub> = F<sub>i</sub>r<sub>i</sub></div>
+      <div class="step" style="padding-left: 30px;">τ<sub>i</sub> = (m<sub>i</sub>r<sub>i</sub>α) × r<sub>i</sub> = m<sub>i</sub>r<sub>i</sub>²α</div>
+      <div class="step"><span class="step-number">6</span> The total torque on the body is the sum of torques on all particles:</div>
+      <div class="step" style="padding-left: 30px;">τ = Στ<sub>i</sub> = Σ(m<sub>i</sub>r<sub>i</sub>²α)</div>
+      <div class="step"><span class="step-number">7</span> Since α is constant for all particles:</div>
+      <div class="step" style="padding-left: 30px;">τ = α Σm<sub>i</sub>r<sub>i</sub>²</div>
+      <div class="step"><span class="step-number">8</span> But Σm<sub>i</sub>r<sub>i</sub>² = I (moment of inertia)</div>
+      <div class="step"><span class="step-number">9</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">τ = Iα</div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 10. WORK AND POWER ===== -->
+    <!-- ======================================== -->
+    <h2 id="work">10. Work and Power in Rotational Motion</h2>
+
+    <h3>10.1 Work Done by a Torque</h3>
+    <p>
+      The work done by a constant torque in rotating a body through an angular displacement <strong>θ</strong> is:
+    </p>
+    <div class="formula-box">
+      W = τθ
+    </div>
+    <p>
+      For variable torque:
+    </p>
+    <div class="formula-box">
+      W = ∫ τ dθ
+    </div>
+
+    <h3>10.2 Rotational Kinetic Energy</h3>
+    <p>
+      The kinetic energy of a rotating body is:
+    </p>
+    <div class="formula-box">
+      KE<sub>rot</sub> = ½Iω²
+    </div>
+
+    <h3>10.3 Work-Energy Theorem for Rotation</h3>
+    <p>
+      The work done by a torque is equal to the change in rotational kinetic energy:
+    </p>
+    <div class="formula-box">
+      W = ½Iω² − ½Iω₀² = ΔKE<sub>rot</sub>
+    </div>
+
+    <h3>10.4 Power in Rotational Motion</h3>
+    <p>
+      Power is the rate of doing work. In rotational motion:
+    </p>
+    <div class="formula-box">
+      P = dW/dt = τω
+    </div>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> Work and power in rotational motion are directly analogous to translational motion: W = τθ and P = τω.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 11. ANGULAR MOMENTUM ===== -->
+    <!-- ======================================== -->
+    <h2 id="angular">11. Angular Momentum</h2>
+
+    <h3>11.1 Definition</h3>
+    <p>
+      <strong>Angular momentum (L)</strong> is the rotational analogue of linear momentum. For a rotating rigid body:
+    </p>
+    <div class="formula-box">
+      L = Iω
+    </div>
+    <p>
+      Where <strong>I</strong> is the moment of inertia and <strong>ω</strong> is the angular velocity.
+    </p>
+
+    <h3>11.2 Vector Form</h3>
+    <div class="formula-box">
+      L = r × p = r × (mv)
+    </div>
+    <p>
+      For a particle moving in a circle:
+    </p>
+    <div class="formula-box">
+      L = mvr = mr²ω = Iω
+    </div>
+
+    <h3>11.3 Relation Between Torque and Angular Momentum</h3>
+    <p>
+      The torque acting on a body is equal to the rate of change of its angular momentum:
+    </p>
+    <div class="formula-box">
+      τ = dL/dt
+    </div>
+    <p>
+      This is the rotational analogue of Newton's second law in terms of momentum (F = dp/dt).
+    </p>
+
+    <!-- ======================================== -->
+    <!-- ===== 12. CONSERVATION OF ANGULAR MOMENTUM ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-angular-momentum">12. Conservation of Angular Momentum</h2>
+
+    <h3>12.1 Statement</h3>
+    <div class="key-point-box">
+      <strong>The law of conservation of angular momentum states that:</strong><br /><br />
+      <strong>If no external torque acts on a system, the total angular momentum of the system remains constant.</strong>
+    </div>
+
+    <h3>12.2 Derivation</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> We know that: τ = dL/dt</div>
+      <div class="step"><span class="step-number">2</span> If no external torque acts: τ = 0</div>
+      <div class="step" style="padding-left: 30px;">dL/dt = 0</div>
+      <div class="step"><span class="step-number">3</span> Integrating both sides:</div>
+      <div class="step" style="padding-left: 30px;">L = constant</div>
+      <div class="step"><span class="step-number">4</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I₁ω₁ = I₂ω₂</div>
+    </div>
+
+    <h3>12.3 Examples of Conservation of Angular Momentum</h3>
+    <ul>
+      <li><strong>Ice Skater:</strong> Spins faster when arms are pulled in (I decreases → ω increases)</li>
+      <li><strong>Diver:</strong> Tucks body to spin faster during a dive</li>
+      <li><strong>Earth:</strong> Rotates with constant angular momentum (no external torque)</li>
+      <li><strong>Gyroscope:</strong> Maintains its orientation due to conservation of angular momentum</li>
+      <li><strong>Spinning Top:</strong> Continues to spin upright</li>
+    </ul>
+
+    <div class="application-box">
+      <strong>💡 Real Life Application:</strong> Ice skaters pull their arms in to spin faster! When they extend their arms, they spin slower. This is conservation of angular momentum in action.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 13. ROLLING BODY ===== -->
+    <!-- ======================================== -->
+    <h2 id="rolling">13. Kinetic Energy of a Rolling Body</h2>
+
+    <p>
+      A rolling body has both <strong>translational</strong> and <strong>rotational</strong> kinetic energy.
+    </p>
+
+    <div class="formula-box">
+      KE<sub>total</sub> = KE<sub>translational</sub> + KE<sub>rotational</sub>
+    </div>
+
+    <div class="formula-box">
+      KE<sub>total</sub> = ½Mv² + ½Iω²
+    </div>
+
+    <p>
+      For a rolling body <strong>without slipping</strong>, the relation between linear velocity (v) and angular velocity (ω) is:
+    </p>
+    <div class="formula-box">
+      v = rω
+    </div>
+
+    <h3>13.1 Kinetic Energy for Different Rolling Bodies</h3>
+
+    <h4>Solid Sphere (I = ⅖MR²)</h4>
+    <div class="derivation-box">
+      <div class="step">KE = ½Mv² + ½(⅖MR²)(v/R)²</div>
+      <div class="step">KE = ½Mv² + ⅕Mv²</div>
+      <div class="formula-box" style="text-align:center;">KE = ⁷⁄₁₀ Mv²</div>
+    </div>
+
+    <h4>Disc (I = ½MR²)</h4>
+    <div class="derivation-box">
+      <div class="step">KE = ½Mv² + ½(½MR²)(v/R)²</div>
+      <div class="step">KE = ½Mv² + ¼Mv²</div>
+      <div class="formula-box" style="text-align:center;">KE = ¾ Mv²</div>
+    </div>
+
+    <h4>Hoop/Ring (I = MR²)</h4>
+    <div class="derivation-box">
+      <div class="step">KE = ½Mv² + ½(MR²)(v/R)²</div>
+      <div class="step">KE = ½Mv² + ½Mv²</div>
+      <div class="formula-box" style="text-align:center;">KE = Mv²</div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> For the same mass and radius, a <strong>solid sphere</strong> has the smallest total kinetic energy for a given speed, which is why it rolls down an incline <strong>faster</strong> than a disc or hoop.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 14. THEOREMS ===== -->
+    <!-- ======================================== -->
+    <h2 id="theorems">14. Theorems of Moment of Inertia</h2>
+
+    <h3>14.1 Parallel Axis Theorem</h3>
+    <p>
+      The moment of inertia of a body about any axis is equal to the moment of inertia about a parallel axis through its center of mass plus the product of the mass and the square of the distance between the axes.
+    </p>
+    <div class="formula-box">
+      I = I<sub>cm</sub> + Md²
+    </div>
+    <p>
+      Where:
+      <ul>
+        <li><strong>I</strong> = Moment of inertia about the given axis</li>
+        <li><strong>I<sub>cm</sub></strong> = Moment of inertia about an axis through the center of mass (parallel to the given axis)</li>
+        <li><strong>M</strong> = Total mass of the body</li>
+        <li><strong>d</strong> = Distance between the two axes</li>
+      </ul>
+    </p>
+
+    <h3>14.2 Perpendicular Axis Theorem</h3>
+    <p>
+      For a planar body (lamina), the moment of inertia about an axis perpendicular to the plane is equal to the sum of the moments of inertia about two mutually perpendicular axes in the plane that intersect at the point where the perpendicular axis passes through.
+    </p>
+    <div class="formula-box">
+      I<sub>z</sub> = I<sub>x</sub> + I<sub>y</sub>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 15. DERIVATIONS OF THEOREMS ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-theorems">15. Derivations of Theorems</h2>
+
+    <h3>15.1 Derivation of Parallel Axis Theorem</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Consider a body of mass M. Let the center of mass be at O.</div>
+      <div class="step"><span class="step-number">2</span> Consider an axis through O (center of mass) and another parallel axis through P, at distance d from O.</div>
+      <div class="step"><span class="step-number">3</span> For a particle of mass m<sub>i</sub> at position r<sub>i</sub> from O:</div>
+      <div class="step" style="padding-left: 30px;">I<sub>cm</sub> = Σm<sub>i</sub>r<sub>i</sub>²</div>
+      <div class="step"><span class="step-number">4</span> Distance of the particle from the axis through P is r<sub>i</sub> + d</div>
+      <div class="step" style="padding-left: 30px;">I = Σm<sub>i</sub>(r<sub>i</sub> + d)²</div>
+      <div class="step" style="padding-left: 30px;">I = Σm<sub>i</sub>(r<sub>i</sub>² + 2r<sub>i</sub>d + d²)</div>
+      <div class="step" style="padding-left: 30px;">I = Σm<sub>i</sub>r<sub>i</sub>² + 2dΣm<sub>i</sub>r<sub>i</sub> + d²Σm<sub>i</sub></div>
+      <div class="step"><span class="step-number">5</span> But Σm<sub>i</sub>r<sub>i</sub> = 0 (since O is the center of mass)</div>
+      <div class="step" style="padding-left: 30px;">I = Σm<sub>i</sub>r<sub>i</sub>² + d²M</div>
+      <div class="step"><span class="step-number">6</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I = I<sub>cm</sub> + Md²</div>
+    </div>
+
+    <h3>15.2 Derivation of Perpendicular Axis Theorem</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Consider a planar body (lamina) lying in the xy-plane.</div>
+      <div class="step"><span class="step-number">2</span> The z-axis is perpendicular to the plane through point O.</div>
+      <div class="step"><span class="step-number">3</span> For a particle at position (x, y) with mass m<sub>i</sub>:</div>
+      <div class="step" style="padding-left: 30px;">I<sub>z</sub> = Σm<sub>i</sub>(x² + y²) = Σm<sub>i</sub>x² + Σm<sub>i</sub>y²</div>
+      <div class="step"><span class="step-number">4</span> But I<sub>x</sub> = Σm<sub>i</sub>y² and I<sub>y</sub> = Σm<sub>i</sub>x²</div>
+      <div class="step"><span class="step-number">5</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">I<sub>z</sub> = I<sub>x</sub> + I<sub>y</sub></div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 16. IMPORTANT FORMULAS ===== -->
+    <!-- ======================================== -->
+    <h2 id="formulas">16. Important Formulas</h2>
+
+    <div class="formula-box">ω = ω₀ + αt</div>
+    <div class="formula-box">θ = ω₀t + ½αt²</div>
+    <div class="formula-box">ω² = ω₀² + 2αθ</div>
+    <div class="formula-box">v = rω</div>
+    <div class="formula-box">a<sub>t</sub> = rα</div>
+    <div class="formula-box">a<sub>c</sub> = rω² = v²/r</div>
+    <div class="formula-box">I = Σ m<sub>i</sub>r<sub>i</sub>² = ∫ r² dm</div>
+    <div class="formula-box">I<sub>center rod</sub> = ¹⁄₁₂ ML²</div>
+    <div class="formula-box">I<sub>end rod</sub> = ⅓ ML²</div>
+    <div class="formula-box">I<sub>disc</sub> = ½ MR²</div>
+    <div class="formula-box">I<sub>solid sphere</sub> = ⅖ MR²</div>
+    <div class="formula-box">I<sub>hollow sphere</sub> = ⅔ MR²</div>
+    <div class="formula-box">I<sub>hoop</sub> = MR²</div>
+    <div class="formula-box">τ = Iα</div>
+    <div class="formula-box">τ = r × F</div>
+    <div class="formula-box">L = Iω</div>
+    <div class="formula-box">τ = dL/dt</div>
+    <div class="formula-box">I₁ω₁ = I₂ω₂ (Conservation of Angular Momentum)</div>
+    <div class="formula-box">KE<sub>rot</sub> = ½Iω²</div>
+    <div class="formula-box">W = τθ</div>
+    <div class="formula-box">P = τω</div>
+    <div class="formula-box">KE<sub>total</sub> = ½Mv² + ½Iω² (Rolling Body)</div>
+    <div class="formula-box">KE<sub>total sphere</sub> = ⁷⁄₁₀ Mv²</div>
+    <div class="formula-box">KE<sub>total disc</sub> = ¾ Mv²</div>
+    <div class="formula-box">KE<sub>total hoop</sub> = Mv²</div>
+    <div class="formula-box">I = I<sub>cm</sub> + Md² (Parallel Axis Theorem)</div>
+    <div class="formula-box">I<sub>z</sub> = I<sub>x</sub> + I<sub>y</sub> (Perpendicular Axis Theorem)</div>
+    <div class="formula-box">K = √(I/M) (Radius of Gyration)</div>
+
+    <!-- ======================================== -->
+    <!-- ===== 17. SOLVED EXAMPLES ===== -->
+    <!-- ======================================== -->
+    <h2 id="examples">17. Solved Examples</h2>
+
+    <div class="example-box">
+      <strong>Example 1:</strong><br />
+      A wheel rotates with a constant angular acceleration of 4 rad/s². If the initial angular velocity is 2 rad/s, find:<br />
+      (a) The angular displacement after 3 seconds.<br />
+      (b) The final angular velocity after 3 seconds.<br /><br />
+      <strong>Solution:</strong><br />
+      Given: ω₀ = 2 rad/s, α = 4 rad/s², t = 3 s<br /><br />
+      (a) Using θ = ω₀t + ½αt²<br />
+      θ = 2(3) + ½(4)(3)²<br />
+      θ = 6 + ½(4)(9)<br />
+      θ = 6 + 18 = <strong>24 rad</strong><br /><br />
+      (b) Using ω = ω₀ + αt<br />
+      ω = 2 + 4(3)<br />
+      ω = 2 + 12 = <strong>14 rad/s</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 2:</strong><br />
+      A solid sphere of mass 5 kg and radius 0.2 m has a moment of inertia I = ⅖MR². Find its radius of gyration.<br /><br />
+      <strong>Solution:</strong><br />
+      I = ⅖ × 5 × (0.2)² = ⅖ × 5 × 0.04 = 0.08 kg·m²<br /><br />
+      K = √(I / M) = √(0.08 / 5) = √0.016 = <strong>0.126 m</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 3:</strong><br />
+      A wheel of moment of inertia 2.5 kg·m² is subjected to a torque of 15 N·m. Find the angular acceleration.<br /><br />
+      <strong>Solution:</strong><br />
+      Using τ = Iα<br />
+      15 = 2.5 × α<br />
+      α = 15 / 2.5 = <strong>6 rad/s²</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 4:</strong><br />
+      A motor develops a torque of 20 N·m at an angular speed of 30 rad/s. Calculate the power developed.<br /><br />
+      <strong>Solution:</strong><br />
+      P = τω = 20 × 30 = <strong>600 W</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 5:</strong><br />
+      A figure skater spins with arms extended, with moment of inertia 6 kg·m² and angular velocity 2 rad/s. When she pulls her arms in, her moment of inertia becomes 3 kg·m². Find her new angular velocity.<br /><br />
+      <strong>Solution:</strong><br />
+      Using conservation of angular momentum: I₁ω₁ = I₂ω₂<br />
+      6 × 2 = 3 × ω₂<br />
+      ω₂ = 12/3 = <strong>4 rad/s</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 6:</strong><br />
+      A solid sphere of mass 2 kg and radius 0.1 m rolls with a speed of 5 m/s. Find its total kinetic energy.<br /><br />
+      <strong>Solution:</strong><br />
+      For a solid sphere, I = ⅖MR² = ⅖ × 2 × (0.1)² = 0.008 kg·m²<br />
+      ω = v/R = 5/0.1 = 50 rad/s<br />
+      KE<sub>total</sub> = ½Mv² + ½Iω²<br />
+      = ½(2)(5)² + ½(0.008)(50)²<br />
+      = 25 + 10 = <strong>35 J</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 7:</strong><br />
+      A uniform rod of length 1 m and mass 2 kg has a moment of inertia about its center of ¹⁄₁₂ML² = ¹⁄₆ kg·m². Find its moment of inertia about an axis through one end (parallel to the center axis).<br /><br />
+      <strong>Solution:</strong><br />
+      Using parallel axis theorem: I = I<sub>cm</sub> + Md²<br />
+      I = ¹⁄₆ + 2 × (0.5)²<br />
+      I = ¹⁄₆ + 2 × 0.25<br />
+      I = ¹⁄₆ + 0.5 = ¹⁄₆ + ³⁄₆ = ⁴⁄₆ = <strong>⅔ kg·m²</strong>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 18. PRACTICE PROBLEMS ===== -->
+    <!-- ======================================== -->
+    <h2 id="practice">18. Practice Problems</h2>
+
+    <div class="example-box">
+      <strong>Problem 1:</strong><br />
+      A flywheel rotates with a constant angular acceleration of 2 rad/s². If it starts from rest, find the angular displacement after 5 seconds.<br /><br />
+      <em>[Hint: Use θ = ω₀t + ½αt²]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 2:</strong><br />
+      A wheel of moment of inertia 4 kg·m² is subjected to a torque of 20 N·m. Find the angular acceleration.<br /><br />
+      <em>[Hint: Use τ = Iα]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 3:</strong><br />
+      A disc of mass 3 kg and radius 0.2 m rolls with a speed of 4 m/s. Find its total kinetic energy.<br /><br />
+      <em>[Hint: I = ½MR², KE = ½Mv² + ½Iω²]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 4:</strong><br />
+      A figure skater spins with arms extended (I = 8 kg·m², ω = 1.5 rad/s). She pulls her arms in (I = 4 kg·m²). Find her new angular velocity.<br /><br />
+      <em>[Hint: Use I₁ω₁ = I₂ω₂]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 5:</strong><br />
+      A solid sphere of mass 2 kg and radius 0.5 m is rotating about its diameter with angular velocity 10 rad/s. Calculate its rotational kinetic energy.<br /><br />
+      <em>[Hint: I = ⅖MR², KE = ½Iω²]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 6:</strong><br />
+      A uniform rod of length 2 m and mass 4 kg rotates about an axis through its center. Calculate its moment of inertia.<br /><br />
+      <em>[Hint: I = ¹⁄₁₂ML²]</em>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 19. APPLICATIONS ===== -->
+    <!-- ======================================== -->
+    <h2 id="applications">19. Real-Life Applications</h2>
+
+    <div class="application-box">
+      <strong>🔧 1. Flywheels in Machines:</strong><br />
+      Flywheels store rotational energy and help maintain smooth operation in engines and machines. They resist changes in rotational speed due to their high moment of inertia. Used in automobiles, generators, and industrial machinery.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 2. Gyroscopes:</strong><br />
+      Used in navigation systems, smartphones, drones, and spacecraft. They maintain orientation due to conservation of angular momentum. A spinning gyroscope resists changes in its axis of rotation.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 3. Ice Skating:</strong><br />
+      Skaters use conservation of angular momentum to spin faster or slower by changing their moment of inertia. When they pull their arms in, they spin faster; when they extend their arms, they spin slower.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 4. Diving and Gymnastics:</strong><br />
+      Athletes tuck their bodies (reducing I) to increase angular velocity during spins and flips. This allows them to perform multiple rotations before entering the water or landing.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 5. Washing Machines:</strong><br />
+      The spinning drum uses rotational dynamics to extract water from clothes through centrifugal force. The high-speed rotation creates a large centripetal force that pushes water outward.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 6. Automobile Wheels:</strong><br />
+      Understanding rotational dynamics helps design better tires, brakes, and suspension systems. The moment of inertia of wheels affects acceleration and braking performance.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 7. Earth's Rotation:</strong><br />
+      The Earth rotates with constant angular momentum. Its rotation is a classic example of conservation of angular momentum. The Earth's rotation affects weather patterns, ocean currents, and the length of day and night.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 8. Bicycles and Motorcycles:</strong><br />
+      The spinning wheels of a bicycle provide gyroscopic stability, helping the rider maintain balance. This is due to the conservation of angular momentum of the wheels.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 9. Satellites and Spacecraft:</strong><br />
+      Satellites use reaction wheels (flywheels) to control their orientation in space without using fuel. By spinning a wheel in one direction, the satellite rotates in the opposite direction due to conservation of angular momentum.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 10. Sports:</strong><br />
+      Many sports use rotational dynamics principles:
+      <ul>
+        <li><strong>Cricket:</strong> Spin bowling</li>
+        <li><strong>Tennis:</strong> Topspin and backspin shots</li>
+        <li><strong>Baseball:</strong> Curveballs</li>
+        <li><strong>Golf:</strong> Club swing mechanics</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <strong>📌 Summary:</strong> Rotational dynamics is everywhere in everyday life – from sports to machines to space exploration. Understanding these concepts helps us design better technology and appreciate the physics of motion around us!
+    </div>
+
+    <!-- ===== PDF DOWNLOAD ===== -->
+    <a href="https://drive.google.com/uc?export=download&id=YOUR_PDF_ID" class="btn-download" target="_blank">
+      📥 Download PDF Notes
+    </a>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      📚 Gyanu Education Hub • Free for every Nepali student
+    </div>
+
+  </div>
+
+</body>
+</html>

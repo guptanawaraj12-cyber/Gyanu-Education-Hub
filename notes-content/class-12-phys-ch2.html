@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 2: Periodic Motion - Full Detailed Note</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 40px 20px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #0ea5e9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #0284c7;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .meta {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .meta .tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0ea5e9;
+      padding: 2px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .toc {
+      background: #f1f5f9;
+      padding: 24px 28px;
+      border-radius: 12px;
+      margin: 24px 0 32px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .toc h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    .toc ul li {
+      margin-bottom: 6px;
+      color: #334155;
+      font-size: 0.9rem;
+    }
+
+    .toc ul li a {
+      color: #0ea5e9;
+      text-decoration: none;
+    }
+
+    .toc ul li a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #0ea5e9;
+    }
+
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 28px 0 12px;
+    }
+
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 20px 0 8px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    ul,
+    ol {
+      margin: 12px 0 20px 28px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .highlight-box strong {
+      color: #0f172a;
+    }
+
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 16px 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #0ea5e9;
+      margin: 20px 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: auto;
+    }
+
+    .formula-box-small {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0ea5e9;
+      margin: 16px 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: auto;
+    }
+
+    .example-box {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example-box strong {
+      color: #92400e;
+    }
+
+    .example-box .solution {
+      margin-top: 10px;
+      color: #0f172a;
+    }
+
+    .derivation-box {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 20px 24px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: auto;
+    }
+
+    .derivation-box .step {
+      margin: 8px 0;
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    .derivation-box .step-number {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    .key-point-box {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .key-point-box strong {
+      color: #065f46;
+    }
+
+    .application-box {
+      background: #e0e7ff;
+      border: 1px solid #818cf8;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .application-box strong {
+      color: #4338ca;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-download:hover {
+      background: #0284c7;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #f1f5f9;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      .container {
+        background: #1e293b;
+        color: #f1f5f9;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #f1f5f9;
+      }
+      p,
+      ul,
+      ol,
+      td {
+        color: #cbd5e1;
+      }
+      .meta {
+        color: #94a3b8;
+        border-bottom-color: #334155;
+      }
+      .meta .tag {
+        background: #1e293b;
+        color: #38bdf8;
+      }
+      .toc {
+        background: #0f172a;
+        border-color: #334155;
+      }
+      .toc ul li {
+        color: #cbd5e1;
+      }
+      .highlight-box {
+        background: #1e293b;
+        border-left-color: #0ea5e9;
+      }
+      .example-box {
+        background: #1e293b;
+        border-color: #f59e0b;
+      }
+      .example-box strong {
+        color: #fcd34d;
+      }
+      .formula-box,
+      .formula-box-small {
+        background: #0f172a;
+        border-color: #334155;
+        color: #38bdf8;
+      }
+      .derivation-box {
+        background: #0f172a;
+        border-color: #334155;
+      }
+      .derivation-box .step {
+        color: #f1f5f9;
+      }
+      .derivation-box .step-number {
+        background: #0ea5e9;
+        color: #fff;
+      }
+      .key-point-box {
+        background: #064e3b;
+        border-color: #34d399;
+      }
+      .key-point-box strong {
+        color: #6ee7b7;
+      }
+      .application-box {
+        background: #1e1b4b;
+        border-color: #818cf8;
+      }
+      .application-box strong {
+        color: #a5b4fc;
+      }
+      th {
+        background: #0f172a;
+        color: #f1f5f9;
+      }
+      .footer-note {
+        border-top-color: #334155;
+      }
+      .back-link {
+        color: #38bdf8;
+      }
+      .back-link:hover {
+        color: #7dd3fc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+      .container {
+        padding: 28px 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      .toc ul {
+        columns: 1;
+      }
+      .meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px 14px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .formula-box {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+      }
+      table {
+        font-size: 0.8rem;
+      }
+      th,
+      td {
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Back Link -->
+    <a href="../notes-chapters/?class=Class%2012&subject=Physics" class="back-link">← Back to Chapters</a>
+
+    <h1>Chapter 2: Periodic Motion</h1>
+    <div class="meta">
+      <span>⚛️ Physics • Class 12</span>
+      <span>📅 Updated: July 19, 2026</span>
+      <span class="tag">📖 Full Detailed Note</span>
+      <span class="tag">🏆 NEB Syllabus</span>
+      <span class="tag">📝 All Derivations Included</span>
+    </div>
+
+    <!-- ===== TABLE OF CONTENTS ===== -->
+    <div class="toc">
+      <h3>📑 Table of Contents</h3>
+      <ul>
+        <li><a href="#introduction">1. Introduction to Periodic Motion</a></li>
+        <li><a href="#shm">2. Simple Harmonic Motion (SHM)</a></li>
+        <li><a href="#derivation-shm">3. Derivation of SHM Equation</a></li>
+        <li><a href="#differential">4. Differential Equation of SHM</a></li>
+        <li><a href="#solution">5. Solution of Differential Equation</a></li>
+        <li><a href="#velocity">6. Velocity in SHM</a></li>
+        <li><a href="#acceleration">7. Acceleration in SHM</a></li>
+        <li><a href="#period">8. Time Period and Frequency</a></li>
+        <li><a href="#energy">9. Energy in SHM</a></li>
+        <li><a href="#spring">10. Spring-Mass System</a></li>
+        <li><a href="#derivation-spring">11. Derivation of Time Period for Spring</a></li>
+        <li><a href="#pendulum">12. Simple Pendulum</a></li>
+        <li><a href="#derivation-pendulum">13. Derivation of Time Period for Pendulum</a></li>
+        <li><a href="#horizontal">14. Horizontal Oscillation of a Spring</a></li>
+        <li><a href="#vertical">15. Vertical Oscillation of a Spring</a></li>
+        <li><a href="#compound">16. Compound Pendulum</a></li>
+        <li><a href="#energy-derivation">17. Energy Conservation in SHM</a></li>
+        <li><a href="#formulas">18. Important Formulas</a></li>
+        <li><a href="#examples">19. Solved Examples</a></li>
+        <li><a href="#practice">20. Practice Problems</a></li>
+        <li><a href="#applications">21. Applications of Periodic Motion</a></li>
+      </ul>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 1. INTRODUCTION ===== -->
+    <!-- ======================================== -->
+    <h2 id="introduction">1. Introduction to Periodic Motion</h2>
+
+    <p>
+      <strong>Periodic Motion</strong> is a type of motion that repeats itself after a fixed interval of time. The interval of time after which the motion repeats is called the <strong>time period (T)</strong>.
+    </p>
+
+    <p>
+      <strong>Examples of Periodic Motion:</strong>
+      <ul>
+        <li>Motion of a pendulum</li>
+        <li>Motion of a mass attached to a spring</li>
+        <li>Rotation of the Earth</li>
+        <li>Motion of the hands of a clock</li>
+        <li>Vibration of a tuning fork</li>
+      </ul>
+    </p>
+
+    <h3>1.1 Key Terms</h3>
+    <ul>
+      <li><strong>Oscillation/Vibration:</strong> One complete to-and-fro motion.</li>
+      <li><strong>Time Period (T):</strong> Time taken for one complete oscillation.</li>
+      <li><strong>Frequency (f):</strong> Number of oscillations per second. f = 1/T</li>
+      <li><strong>Amplitude (A):</strong> Maximum displacement from mean position.</li>
+      <li><strong>Phase (φ):</strong> The state of motion at a given instant.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> Periodic motion is the foundation of oscillatory motion. All oscillatory motions are periodic, but not all periodic motions are oscillatory (e.g., circular motion).
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 2. SIMPLE HARMONIC MOTION ===== -->
+    <!-- ======================================== -->
+    <h2 id="shm">2. Simple Harmonic Motion (SHM)</h2>
+
+    <p>
+      <strong>Simple Harmonic Motion (SHM)</strong> is the simplest form of periodic motion. It is the motion in which the acceleration of the particle is <strong>directly proportional</strong> to its displacement from the mean position and is always directed towards the mean position.
+    </p>
+
+    <h3>2.1 Definition of SHM</h3>
+    <div class="key-point-box">
+      A particle is said to execute SHM if its acceleration is:
+      <ul>
+        <li><strong>Directly proportional</strong> to the displacement from the mean position</li>
+        <li><strong>Always directed towards</strong> the mean position</li>
+      </ul>
+    </div>
+
+    <div class="formula-box">
+      a ∝ −x &nbsp;&nbsp; or &nbsp;&nbsp; a = −ω²x
+    </div>
+
+    <p>
+      Where <strong>ω</strong> is the angular frequency (or angular velocity) of the motion.
+    </p>
+
+    <h3>2.2 Characteristics of SHM</h3>
+    <ul>
+      <li><strong>Mean Position:</strong> The position where the particle has zero acceleration and zero restoring force.</li>
+      <li><strong>Extreme Position:</strong> The position where the particle has maximum acceleration and maximum restoring force.</li>
+      <li><strong>Restoring Force:</strong> The force that tries to bring the particle back to the mean position.</li>
+      <li><strong>Restoring Force (F):</strong> F = −kx, where k is the force constant.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> The negative sign in a = −ω²x indicates that the acceleration is always directed towards the mean position (opposite to displacement).
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 3. DERIVATION OF SHM EQUATION ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-shm">3. Derivation of SHM Equation</h2>
+
+    <p>
+      Let us derive the equation of SHM from the definition of restoring force.
+    </p>
+
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> From Hooke's Law, the restoring force is: F = −kx</div>
+      <div class="step"><span class="step-number">2</span> From Newton's Second Law: F = ma</div>
+      <div class="step"><span class="step-number">3</span> Equating both: ma = −kx</div>
+      <div class="step"><span class="step-number">4</span> Since a = d²x/dt²:</div>
+      <div class="step" style="padding-left: 30px;">m (d²x/dt²) = −kx</div>
+      <div class="step"><span class="step-number">5</span> Rearranging:</div>
+      <div class="step" style="padding-left: 30px;">d²x/dt² + (k/m)x = 0</div>
+      <div class="step"><span class="step-number">6</span> Let ω² = k/m</div>
+      <div class="step"><span class="step-number">7</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">d²x/dt² + ω²x = 0</div>
+    </div>
+
+    <div class="key-point-box">
+      <strong>💡 This is the fundamental differential equation of SHM.</strong>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 4. DIFFERENTIAL EQUATION ===== -->
+    <!-- ======================================== -->
+    <h2 id="differential">4. Differential Equation of SHM</h2>
+
+    <p>
+      The differential equation of SHM is:
+    </p>
+    <div class="formula-box">
+      d²x/dt² + ω²x = 0
+    </div>
+
+    <p>
+      Where <strong>ω</strong> is the angular frequency, given by:
+    </p>
+    <div class="formula-box">
+      ω = √(k/m)
+    </div>
+
+    <p>
+      The general solution to this differential equation is:
+    </p>
+    <div class="formula-box">
+      x = A sin(ωt + φ)
+    </div>
+    <p>
+      or
+    </p>
+    <div class="formula-box">
+      x = A cos(ωt + φ)
+    </div>
+
+    <p>
+      Where:
+      <ul>
+        <li><strong>A</strong> = Amplitude (maximum displacement)</li>
+        <li><strong>ω</strong> = Angular frequency</li>
+        <li><strong>φ</strong> = Phase constant</li>
+        <li><strong>t</strong> = Time</li>
+      </ul>
+    </p>
+
+    <!-- ======================================== -->
+    <!-- ===== 5. SOLUTION OF DE ===== -->
+    <!-- ======================================== -->
+    <h2 id="solution">5. Solution of Differential Equation</h2>
+
+    <p>
+      To solve the differential equation d²x/dt² + ω²x = 0, we use the method of trial solution.
+    </p>
+
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> Assume a solution of the form: x = A sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">2</span> Differentiate with respect to t:</div>
+      <div class="step" style="padding-left: 30px;">dx/dt = Aω cos(ωt + φ)</div>
+      <div class="step"><span class="step-number">3</span> Differentiate again:</div>
+      <div class="step" style="padding-left: 30px;">d²x/dt² = −Aω² sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">4</span> Substitute back into the differential equation:</div>
+      <div class="step" style="padding-left: 30px;">−Aω² sin(ωt + φ) + ω²[A sin(ωt + φ)] = 0</div>
+      <div class="step"><span class="step-number">5</span> Simplify:</div>
+      <div class="step" style="padding-left: 30px;">−Aω² sin(ωt + φ) + Aω² sin(ωt + φ) = 0</div>
+      <div class="step"><span class="step-number">6</span> Which is true for all t.</div>
+      <div class="step"><span class="step-number">7</span> Therefore, the solution is:</div>
+      <div class="formula-box" style="text-align:center;">x = A sin(ωt + φ)</div>
+    </div>
+
+    <p>
+      If the particle starts from the mean position (x = 0 at t = 0), then φ = 0:
+    </p>
+    <div class="formula-box">
+      x = A sin(ωt)
+    </div>
+
+    <p>
+      If the particle starts from the extreme position (x = A at t = 0), then φ = π/2:
+    </p>
+    <div class="formula-box">
+      x = A cos(ωt)
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 6. VELOCITY IN SHM ===== -->
+    <!-- ======================================== -->
+    <h2 id="velocity">6. Velocity in SHM</h2>
+
+    <p>
+      The velocity of a particle executing SHM can be derived from the displacement equation.
+    </p>
+
+    <h3>6.1 Velocity from Displacement</h3>
+    <p>
+      Given x = A sin(ωt + φ), the velocity is:
+    </p>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> x = A sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">2</span> Differentiate with respect to t:</div>
+      <div class="step" style="padding-left: 30px;">v = dx/dt = Aω cos(ωt + φ)</div>
+      <div class="step"><span class="step-number">3</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">v = Aω cos(ωt + φ)</div>
+    </div>
+
+    <h3>6.2 Velocity in Terms of Displacement</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> We know that: v = Aω cos(ωt + φ)</div>
+      <div class="step"><span class="step-number">2</span> Also: x = A sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">3</span> Square both:</div>
+      <div class="step" style="padding-left: 30px;">v² = A²ω² cos²(ωt + φ)</div>
+      <div class="step" style="padding-left: 30px;">x² = A² sin²(ωt + φ)</div>
+      <div class="step"><span class="step-number">4</span> Using cos²θ + sin²θ = 1:</div>
+      <div class="step" style="padding-left: 30px;">v²/A²ω² + x²/A² = 1</div>
+      <div class="step"><span class="step-number">5</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">v² = ω²(A² − x²)</div>
+      <div class="formula-box" style="text-align:center;">v = ω√(A² − x²)</div>
+    </div>
+
+    <h3>6.3 Maximum and Minimum Velocity</h3>
+    <ul>
+      <li><strong>Maximum velocity (v<sub>max</sub>):</strong> At mean position (x = 0)</li>
+      <div class="formula-box-small">v<sub>max</sub> = Aω</div>
+      <li><strong>Minimum velocity (v<sub>min</sub>):</strong> At extreme position (x = A)</li>
+      <div class="formula-box-small">v<sub>min</sub> = 0</div>
+    </ul>
+
+    <!-- ======================================== -->
+    <!-- ===== 7. ACCELERATION IN SHM ===== -->
+    <!-- ======================================== -->
+    <h2 id="acceleration">7. Acceleration in SHM</h2>
+
+    <p>
+      The acceleration of a particle executing SHM can be derived from the velocity or displacement.
+    </p>
+
+    <h3>7.1 Acceleration from Displacement</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> x = A sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">2</span> Velocity: v = Aω cos(ωt + φ)</div>
+      <div class="step"><span class="step-number">3</span> Acceleration: a = dv/dt = −Aω² sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">4</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">a = −ω²x</div>
+    </div>
+
+    <h3>7.2 Maximum and Minimum Acceleration</h3>
+    <ul>
+      <li><strong>Maximum acceleration (a<sub>max</sub>):</strong> At extreme position (x = A)</li>
+      <div class="formula-box-small">a<sub>max</sub> = Aω²</div>
+      <li><strong>Minimum acceleration (a<sub>min</sub>):</strong> At mean position (x = 0)</li>
+      <div class="formula-box-small">a<sub>min</sub> = 0</div>
+    </ul>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> In SHM, acceleration is maximum at the extreme positions and zero at the mean position. Velocity is maximum at the mean position and zero at the extreme positions.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 8. TIME PERIOD AND FREQUENCY ===== -->
+    <!-- ======================================== -->
+    <h2 id="period">8. Time Period and Frequency</h2>
+
+    <p>
+      The time period of SHM is the time taken to complete one complete oscillation.
+    </p>
+
+    <h3>8.1 Time Period (T)</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> In one complete oscillation, the angular displacement is 2π radians.</div>
+      <div class="step"><span class="step-number">2</span> Angular velocity (ω) = 2π/T</div>
+      <div class="step"><span class="step-number">3</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">T = 2π/ω</div>
+    </div>
+
+    <h3>8.2 Frequency (f)</h3>
+    <p>
+      Frequency is the number of oscillations per second.
+    </p>
+    <div class="formula-box">
+      f = 1/T = ω/2π
+    </div>
+
+    <div class="key-point-box">
+      <strong>💡 Key Point:</strong> The time period of SHM does NOT depend on the amplitude. This is called <strong>isochronism</strong>.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 9. ENERGY IN SHM ===== -->
+    <!-- ======================================== -->
+    <h2 id="energy">9. Energy in SHM</h2>
+
+    <p>
+      A particle executing SHM has both <strong>kinetic energy</strong> and <strong>potential energy</strong>. The total energy remains constant throughout the motion.
+    </p>
+
+    <h3>9.1 Kinetic Energy (KE)</h3>
+    <div class="formula-box">
+      KE = ½mv² = ½mω²(A² − x²)
+    </div>
+
+    <h3>9.2 Potential Energy (PE)</h3>
+    <div class="formula-box">
+      PE = ½kx² = ½mω²x²
+    </div>
+
+    <h3>9.3 Total Energy (TE)</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> TE = KE + PE</div>
+      <div class="step"><span class="step-number">2</span> TE = ½mω²(A² − x²) + ½mω²x²</div>
+      <div class="step"><span class="step-number">3</span> TE = ½mω²A²</div>
+      <div class="formula-box" style="text-align:center;">TE = ½mω²A² = ½kA²</div>
+    </div>
+
+    <h3>9.4 Energy Distribution</h3>
+    <ul>
+      <li><strong>At mean position (x = 0):</strong> KE = maximum, PE = 0</li>
+      <li><strong>At extreme position (x = A):</strong> KE = 0, PE = maximum</li>
+    </ul>
+
+    <!-- ======================================== -->
+    <!-- ===== 10. SPRING-MASS SYSTEM ===== -->
+    <!-- ======================================== -->
+    <h2 id="spring">10. Spring-Mass System</h2>
+
+    <p>
+      A spring-mass system is one of the simplest examples of SHM. When a mass is attached to a spring and displaced from its equilibrium position, it oscillates with SHM.
+    </p>
+
+    <h3>10.1 Restoring Force</h3>
+    <p>
+      According to Hooke's Law, the restoring force is:
+    </p>
+    <div class="formula-box">
+      F = −kx
+    </div>
+    <p>
+      Where <strong>k</strong> is the spring constant and <strong>x</strong> is the displacement from equilibrium.
+    </p>
+
+    <!-- ======================================== -->
+    <!-- ===== 11. DERIVATION OF TIME PERIOD FOR SPRING ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-spring">11. Derivation of Time Period for Spring</h2>
+
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> The restoring force is: F = −kx</div>
+      <div class="step"><span class="step-number">2</span> From Newton's Second Law: F = ma</div>
+      <div class="step"><span class="step-number">3</span> Therefore: ma = −kx</div>
+      <div class="step"><span class="step-number">4</span> Since a = d²x/dt²:</div>
+      <div class="step" style="padding-left: 30px;">m(d²x/dt²) = −kx</div>
+      <div class="step"><span class="step-number">5</span> Rearranging:</div>
+      <div class="step" style="padding-left: 30px;">d²x/dt² + (k/m)x = 0</div>
+      <div class="step"><span class="step-number">6</span> Comparing with the standard SHM equation: d²x/dt² + ω²x = 0</div>
+      <div class="step"><span class="step-number">7</span> Therefore: ω² = k/m</div>
+      <div class="step"><span class="step-number">8</span> ω = √(k/m)</div>
+      <div class="step"><span class="step-number">9</span> Since T = 2π/ω:</div>
+      <div class="formula-box" style="text-align:center;">T = 2π√(m/k)</div>
+    </div>
+
+    <div class="key-point-box">
+      <strong>💡 Important:</strong> The time period of a spring-mass system depends on:
+      <ul>
+        <li><strong>Mass (m):</strong> T ∝ √m</li>
+        <li><strong>Spring constant (k):</strong> T ∝ 1/√k</li>
+      </ul>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 12. SIMPLE PENDULUM ===== -->
+    <!-- ======================================== -->
+    <h2 id="pendulum">12. Simple Pendulum</h2>
+
+    <p>
+      A <strong>simple pendulum</strong> consists of a point mass (called the bob) attached to a light, inextensible string of length <strong>L</strong>.
+    </p>
+
+    <h3>12.1 Restoring Force</h3>
+    <p>
+      The restoring force is the component of the weight along the tangent to the circular path.
+    </p>
+    <div class="formula-box">
+      F = −mg sinθ
+    </div>
+    <p>
+      For small angles (θ < 15°), sinθ ≈ θ:
+    </p>
+    <div class="formula-box">
+      F = −mgθ
+    </div>
+
+    <h3>12.2 Relation between θ and x</h3>
+    <p>
+      For small angles, θ ≈ x/L:
+    </p>
+    <div class="formula-box">
+      F = −mg(x/L)
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 13. DERIVATION OF TIME PERIOD FOR PENDULUM ===== -->
+    <!-- ======================================== -->
+    <h2 id="derivation-pendulum">13. Derivation of Time Period for Pendulum</h2>
+
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> The restoring force is: F = −mg sinθ</div>
+      <div class="step"><span class="step-number">2</span> For small θ, sinθ ≈ θ:</div>
+      <div class="step" style="padding-left: 30px;">F = −mgθ</div>
+      <div class="step"><span class="step-number">3</span> Since θ = x/L:</div>
+      <div class="step" style="padding-left: 30px;">F = −mg(x/L)</div>
+      <div class="step"><span class="step-number">4</span> This is of the form F = −kx, where k = mg/L</div>
+      <div class="step"><span class="step-number">5</span> The time period of a spring-mass system is: T = 2π√(m/k)</div>
+      <div class="step"><span class="step-number">6</span> Substituting k = mg/L:</div>
+      <div class="step" style="padding-left: 30px;">T = 2π√(m/(mg/L))</div>
+      <div class="step" style="padding-left: 30px;">T = 2π√(L/g)</div>
+      <div class="formula-box" style="text-align:center;">T = 2π√(L/g)</div>
+    </div>
+
+    <div class="key-point-box">
+      <strong>💡 Important:</strong> The time period of a simple pendulum depends on:
+      <ul>
+        <li><strong>Length (L):</strong> T ∝ √L</li>
+        <li><strong>Acceleration due to gravity (g):</strong> T ∝ 1/√g</li>
+        <li><strong>Does NOT depend on:</strong> Mass of the bob</li>
+        <li><strong>Does NOT depend on:</strong> Amplitude (for small angles)</li>
+      </ul>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 14. HORIZONTAL OSCILLATION ===== -->
+    <!-- ======================================== -->
+    <h2 id="horizontal">14. Horizontal Oscillation of a Spring</h2>
+
+    <p>
+      In horizontal oscillation, the mass moves on a frictionless horizontal surface. The spring is attached to a fixed wall at one end and a mass at the other.
+    </p>
+
+    <h3>14.1 Equation of Motion</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> The restoring force: F = −kx</div>
+      <div class="step"><span class="step-number">2</span> From Newton's Second Law: ma = −kx</div>
+      <div class="step"><span class="step-number">3</span> Therefore: d²x/dt² + (k/m)x = 0</div>
+      <div class="step"><span class="step-number">4</span> The solution is: x = A sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">5</span> Where: ω = √(k/m)</div>
+      <div class="step"><span class="step-number">6</span> Time period: T = 2π√(m/k)</div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 15. VERTICAL OSCILLATION ===== -->
+    <!-- ======================================== -->
+    <h2 id="vertical">15. Vertical Oscillation of a Spring</h2>
+
+    <p>
+      In vertical oscillation, the mass is attached to a spring hanging vertically. The spring stretches due to the weight of the mass.
+    </p>
+
+    <h3>15.1 Equilibrium Position</h3>
+    <p>
+      At equilibrium, the spring force equals the weight:
+    </p>
+    <div class="formula-box">
+      kx₀ = mg
+    </div>
+    <p>
+      Where x₀ is the extension at equilibrium.
+    </p>
+
+    <h3>15.2 Time Period</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> At equilibrium: kx₀ = mg</div>
+      <div class="step"><span class="step-number">2</span> When displaced by x from equilibrium:</div>
+      <div class="step" style="padding-left: 30px;">F = −kx</div>
+      <div class="step"><span class="step-number">3</span> The equation of motion is the same as horizontal:</div>
+      <div class="step" style="padding-left: 30px;">d²x/dt² + (k/m)x = 0</div>
+      <div class="step"><span class="step-number">4</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">T = 2π√(m/k)</div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> The time period of vertical oscillation is the SAME as horizontal oscillation for the same spring and mass.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 16. COMPOUND PENDULUM ===== -->
+    <!-- ======================================== -->
+    <h2 id="compound">16. Compound Pendulum</h2>
+
+    <p>
+      A <strong>compound pendulum</strong> (or physical pendulum) is a rigid body that oscillates about a fixed axis passing through a point other than its center of mass.
+    </p>
+
+    <h3>16.1 Time Period of Compound Pendulum</h3>
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> The equation of motion is: τ = Iα</div>
+      <div class="step"><span class="step-number">2</span> The restoring torque is: τ = −MgL sinθ</div>
+      <div class="step"><span class="step-number">3</span> For small θ, sinθ ≈ θ:</div>
+      <div class="step" style="padding-left: 30px;">τ = −MgLθ</div>
+      <div class="step"><span class="step-number">4</span> Therefore: Iα = −MgLθ</div>
+      <div class="step"><span class="step-number">5</span> Since α = d²θ/dt²:</div>
+      <div class="step" style="padding-left: 30px;">I(d²θ/dt²) + MgLθ = 0</div>
+      <div class="step"><span class="step-number">6</span> d²θ/dt² + (MgL/I)θ = 0</div>
+      <div class="step"><span class="step-number">7</span> Comparing with SHM: ω² = MgL/I</div>
+      <div class="step"><span class="step-number">8</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">T = 2π√(I/(MgL))</div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>📌 Key Point:</strong> A simple pendulum is a special case of a compound pendulum where all the mass is concentrated at a point (I = ML²).
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 17. ENERGY CONSERVATION IN SHM ===== -->
+    <!-- ======================================== -->
+    <h2 id="energy-derivation">17. Energy Conservation in SHM</h2>
+
+    <p>
+      In SHM, total energy is always conserved. Let's prove this.
+    </p>
+
+    <div class="derivation-box">
+      <div class="step"><span class="step-number">1</span> We know: x = A sin(ωt + φ)</div>
+      <div class="step"><span class="step-number">2</span> Velocity: v = Aω cos(ωt + φ)</div>
+      <div class="step"><span class="step-number">3</span> Kinetic Energy: KE = ½mv² = ½m(Aω cos(ωt + φ))²</div>
+      <div class="step" style="padding-left: 30px;">KE = ½mω²A² cos²(ωt + φ)</div>
+      <div class="step"><span class="step-number">4</span> Potential Energy: PE = ½kx² = ½k(A sin(ωt + φ))²</div>
+      <div class="step" style="padding-left: 30px;">PE = ½kA² sin²(ωt + φ)</div>
+      <div class="step"><span class="step-number">5</span> Since k = mω²:</div>
+      <div class="step" style="padding-left: 30px;">PE = ½mω²A² sin²(ωt + φ)</div>
+      <div class="step"><span class="step-number">6</span> Total Energy: TE = KE + PE</div>
+      <div class="step" style="padding-left: 30px;">TE = ½mω²A²[cos²(ωt + φ) + sin²(ωt + φ)]</div>
+      <div class="step"><span class="step-number">7</span> Using cos²θ + sin²θ = 1:</div>
+      <div class="step" style="padding-left: 30px;">TE = ½mω²A²</div>
+      <div class="step"><span class="step-number">8</span> Therefore:</div>
+      <div class="formula-box" style="text-align:center;">TE = ½mω²A² = constant</div>
+    </div>
+
+    <div class="key-point-box">
+      <strong>💡 Key Point:</strong> In SHM, energy is continuously converted between kinetic and potential forms, but the total energy remains constant.
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 18. IMPORTANT FORMULAS ===== -->
+    <!-- ======================================== -->
+    <h2 id="formulas">18. Important Formulas</h2>
+
+    <div class="formula-box">a = −ω²x (Acceleration in SHM)</div>
+    <div class="formula-box">x = A sin(ωt + φ) (Displacement)</div>
+    <div class="formula-box">v = Aω cos(ωt + φ) (Velocity)</div>
+    <div class="formula-box">v = ω√(A² − x²) (Velocity in terms of displacement)</div>
+    <div class="formula-box">v<sub>max</sub> = Aω (Maximum velocity)</div>
+    <div class="formula-box">a<sub>max</sub> = Aω² (Maximum acceleration)</div>
+    <div class="formula-box">T = 2π/ω (Time Period)</div>
+    <div class="formula-box">f = 1/T = ω/2π (Frequency)</div>
+    <div class="formula-box">KE = ½mω²(A² − x²) (Kinetic Energy)</div>
+    <div class="formula-box">PE = ½mω²x² (Potential Energy)</div>
+    <div class="formula-box">TE = ½mω²A² = ½kA² (Total Energy)</div>
+    <div class="formula-box">T = 2π√(m/k) (Spring-Mass System)</div>
+    <div class="formula-box">T = 2π√(L/g) (Simple Pendulum)</div>
+    <div class="formula-box">T = 2π√(I/(MgL)) (Compound Pendulum)</div>
+
+    <!-- ======================================== -->
+    <!-- ===== 19. SOLVED EXAMPLES ===== -->
+    <!-- ======================================== -->
+    <h2 id="examples">19. Solved Examples</h2>
+
+    <div class="example-box">
+      <strong>Example 1:</strong><br />
+      A particle executes SHM with amplitude 5 cm and time period 2 s. Find the maximum velocity and maximum acceleration.<br /><br />
+      <strong>Solution:</strong><br />
+      Given: A = 5 cm = 0.05 m, T = 2 s<br />
+      ω = 2π/T = 2π/2 = π rad/s<br />
+      v<sub>max</sub> = Aω = 0.05 × π = <strong>0.157 m/s</strong><br />
+      a<sub>max</sub> = Aω² = 0.05 × π² = <strong>0.493 m/s²</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 2:</strong><br />
+      A spring-mass system has a mass of 0.5 kg and spring constant 20 N/m. Find the time period.<br /><br />
+      <strong>Solution:</strong><br />
+      Given: m = 0.5 kg, k = 20 N/m<br />
+      T = 2π√(m/k) = 2π√(0.5/20) = 2π√0.025 = 2π × 0.158 = <strong>0.993 s</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 3:</strong><br />
+      A simple pendulum has a length of 1 m. Calculate its time period on Earth (g = 9.8 m/s²).<br /><br />
+      <strong>Solution:</strong><br />
+      Given: L = 1 m, g = 9.8 m/s²<br />
+      T = 2π√(L/g) = 2π√(1/9.8) = 2π√0.102 = 2π × 0.319 = <strong>2.006 s</strong>
+    </div>
+
+    <div class="example-box">
+      <strong>Example 4:</strong><br />
+      A particle executing SHM has displacement x = 0.02 sin(4πt). Find:<br />
+      (a) Amplitude<br />
+      (b) Angular frequency<br />
+      (c) Time period<br /><br />
+      <strong>Solution:</strong><br />
+      Comparing with x = A sin(ωt):<br />
+      (a) A = 0.02 m = <strong>2 cm</strong><br />
+      (b) ω = 4π rad/s<br />
+      (c) T = 2π/ω = 2π/4π = <strong>0.5 s</strong>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 20. PRACTICE PROBLEMS ===== -->
+    <!-- ======================================== -->
+    <h2 id="practice">20. Practice Problems</h2>
+
+    <div class="example-box">
+      <strong>Problem 1:</strong><br />
+      A particle executes SHM with amplitude 0.1 m and time period 4 s. Find:<br />
+      (a) Maximum velocity<br />
+      (b) Maximum acceleration<br /><br />
+      <em>[Hint: ω = 2π/T]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 2:</strong><br />
+      A spring of spring constant 100 N/m is attached to a mass of 0.25 kg. Find the time period.<br /><br />
+      <em>[Hint: T = 2π√(m/k)]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 3:</strong><br />
+      A simple pendulum has a length of 2.5 m. Find its time period.<br /><br />
+      <em>[Hint: T = 2π√(L/g)]</em>
+    </div>
+
+    <div class="example-box">
+      <strong>Problem 4:</strong><br />
+      In SHM, the displacement of a particle is x = 0.05 cos(3t). Find:<br />
+      (a) Amplitude<br />
+      (b) Angular frequency<br />
+      (c) Time period<br />
+      (d) Maximum velocity
+    </div>
+
+    <!-- ======================================== -->
+    <!-- ===== 21. APPLICATIONS ===== -->
+    <!-- ======================================== -->
+    <h2 id="applications">21. Applications of Periodic Motion</h2>
+
+    <div class="application-box">
+      <strong>🔧 1. Pendulum Clocks:</strong> The simple pendulum is used in pendulum clocks to measure time. The time period is constant, making it a reliable timekeeper.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 2. Springs in Vehicles:</strong> Springs are used in vehicle suspension systems to absorb shocks. They oscillate and dampen the motion of the vehicle.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 3. Seismometers:</strong> Used to measure earthquakes. The mass-spring system oscillates during ground motion, and the displacement is recorded.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 4. Tuning Forks:</strong> Used to produce standard frequencies in music and physics experiments. The prongs oscillate in SHM.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 5. Bridges and Buildings:</strong> Engineers consider periodic motion when designing buildings and bridges to avoid resonance that could cause collapse.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 6. Atomic and Molecular Vibrations:</strong> Atoms in molecules vibrate in SHM, which is studied in spectroscopy.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 7. Heartbeat:</strong> The rhythmic contraction and relaxation of the heart is a form of periodic motion.
+    </div>
+
+    <div class="application-box">
+      <strong>🔧 8. Sound Waves:</strong> Sound is produced by periodic vibrations of particles in a medium.
+    </div>
+
+    <div class="highlight-box">
+      <strong>📌 Summary:</strong> Periodic motion is everywhere in nature and technology. Understanding SHM is essential for fields ranging from engineering to medicine.
+    </div>
+
+    <!-- ===== PDF DOWNLOAD ===== -->
+    <a href="https://drive.google.com/uc?export=download&id=YOUR_PDF_ID" class="btn-download" target="_blank">
+      📥 Download PDF Notes
+    </a>
+
+    <!-- Footer -->
+    <div class="footer-note">
+      📚 Gyanu Education Hub • Free for every Nepali student
+    </div>
+
+  </div>
+
+</body>
